@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --container-size: 1200px;
+  }
+}
+
+@layer utilities {
+  .slide-center {
+    transform: translateX(calc(max(var(--container-size), 100vw) / 2) - calc(var(--container-size) / 2 ));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translate3d(0%, 0%, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@layer utilities {
+  .clip-video {
+    clip-path: inset(10% 0 10% 0);
+  }
+}
+
+.scrolling-text {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll 35s linear infinite;
+  transition: animation-play-state ease-in-out;
+}
+
+.screen-max-width {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  position: relative;
+  max-width: 1120px;
+}
+
+.custom-grid-title {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  position: absolute;
+  text-align: center;
+  transform: translateY(8px);
+}
+
+.custom-grid-des {
+  display: grid;
+  grid-template-columns: repeat(5, 170px);
+  position: absolute;
+  text-align: center;
+  margin-top: 0px;
+  transform: translateY(490px);
+}
+
+.text-shift-down-12 {
+  transform: translateY(45px);
+  opacity: 0;
+}
+
+.text-shift-down-SE {
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

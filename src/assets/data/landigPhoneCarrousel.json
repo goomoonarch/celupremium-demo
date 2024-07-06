@@ -1,0 +1,56 @@
+[
+  {
+    "id": "i15pbc",
+    "img": "/src/assets/images/iphone15_plus_black_2x.jpg",
+    "family_reference": "iPhone 15 Plus",
+    "swatch": "/src/assets/swatch_colors/iPhone15Plus_x2.png",
+    "price": "3'920.000",
+    "finance": "268.900",
+    "buylink": ""
+  },
+  {
+    "id": "i14ppc",
+    "img": "/src/assets/images/iphone14_plus_purple_2x.jpg",
+    "family_reference": "iPhone 14 Plus",
+    "swatch": "/src/assets/swatch_colors/iPhone14_colors_x2.png",
+    "price": "3'219.900",
+    "finance": "268.325",
+    "buylink": ""
+  },
+  {
+    "id": "i13rc",
+    "img" : "/src/assets/images/iphone13_red_2x.jpg",
+    "family_reference" : "iPhone 13",
+    "swatch" : "/src/assets/swatch_colors/iPhone13_colors_x2.png",
+    "price" : "2'200.000",
+    "finance": "183.500",
+    "buylink": ""
+},
+{
+    "id": "i12bc",
+    "img" : "/src/assets/images/iphone12_black_2x.jpg",
+    "family_reference" : "iPhone 12",
+    "swatch" : "/src/assets/swatch_colors/iPhone12_colors_x2.png",
+    "price" : "1'599.900",
+    "finance": "133.325",
+    "buylink": ""
+},
+{
+    "id": "i14yc",
+    "img" : "/src/assets/images/iphone14_yellow_2x.jpg",
+    "family_reference" : "iPhone 14",
+    "swatch" : "/src/assets/swatch_colors/iPhone14_colors_x2.png",
+    "price" : "2'519.900",
+    "finance": "209.900",
+    "buylink": ""
+},
+{
+    "id": "i1wc",
+    "img" : "/src/assets/images/iphone11_white_2x.jpg",
+    "family_reference" : "iPhone 11",
+    "swatch" : "/src/assets/swatch_colors/iPhone11_colors_x2.png",
+    "price" : "1'219.900",
+    "finance": "101.658",
+    "buylink": ""
+}
+]
