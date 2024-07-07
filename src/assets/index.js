@@ -16,6 +16,7 @@ import saiye from "./sales/promo_iPhone_yellow.png";
 //--->Data
 import phonedetails from "./data/landingPhoneDetails.json";
 import phonecarrouselinfo from "./data/landigPhoneCarrousel.json"
+import accesoriescarrouselinfo from "./data/landingAccesoriesCarrousel.json";
 
 export const large_video = hvm;
 export const small_video = svm;
@@ -33,3 +34,4 @@ export const arrow = yarrow;
 export const saleiPhoneY = saiye;
 export const landingPhodeDetails = phonedetails;
 export const phoneCarrousel = phonecarrouselinfo;
+export const accesoriesCarrousel = accesoriescarrouselinfo;

@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useState, useRef, useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
-export const MainCarrousel = ({ references }) => {
+export const AccesoriesCarrousel = ({ references }) => {
   const sliderRef = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoverU, setHoverU] = useState(true);
@@ -44,10 +44,10 @@ export const MainCarrousel = ({ references }) => {
   }, []);
 
   return (
-    <div className="relative mb-10">
+    <div className="relative">
       <ul
         ref={sliderRef}
-        className="flex overflow-x-auto scrollbar-hide bg-[#F3F5F7] h-[490px] items-center snap-x snap-mandatory"
+        className="flex overflow-x-auto scrollbar-hide bg-[#F3F5F7] h-[500px] items-center snap-x snap-mandatory"
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       >
@@ -63,7 +63,7 @@ export const MainCarrousel = ({ references }) => {
             >
               <div className="transition-transform duration-300 hover:scale-[1.016] ease-custom w-[300px] h-[480px] bg-white rounded-[20px] p-[30px]">
                 <div className="flex flex-col items-center justify-center">
-                  <img src={list.img} alt="articleimg" className="w-[210px]" />
+                  <img src={list.img} alt="articleimg" className="w-[210px] pt-[28px]" />
                   <img
                     src={list.swatch}
                     alt="swatch"

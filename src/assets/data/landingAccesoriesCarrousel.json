@@ -1,0 +1,57 @@
+[
+    {
+      "id": "airpromaxsl",
+      "img": "/src/assets/images/airpods_max_silver_2x.png",
+      "family_reference": "AirpodsMax",
+      "swatch": "/src/assets/swatch_colors/airpods_max_colors.png",
+      "price": "2'260.000",
+      "finance": "188.400",
+      "buylink": ""
+    },
+    {
+      "id": "air3gl",
+      "img": "/src/assets/images/airpods3gen_2x.png",
+      "family_reference": "AirPods 3Gen",
+      "swatch": "/src/assets/swatch_colors/airpods_3gen_x2.png",
+      "price": "820.000",
+      "finance": "68.500",
+      "buylink": ""
+    },
+    {
+      "id": "magsafelanding",
+      "img" : "/src/assets/images/magsafe.png",
+      "family_reference" : "Cargador MagSafe",
+      "swatch" : "/src/assets/swatch_colors/magsafe_colors_x2.png",
+      "price" : "180.000",
+      "finance": "15.000",
+      "buylink": ""
+  },
+  {
+      "id": "20wpoweradapter",
+      "img" : "/src/assets/images/20wpoweradapter.png",
+      "family_reference" : "Adaptador de 20W",
+      "swatch" : "/src/assets/swatch_colors/airpods_3gen_x2.png",
+      "price" : "98.000",
+      "finance": "8.200",
+      "buylink": ""
+  },
+  {
+      "id": "airpodspro2gen",
+      "img" : "/src/assets/images/airpods_pro_2gen_2x.png",
+      "family_reference" : "AirPods Pro 2Gen",
+      "swatch" : "/src/assets/swatch_colors/airpods_3gen_x2.png",
+      "price" : "920.000",
+      "finance": "76.700",
+      "buylink": ""
+  },
+  {
+      "id": "i1wc",
+      "img" : "/src/assets/images/siliconmagsafecover_pink_2x.png",
+      "family_reference" : "Case de silicona",
+      "swatch" : "/src/assets/swatch_colors/silicon_case_magsafe_colors_x2.png",
+      "price" : "269.900",
+      "finance": "22.500",
+      "buylink": ""
+  }
+  ]
+  

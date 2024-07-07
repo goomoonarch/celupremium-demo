@@ -10,7 +10,10 @@
 
 @layer utilities {
   .slide-center {
-    transform: translateX(calc(max(var(--container-size), 100vw) / 2) - calc(var(--container-size) / 2 ));
+    transform: translateX(calc(max(var(--container-size), 100vw) / 2 - calc(var(--container-size) / 2)));
+  }
+  .ease-custom {
+    transition-timing-function: cubic-bezier(0, 0, .5, 1);
   }
 }
 
