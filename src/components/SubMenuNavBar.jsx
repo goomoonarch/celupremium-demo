@@ -2,7 +2,7 @@ import { PhoneCat } from "./PhoneCat";
 import { AccesoriesCat } from "./AccesoriesCat";
 
 /* eslint-disable react/prop-types */
-export const SubMenuNavBar = ({ cat }) => {
+export const SubMenuNavBar = ({ cat, onMouseEnter, onMouseLeave }) => {
   const renderSwitch = (cat) => {
     switch (cat) {
       case "iPhone":
@@ -15,7 +15,11 @@ export const SubMenuNavBar = ({ cat }) => {
   };
 
   return (
-    <div className="absolute w-full h-full z-10">
+    <div
+      className="absolute w-full h-full z-10"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <div
         id="content"
         className="bg-[#F5F5F7] flex flex-col items-center justify-center"
