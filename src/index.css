@@ -76,3 +76,16 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.hoverable-text {
+  color: #6E6E73;   
+  transform: scale(1); 
+  font-weight: 400;   
+  transition: color 0.3s ease, transform 0.3s ease, font-weight 0.3s ease;
+}
+
+.hoverable-text:hover {
+  color: #1D1D1F;      
+  transform: scale(1.1);  
+  font-weight: 500;
+}

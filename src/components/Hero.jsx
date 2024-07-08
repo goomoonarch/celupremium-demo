@@ -15,7 +15,6 @@ export const Hero = () => {
   const [description, setDescription] = useState(false);
 
   const handleTimeUpdate = (e) => {
-    console.log(e.target.currentTime);
     if (e.target.currentTime >= 2.8) {
       setTitle(true);
       setDescription(true);
@@ -139,9 +138,6 @@ export const Hero = () => {
         if (gridRef2.current) {
           gridRef2.current.style.gap = gapValueDes;
           gridRef2.current.style.marginTop = marginTopValue;
-          console.log(
-            `${entry.contentRect.width}, ${gridRef2.current.style.marginTop}`
-          );
         }
       }
     });
@@ -175,11 +171,7 @@ export const Hero = () => {
           <source src={videoSrc} type="video/mp4" />
         </video>
       </div>
-      {description && (
-        <LandingPhoneDescription
-          gridRef2={gridRef2}
-        />
-      )}
+      {description && <LandingPhoneDescription gridRef2={gridRef2} />}
     </div>
   );
 };

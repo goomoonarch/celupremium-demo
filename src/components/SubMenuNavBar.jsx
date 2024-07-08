@@ -1,8 +1,12 @@
+import { useEffect, useRef } from "react";
 import { PhoneCat } from "./PhoneCat";
 import { AccesoriesCat } from "./AccesoriesCat";
+import { gsap } from "gsap";
 
 /* eslint-disable react/prop-types */
-export const SubMenuNavBar = ({ cat, onMouseEnter, onMouseLeave }) => {
+export const SubMenuNavBar = ({ cat, onBlurEnter }) => {
+  const contentRef = useRef(null);
+
   const renderSwitch = (cat) => {
     switch (cat) {
       case "iPhone":
@@ -14,14 +18,20 @@ export const SubMenuNavBar = ({ cat, onMouseEnter, onMouseLeave }) => {
     }
   };
 
+  useEffect(() => {
+    if (contentRef.current) {
+      gsap.to(contentRef.current, {
+        height: "auto",
+        duration: 0.5,
+        ease: "power4.out",
+      });
+    }
+  }, [cat]);
+
   return (
-    <div
-      className="absolute w-full h-full z-10"
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <div className="absolute w-full z-10 overflow-hidden">
       <div
-        id="content"
+        ref={contentRef}
         className="bg-[#F5F5F7] flex flex-col items-center justify-center"
       >
         <div className="flex flex-col items-center justify-center">
@@ -30,6 +40,7 @@ export const SubMenuNavBar = ({ cat, onMouseEnter, onMouseLeave }) => {
       </div>
       <div
         id="blur"
+        onMouseEnter={onBlurEnter}
         className="h-full backdrop-blur-[12px] bg-[#ffffff30]"
       ></div>
     </div>

@@ -8,13 +8,13 @@ import { BuyDescription } from "./components/BuyDescription.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <App />,
   },
   {
     path: "/buy-iphone",
-    element: <BuyDescription />
-  }
-])
+    element: <BuyDescription />,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
