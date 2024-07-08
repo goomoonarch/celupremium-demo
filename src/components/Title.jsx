@@ -2,7 +2,7 @@
 export const Title = ({ atributes }) => {
   const { title, url } = atributes;
   return (
-    <div className="flex items-center justify-start slide-center mt-[60px] font-inter">
+    <div className="flex items-center justify-start slide-center mt-[60px] font-inter max-w-[1080px]">
       <div className="flex flex-col w-[960px] leading-8 mb-8">
         <div className="text-[26px] font-medium text-[1d1d1f]">
           {title}

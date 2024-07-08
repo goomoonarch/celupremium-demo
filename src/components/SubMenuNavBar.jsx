@@ -1,14 +1,33 @@
+import { PhoneCat } from "./PhoneCat";
+import { AccesoriesCat } from "./AccesoriesCat";
+
 /* eslint-disable react/prop-types */
-export const SubMenuNavBar = () => {
+export const SubMenuNavBar = ({ cat }) => {
+  const renderSwitch = (cat) => {
+    switch (cat) {
+      case "iPhone":
+        return <PhoneCat />;
+      case "Accesorios":
+        return <AccesoriesCat />;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className="absolute w-full h-full">
+    <div className="absolute w-full h-full z-10">
       <div
         id="content"
         className="bg-[#F5F5F7] flex flex-col items-center justify-center"
       >
-        <div className="flex items-center justify-center">iconContent</div>
+        <div className="flex flex-col items-center justify-center">
+          {renderSwitch(cat)}
+        </div>
       </div>
-      <div id="blur" className="h-full backdrop-blur-sm bg-white/20"></div>
+      <div
+        id="blur"
+        className="h-full backdrop-blur-[12px] bg-[#ffffff30]"
+      ></div>
     </div>
   );
 };
