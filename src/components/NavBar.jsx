@@ -23,7 +23,7 @@ export const NavBar = () => {
       case "Accesorios":
         return <AccesoriesCat trigger={controlCatAnimation} />;
       case "Nosotros":
-        return <AboutUsCat />;
+        return <AboutUsCat trigger={controlCatAnimation} />;
       default:
         return null;
     }
@@ -58,7 +58,6 @@ export const NavBar = () => {
         });
         gsap.to(navRef.current, {
           backgroundColor: "white",
-          delay: 0.2,
           duration: 0.1,
           ease: "power3.out",
         });
@@ -97,8 +96,8 @@ export const NavBar = () => {
   };
 
   const toggleCatAnimation = () => {
-    subPage ? setControlCatAnimation(true) : null
-  }
+    subPage ? setControlCatAnimation(true) : null;
+  };
 
   return (
     <header onMouseLeave={handleMouseLeave}>

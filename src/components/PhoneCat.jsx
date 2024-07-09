@@ -9,7 +9,7 @@ import { P15 } from "./submenucontent/P15";
 import { P15Pro } from "./submenucontent/P15Pro";
 import { PSE } from "./submenucontent/PSE";
 
-export const PhoneCat = () => {
+export const PhoneCat = ({ trigger }) => {
   const containerRef = useRef(null);
   useEffect(() => {
     const elements = containerRef.current.children;
@@ -23,7 +23,7 @@ export const PhoneCat = () => {
       stagger: 0.06,
       ease: "power2.out",
     });
-  }, []);
+  }, [trigger]);
 
   return (
     <div className="py-6">
