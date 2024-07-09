@@ -1,10 +1,10 @@
+import { useEffect, useRef, useState, useCallback } from "react";
+import gsap from "gsap";
 import celupremiumLogo from "../assets/cp_logo.svg";
 import search from "../assets/magnifyingglass.svg";
 import bag from "../assets/bag.svg";
 import { PhoneCat } from "./PhoneCat";
 import { AccesoriesCat } from "./AccesoriesCat";
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
 import { AboutUsCat } from "./AboutUsCat";
 
 export const NavBar = () => {
@@ -14,90 +14,110 @@ export const NavBar = () => {
   const [subPage, setSubPage] = useState("");
   const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
   const [subMenuHeight, setSubMenuHeight] = useState(0);
-  const [controlCatAnimation, setControlCatAnimation] = useState(false);
+  const isClosingRef = useRef(false);
+  const subMenuContentRef = useRef(null);
+  const timeoutRef = useRef(null);
 
   const renderSubMenu = (category) => {
     switch (category) {
       case "iPhone":
         return <PhoneCat />;
       case "Accesorios":
-        return <AccesoriesCat trigger={controlCatAnimation} />;
+        return <AccesoriesCat trigger={subPage} />;
       case "Nosotros":
-        return <AboutUsCat trigger={controlCatAnimation} />;
+        return <AboutUsCat trigger={subPage} />;
       default:
         return null;
     }
   };
 
+  const animateNavBackground = useCallback((color, delay) => {
+    gsap.to(navRef.current, {
+      backgroundColor: color,
+      duration: 0.2,
+      delay: delay,
+      ease: "power3.out",
+    });
+  }, []);
+
+  const closeSubmenu = useCallback(() => {
+    isClosingRef.current = true;
+    const tl = gsap.timeline();
+
+    tl.to(subMenuRef.current, {
+      height: 0,
+      opacity: 0,
+      duration: 0.25,
+      ease: "power3.in",
+    });
+
+    tl.to(blurRef.current, {
+      height: 0,
+      opacity: 0,
+      duration: 0.25,
+      ease: "power3.in",
+    }, "-=0.25"); // Start at the same time as the submenu animation
+
+    tl.call(() => {
+      animateNavBackground("white");
+    }, null, "-=0.1");
+    
+    tl.call(() => {
+      if (isClosingRef.current) {
+        console.log("Closing completed");
+        setSubPage("");
+        isClosingRef.current = false;
+      }
+    });
+  }, [animateNavBackground]);
+
   useEffect(() => {
     if (subMenuRef.current) {
       if (isSubMenuVisible) {
-        gsap.to(subMenuRef.current, {
+        isClosingRef.current = false;
+        clearTimeout(timeoutRef.current);
+        const tl = gsap.timeline();
+
+        tl.to(subMenuRef.current, {
           height: subMenuHeight,
           opacity: 1,
           duration: 0.25,
           ease: "power3.out",
         });
-        gsap.to(navRef.current, {
-          backgroundColor: "#F5F5F7",
-          duration: 0.2,
-          ease: "power3.out",
-        });
-        gsap.to(blurRef.current, {
+
+        tl.to(blurRef.current, {
           height: "1200px",
           opacity: 1,
           duration: 0.25,
           ease: "power3.out",
-        });
+        }, "-=0.25");
+
+        animateNavBackground("#F5F5F7");
       } else {
-        gsap.to(subMenuRef.current, {
-          height: 0,
-          opacity: 0,
-          duration: 0.25,
-          ease: "power3.in",
-        });
-        gsap.to(navRef.current, {
-          backgroundColor: "white",
-          duration: 0.1,
-          ease: "power3.out",
-        });
-        gsap.to(blurRef.current, {
-          height: 0,
-          opacity: 0,
-          duration: 0.25,
-          ease: "power3.in",
-        });
+        closeSubmenu();
       }
     }
-  }, [isSubMenuVisible, subMenuHeight]);
-
-  const subMenuContentRef = useRef(null);
+  }, [isSubMenuVisible, subMenuHeight, closeSubmenu, animateNavBackground]);
 
   useEffect(() => {
     if (subMenuContentRef.current) {
       const height = subMenuContentRef.current.offsetHeight;
       setSubMenuHeight(height);
     }
-    if (subPage) {
-      setControlCatAnimation(true);
-    }
   }, [subPage]);
 
-  const handleMouseEnter = (nav) => {
-    console.log(nav);
+  const handleMouseEnter = useCallback((nav) => {
+    clearTimeout(timeoutRef.current);
+    isClosingRef.current = false;
     setSubPage(nav);
     setIsSubMenuVisible(true);
-    toggleCatAnimation();
-  };
+  }, []);
 
-  const handleMouseLeave = () => {
-    setIsSubMenuVisible(false);
-    setSubPage("");
-  };
-
-  const toggleCatAnimation = () => {
-    subPage ? setControlCatAnimation(true) : null;
-  };
+  const handleMouseLeave = useCallback(() => {
+    timeoutRef.current = setTimeout(() => {
+      setIsSubMenuVisible(false);
+    }, 100);
+  }, []);
 
   return (
     <header onMouseLeave={handleMouseLeave}>
