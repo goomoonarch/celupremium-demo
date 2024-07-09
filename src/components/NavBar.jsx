@@ -31,37 +31,30 @@ export const NavBar = () => {
     }
   };
 
-  const animateNavBackground = useCallback((color, delay) => {
-    gsap.to(navRef.current, {
-      backgroundColor: color,
-      duration: 0.2,
-      delay: delay,
-      ease: "power3.out",
-    });
-  }, []);
-
   const closeSubmenu = useCallback(() => {
     isClosingRef.current = true;
     const tl = gsap.timeline();
+
+    tl.to(navRef.current, {
+      backgroundColor: "white",
+      duration: 0.25,
+      ease: "power3.inOut",
+    }, 0);
 
     tl.to(subMenuRef.current, {
       height: 0,
       opacity: 0,
       duration: 0.25,
-      ease: "power3.in",
-    });
+      ease: "power3.inOut",
+    }, 0);
 
     tl.to(blurRef.current, {
       height: 0,
       opacity: 0,
       duration: 0.25,
-      ease: "power3.in",
-    }, "-=0.25"); // Start at the same time as the submenu animation
+      ease: "power3.inOut",
+    }, 0);
 
-    tl.call(() => {
-      animateNavBackground("white");
-    }, null, "-=0.1");
-    
     tl.call(() => {
       if (isClosingRef.current) {
         console.log("Closing completed");
@@ -69,7 +62,7 @@ export const NavBar = () => {
         isClosingRef.current = false;
       }
     });
-  }, [animateNavBackground]);
+  }, []);
 
   useEffect(() => {
     if (subMenuRef.current) {
@@ -78,26 +71,30 @@ export const NavBar = () => {
         clearTimeout(timeoutRef.current);
         const tl = gsap.timeline();
 
+        tl.to(navRef.current, {
+          backgroundColor: "#F5F5F7",
+          duration: 0.25,
+          ease: "power3.inOut",
+        }, 0);
+
         tl.to(subMenuRef.current, {
           height: subMenuHeight,
           opacity: 1,
           duration: 0.25,
-          ease: "power3.out",
-        });
+          ease: "power3.inOut",
+        }, 0);
 
         tl.to(blurRef.current, {
           height: "1200px",
           opacity: 1,
           duration: 0.25,
-          ease: "power3.out",
-        }, "-=0.25");
-
-        animateNavBackground("#F5F5F7");
+          ease: "power3.inOut",
+        }, 0);
       } else {
         closeSubmenu();
       }
     }
-  }, [isSubMenuVisible, subMenuHeight, closeSubmenu, animateNavBackground]);
+  }, [isSubMenuVisible, subMenuHeight, closeSubmenu]);
 
   useEffect(() => {
     if (subMenuContentRef.current) {
