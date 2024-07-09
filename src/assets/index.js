@@ -12,7 +12,9 @@ import sc15pro from "./swatch_colors/iPhone15Pro_colors.png";
 import scse from "./swatch_colors/iPhone_SE_3_colors.png";
 import yarrow from "./arrow.up.right.svg";
 import saiye from "./sales/promo_iPhone_yellow.png";
-
+import mg from "./svg/magnifyingglass.svg";
+import eratext from "./svg/erasetext.svg"
+;
 //--->Data
 import phonedetails from "./data/landingPhoneDetails.json";
 import phonecarrouselinfo from "./data/landigPhoneCarrousel.json"
@@ -35,3 +37,5 @@ export const saleiPhoneY = saiye;
 export const landingPhodeDetails = phonedetails;
 export const phoneCarrousel = phonecarrouselinfo;
 export const accesoriesCarrousel = accesoriescarrouselinfo;
+export const mgico = mg;
+export const erasetext = eratext;

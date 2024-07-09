@@ -31,7 +31,14 @@
     clip-path: inset(10% 0 10% 0);
   }
 }
+.search-button {
+  color: #393939;
+  transition: color 0.3s ease;
+}
 
+.search-button:hover {
+  color: #FFCC00;
+}
 .scrolling-text {
   display: flex;
   white-space: nowrap;
