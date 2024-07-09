@@ -100,7 +100,7 @@ export const P15Pro = () => {
           </clipPath>
         </defs>
       </svg>
-      iPhone 15 Pro
+      <p>iPhone 15 Pro</p>
     </a>
   );
 };

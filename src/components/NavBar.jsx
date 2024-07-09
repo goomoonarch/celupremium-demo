@@ -5,6 +5,7 @@ import { PhoneCat } from "./PhoneCat";
 import { AccesoriesCat } from "./AccesoriesCat";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { AboutUsCat } from "./AboutUsCat";
 
 export const NavBar = () => {
   const subMenuRef = useRef(null);
@@ -13,13 +14,16 @@ export const NavBar = () => {
   const [subPage, setSubPage] = useState("");
   const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
   const [subMenuHeight, setSubMenuHeight] = useState(0);
+  const [controlCatAnimation, setControlCatAnimation] = useState(false);
 
   const renderSubMenu = (category) => {
     switch (category) {
       case "iPhone":
         return <PhoneCat />;
       case "Accesorios":
-        return <AccesoriesCat />;
+        return <AccesoriesCat trigger={controlCatAnimation} />;
+      case "Nosotros":
+        return <AboutUsCat />;
       default:
         return null;
     }
@@ -75,16 +79,26 @@ export const NavBar = () => {
       const height = subMenuContentRef.current.offsetHeight;
       setSubMenuHeight(height);
     }
+    if (subPage) {
+      setControlCatAnimation(true);
+    }
   }, [subPage]);
 
   const handleMouseEnter = (nav) => {
+    console.log(nav);
     setSubPage(nav);
     setIsSubMenuVisible(true);
+    toggleCatAnimation();
   };
 
   const handleMouseLeave = () => {
     setIsSubMenuVisible(false);
+    setSubPage("");
   };
+
+  const toggleCatAnimation = () => {
+    subPage ? setControlCatAnimation(true) : null
+  }
 
   return (
     <header onMouseLeave={handleMouseLeave}>
@@ -130,8 +144,9 @@ export const NavBar = () => {
         style={{ height: 0, opacity: 0 }}
       >
         <div
-        ref={subMenuContentRef} 
-        className="bg-[#F5F5F7] flex flex-col items-center justify-center">
+          ref={subMenuContentRef}
+          className="bg-[#F5F5F7] flex flex-col items-center justify-center"
+        >
           <div className="flex flex-col items-center justify-center">
             {renderSubMenu(subPage)}
           </div>
