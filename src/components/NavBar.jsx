@@ -12,13 +12,15 @@ export const NavBar = () => {
   const subMenuRef = useRef(null);
   const navRef = useRef(null);
   const blurRef = useRef(null);
+  const isClosingRef = useRef(false);
+  const subMenuContentRef = useRef(null);
+  const timeoutRef = useRef(null);
   const [subPage, setSubPage] = useState("");
   const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
   const [subMenuHeight, setSubMenuHeight] = useState(0);
   const [searchBarView, setSearchBarView] = useState(false);
-  const isClosingRef = useRef(false);
-  const subMenuContentRef = useRef(null);
-  const timeoutRef = useRef(null);
+  const [isSearchActive, setIsSearchActive] = useState(false);
+  const [activeItem, setActiveItem] = useState("");
 
   const renderSubMenu = (category) => {
     switch (category) {
@@ -135,34 +137,46 @@ export const NavBar = () => {
     isClosingRef.current = false;
     setSubPage(nav);
     setIsSubMenuVisible(true);
-    setSearchBarView(nav === "SearchBar"); // Mostrar barra de búsqueda si el nav es "SearchBar"
+    setActiveItem(nav);
+    if (nav === "SearchBar") {
+      setSearchBarView(true);
+      setIsSearchActive(true);
+    } else {
+      setSearchBarView(false);
+      setIsSearchActive(false);
+    }
   }, []);
 
   const handleMouseLeave = useCallback(() => {
     timeoutRef.current = setTimeout(() => {
       setIsSubMenuVisible(false);
-      setSearchBarView(false); // Ocultar la barra de búsqueda al salir del navbar
+      setSearchBarView(false);
+      setIsSearchActive(false);
+      setActiveItem("");
     }, 100);
   }, []);
 
-  const handleSearchbarView = () => {
+  const handleSearchbarClick = () => {
     if (searchBarView) {
       setIsSubMenuVisible(false);
       setSearchBarView(false);
+      setIsSearchActive(false);
     } else {
       setSubPage("SearchBar");
       setIsSubMenuVisible(true);
       setSearchBarView(true);
+      setIsSearchActive(true);
     }
   };
 
   const handleIconMouseEnter = useCallback(() => {
-    if (isSubMenuVisible) {
+    if (isSubMenuVisible && !searchBarView) {
       setIsSubMenuVisible(false);
       setSearchBarView(false);
+      setIsSearchActive(false);
+      setActiveItem("");
     }
-  }, [isSubMenuVisible]);
-
+  }, [isSubMenuVisible, searchBarView]);
   return (
     <header onMouseLeave={handleMouseLeave}>
       <nav
@@ -178,7 +192,9 @@ export const NavBar = () => {
             {["iPhone", "Accesorios", "Nosotros", "Políticas"].map((nav, i) => (
               <div
                 key={i}
-                className="cursor-pointer font-inter"
+                className={`cursor-pointer font-inter hover:text-[#FFCC00] transition-colors duration-300 ${
+                  activeItem === nav ? "text-[#FFCC00]" : ""
+                }`}
                 onMouseEnter={() => handleMouseEnter(nav)}
               >
                 {nav}
@@ -189,7 +205,8 @@ export const NavBar = () => {
             <div onMouseEnter={handleIconMouseEnter}>
               <SearchButton
                 className={"search-button"}
-                onSearchBarClick={handleSearchbarView}
+                onClick={handleSearchbarClick}
+                isActive={isSearchActive}
               />
             </div>
             <img

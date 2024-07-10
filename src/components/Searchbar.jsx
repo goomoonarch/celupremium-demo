@@ -46,7 +46,7 @@ export const Searchbar = () => {
           <SubA a={{ title: "AirPods", url: "" }} />
           <SubA a={{ title: "AirTag", url: "" }} />
           <SubA a={{ title: "MagSafe", url: "" }} />
-          <div className="h-[30px]"></div>
+          <div className="h-[30px]" />
           <OurStores />
         </div>
         <div className="flex flex-col ml-[35px]" ref={column2Ref}>
@@ -61,7 +61,7 @@ export const Searchbar = () => {
           <SubB b={{ title: "Políticas de privacidad", url: "" }} />
           <SubB b={{ title: "Políticas de envío", url: "" }} />
           <SubB b={{ title: "Políticas de financiamiento", url: "" }} />
-          <div className="h-[30px]"></div>
+          <div className="h-[23px]"/>
           <AcessorContact />
         </div>
       </div>
