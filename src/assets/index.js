@@ -14,7 +14,8 @@ import yarrow from "./arrow.up.right.svg";
 import saiye from "./sales/promo_iPhone_yellow.png";
 import mg from "./svg/magnifyingglass.svg";
 import eratext from "./svg/erasetext.svg"
-;
+import arrowright from "./svg/arrowright.svg";
+
 //--->Data
 import phonedetails from "./data/landingPhoneDetails.json";
 import phonecarrouselinfo from "./data/landigPhoneCarrousel.json"
@@ -39,3 +40,4 @@ export const phoneCarrousel = phonecarrouselinfo;
 export const accesoriesCarrousel = accesoriescarrouselinfo;
 export const mgico = mg;
 export const erasetext = eratext;
+export const arright = arrowright;

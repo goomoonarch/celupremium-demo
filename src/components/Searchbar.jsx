@@ -1,12 +1,17 @@
 import { useRef, useState, useEffect } from "react";
 import { mgico } from "../assets";
 import gsap from "gsap";
+import { SubA } from "./submenucontent/SubA";
+import { OurStores } from "./submenucontent/OurStores";
+import { SubB } from "./submenucontent/SubB";
+
 
 export const Searchbar = () => {
   const [inputValue, setInputValue] = useState("");
   const [eraseIconAnimation, setEraseIconAnimation] = useState(false);
   const inputRef = useRef(null);
   const eraseIconRef = useRef(null);
+  const barRef = useRef(null);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -34,8 +39,14 @@ export const Searchbar = () => {
   }, [eraseIconAnimation]);
 
   return (
-    <div className="flex flex-col font-inter text-[17px] text-[#1d1d1F] mt-[18px] mb-[40px] font-medium">
-      <div className="w-[780px] h-[42px] rounded-[10px] bg-[#ECECEC] flex items-center justify-between">
+    <div
+      id="searchbar"
+      className="flex flex-col font-inter text-[17px] text-[#1d1d1F] mt-[18px] mb-[40px]"
+    >
+      <div
+        ref={barRef}
+        className="w-[780px] h-[42px] rounded-[10px] bg-[#ECECEC] flex items-center justify-between font-medium mb-[40px]"
+      >
         <div className="flex">
           <img
             src={mgico}
@@ -69,6 +80,30 @@ export const Searchbar = () => {
               />
             </svg>
           )}
+        </div>
+      </div>
+      <div className="flex text-[#6E6E73] w-[700px]" id="links">
+        <div className="flex flex-col">
+          <SubA a={{ title: "iPhone", url: "" }} />
+          <SubA a={{ title: "AirPods", url: "" }} />
+          <SubA a={{ title: "AirTag", url: "" }} />
+          <SubA a={{ title: "MagSafe", url: "" }} />
+          <div className="h-[30px]"></div>
+          <OurStores />
+        </div>
+        <div className="flex flex-col ml-[30px]">
+          <SubA a={{ title: "iPhone 15", url: "" }} />
+          <SubA a={{ title: "iPhone 14", url: "" }} />
+          <SubA a={{ title: "iPhone SE", url: "" }} />
+          <SubA a={{ title: "iPhone 13", url: "" }} />
+          <SubA a={{ title: "iPhone 12", url: "" }} />
+          <SubA a={{ title: "iPhone 11", url: "" }} />
+        </div>
+        <div className="ml-[100px]">
+          {/** For componetization */}
+          <SubB b={{ title: "Políticas de privacidad", url: "" }} />
+          <SubB b={{ title: "Políticas de envío", url: "" }} />
+          <SubB b={{ title: "Políticas de financiamiento", url: "" }} />   
         </div>
       </div>
     </div>
