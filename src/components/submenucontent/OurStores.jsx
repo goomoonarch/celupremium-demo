@@ -29,7 +29,6 @@ export const OurStores = () => {
           </clipPath>
         </defs>
       </svg>
-
       <p>Nuestras tiendas</p>
     </a>
   );

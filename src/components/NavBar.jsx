@@ -140,8 +140,8 @@ export const NavBar = () => {
 
   const handleMouseLeave = useCallback(() => {
     timeoutRef.current = setTimeout(() => {
-      setIsSubMenuVisible(!false);
-      setSearchBarView(!false); // Ocultar la barra de búsqueda al salir del navbar
+      setIsSubMenuVisible(false);
+      setSearchBarView(false); // Ocultar la barra de búsqueda al salir del navbar
     }, 100);
   }, []);
 

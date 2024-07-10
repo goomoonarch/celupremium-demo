@@ -5,7 +5,7 @@ export const SubA = ({ a }) => {
   return (
     <a
       href={url}
-      className="flex justify-start items-center mb-[5px] group hover:text-[#FFCC00] transition-all ease-out"
+      className="flex justify-start items-center mb-[5px] group hover:text-[#FFCC00] transition-all ease-out text-[16px]"
     >
       <svg
         width="16"
@@ -26,8 +26,7 @@ export const SubA = ({ a }) => {
           </clipPath>
         </defs>
       </svg>
-
-      <p className="">{title}</p>
+      <p>{title}</p>
     </a>
   );
 };
