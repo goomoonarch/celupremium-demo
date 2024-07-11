@@ -15,11 +15,13 @@ import saiye from "./sales/promo_iPhone_yellow.png";
 import mg from "./svg/magnifyingglass.svg";
 import eratext from "./svg/erasetext.svg"
 import arrowright from "./svg/arrowright.svg";
+import addilogo from "./svg/addi_search_logo.png";
 
 //--->Data
 import phonedetails from "./data/landingPhoneDetails.json";
 import phonecarrouselinfo from "./data/landigPhoneCarrousel.json"
 import accesoriescarrouselinfo from "./data/landingAccesoriesCarrousel.json";
+import allstock from "./data/allStock.json";
 
 export const large_video = hvm;
 export const small_video = svm;
@@ -41,3 +43,5 @@ export const accesoriesCarrousel = accesoriescarrouselinfo;
 export const mgico = mg;
 export const erasetext = eratext;
 export const arright = arrowright;
+export const allStock = allstock;
+export const addiLogo = addilogo;

@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { mgico } from "../../assets";
 
-export const SearchInput = () => {
+export const SearchInput = ({ onSearch }) => {
   const [inputValue, setInputValue] = useState("");
   const [eraseIconAnimation, setEraseIconAnimation] = useState(false);
   const inputRef = useRef(null);
@@ -10,8 +11,10 @@ export const SearchInput = () => {
   const barRef = useRef(null);
 
   const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-    if (e.target.value) {
+    const value = e.target.value;
+    setInputValue(value);
+    onSearch(value);
+    if (value) {
       setEraseIconAnimation(true);
     } else {
       setEraseIconAnimation(false);
@@ -20,6 +23,7 @@ export const SearchInput = () => {
 
   const handleEraseClick = () => {
     setInputValue("");
+    onSearch("");
     inputRef.current.focus();
     setEraseIconAnimation(false);
   };

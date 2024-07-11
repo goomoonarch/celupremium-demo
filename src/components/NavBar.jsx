@@ -21,17 +21,18 @@ export const NavBar = () => {
   const [searchBarView, setSearchBarView] = useState(false);
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [activeItem, setActiveItem] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   const renderSubMenu = (category) => {
     switch (category) {
       case "iPhone":
         return <PhoneCat />;
       case "Accesorios":
-        return <AccesoriesCat trigger={subPage} />;
+        return <AccesoriesCat />;
       case "Nosotros":
-        return <AboutUsCat trigger={subPage} />;
+        return <AboutUsCat />;
       case "SearchBar":
-        return <Searchbar />;
+        return <Searchbar onSearchResult={handleSearchResults} />;
       default:
         return null;
     }
@@ -82,55 +83,57 @@ export const NavBar = () => {
   }, []);
 
   useEffect(() => {
-    if (subMenuRef.current) {
-      if (isSubMenuVisible) {
-        isClosingRef.current = false;
-        clearTimeout(timeoutRef.current);
-        const tl = gsap.timeline();
+    if (subMenuRef.current && isSubMenuVisible) {
+      isClosingRef.current = false;
+      clearTimeout(timeoutRef.current);
+      const tl = gsap.timeline();
 
-        tl.to(
-          navRef.current,
-          {
-            backgroundColor: "#F5F5F7",
-            duration: 0.25,
-            ease: "power3.inOut",
-          },
-          0
-        );
+      tl.to(
+        navRef.current,
+        {
+          backgroundColor: "#F5F5F7",
+          duration: 0.25,
+          ease: "power3.inOut",
+        },
+        0
+      );
 
-        tl.to(
-          subMenuRef.current,
-          {
-            height: subMenuHeight,
-            opacity: 1,
-            duration: 0.25,
-            ease: "power3.inOut",
-          },
-          0
-        );
+      tl.to(
+        subMenuRef.current,
+        {
+          height: subMenuHeight,
+          opacity: 1,
+          duration: 0.25,
+          ease: "power3.inOut",
+        },
+        0
+      );
 
-        tl.to(
-          blurRef.current,
-          {
-            height: "1200px",
-            opacity: 1,
-            duration: 0.25,
-            ease: "power3.inOut",
-          },
-          0
-        );
-      } else {
-        closeSubmenu();
-      }
+      tl.to(
+        blurRef.current,
+        {
+          height: "1200px",
+          opacity: 1,
+          duration: 0.25,
+          ease: "power3.inOut",
+        },
+        0
+      );
+    } else {
+      closeSubmenu();
     }
-  }, [isSubMenuVisible, subMenuHeight, closeSubmenu]);
+  }, [isSubMenuVisible, subMenuHeight, closeSubmenu, subPage, searchResults]);
+
+  const handleSearchResults = useCallback((results) => {
+    setSearchResults(results);
+  }, []);
 
   useEffect(() => {
     if (subMenuContentRef.current) {
       const height = subMenuContentRef.current.offsetHeight;
       setSubMenuHeight(height);
     }
-  }, [subPage]);
+  }, [subPage, searchResults]);
 
   const handleMouseEnter = useCallback((nav) => {
     clearTimeout(timeoutRef.current);
@@ -149,8 +152,8 @@ export const NavBar = () => {
 
   const handleMouseLeave = useCallback(() => {
     timeoutRef.current = setTimeout(() => {
-      setIsSubMenuVisible(false);
-      setSearchBarView(false);
+      setIsSubMenuVisible(!false);
+      setSearchBarView(!false);
       setIsSearchActive(false);
       setActiveItem("");
     }, 100);
@@ -177,6 +180,7 @@ export const NavBar = () => {
       setActiveItem("");
     }
   }, [isSubMenuVisible, searchBarView]);
+
   return (
     <header onMouseLeave={handleMouseLeave}>
       <nav
