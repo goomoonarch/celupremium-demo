@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import gsap from "gsap";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { mgico } from "../../assets";
 
 export const SearchInput = ({ onSearch, clickUp }) => {
