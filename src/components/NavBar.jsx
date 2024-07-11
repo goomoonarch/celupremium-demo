@@ -22,6 +22,7 @@ export const NavBar = () => {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [activeItem, setActiveItem] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [searchClick, setSearchClick] = useState(false);
 
   const renderSubMenu = (category) => {
     switch (category) {
@@ -32,7 +33,9 @@ export const NavBar = () => {
       case "Nosotros":
         return <AboutUsCat />;
       case "SearchBar":
-        return <Searchbar onSearchResult={handleSearchResults} />;
+        return (
+          <Searchbar onSearchResult={handleSearchResults} click={searchClick} />
+        );
       default:
         return null;
     }
@@ -46,8 +49,8 @@ export const NavBar = () => {
       navRef.current,
       {
         backgroundColor: "white",
-        duration: 0.25,
-        ease: "power3.inOut",
+        duration: 0.3,
+        ease: "power2.inOut",
       },
       0
     );
@@ -57,8 +60,8 @@ export const NavBar = () => {
       {
         height: 0,
         opacity: 0,
-        duration: 0.25,
-        ease: "power3.inOut",
+        duration: 0.3,
+        ease: "power2.inOut",
       },
       0
     );
@@ -104,7 +107,7 @@ export const NavBar = () => {
           height: subMenuHeight,
           opacity: 1,
           duration: 0.25,
-          ease: "power3.inOut",
+          ease: "power2.inOut",
         },
         0
       );
@@ -112,7 +115,7 @@ export const NavBar = () => {
       tl.to(
         blurRef.current,
         {
-          height: "1200px",
+          height: "1500px",
           opacity: 1,
           duration: 0.25,
           ease: "power3.inOut",
@@ -131,6 +134,7 @@ export const NavBar = () => {
   useEffect(() => {
     if (subMenuContentRef.current) {
       const height = subMenuContentRef.current.offsetHeight;
+
       setSubMenuHeight(height);
     }
   }, [subPage, searchResults]);
@@ -160,6 +164,7 @@ export const NavBar = () => {
   }, []);
 
   const handleSearchbarClick = () => {
+    setSearchClick(prev => !prev);
     if (searchBarView) {
       setIsSubMenuVisible(false);
       setSearchBarView(false);
@@ -224,12 +229,12 @@ export const NavBar = () => {
       </nav>
       <div
         ref={subMenuRef}
-        className="absolute w-full z-20 overflow-hidden"
+        className="absolute w-full z-20 overflow-hidden bg-[#F5F5F7]"
         style={{ height: 0, opacity: 0 }}
       >
         <div
           ref={subMenuContentRef}
-          className="bg-[#F5F5F7] flex flex-col items-center justify-center"
+          className=" flex flex-col items-center justify-center"
         >
           <div className="flex flex-col items-center justify-center">
             {renderSubMenu(subPage)}

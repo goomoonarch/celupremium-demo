@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { mgico } from "../../assets";
 
-export const SearchInput = ({ onSearch }) => {
+export const SearchInput = ({ onSearch, clickUp }) => {
   const [inputValue, setInputValue] = useState("");
   const [eraseIconAnimation, setEraseIconAnimation] = useState(false);
   const inputRef = useRef(null);
@@ -27,6 +27,13 @@ export const SearchInput = ({ onSearch }) => {
     inputRef.current.focus();
     setEraseIconAnimation(false);
   };
+
+  useEffect(() => {
+    setInputValue("");
+    onSearch("");
+    inputRef.current.focus();
+  }, [clickUp])
+  
 
   useEffect(() => {
     if (eraseIconAnimation) {
