@@ -16,6 +16,7 @@ import mg from "./svg/magnifyingglass.svg";
 import eratext from "./svg/erasetext.svg"
 import arrowright from "./svg/arrowright.svg";
 import addilogo from "./svg/addi_search_logo.png";
+import support from "./images/supportaggent.png";
 
 //--->Data
 import phonedetails from "./data/landingPhoneDetails.json";
@@ -47,3 +48,4 @@ export const arright = arrowright;
 export const allStock = allstock;
 export const addiLogo = addilogo;
 export const defaultStock = defaultstock;
+export const supportAggent = support;

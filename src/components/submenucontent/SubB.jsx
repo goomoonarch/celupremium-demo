@@ -4,6 +4,7 @@ export const SubB = ({ b }) => {
   return (
     <a
       href={url}
+      target="_blank"
       className={`${classd} flex w-fit justify-start items-center mb-[5px] group hover:text-[#FFCC00] transition-all ease-out`}
       style={{ opacity: 0, transform: 'translateX(-10px)' }}
     >

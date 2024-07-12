@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import celupremiumLogo from "../assets/cp_logo.svg";
 import bag from "../assets/bag.svg";
@@ -7,6 +8,7 @@ import { AccesoriesCat } from "./AccesoriesCat";
 import { AboutUsCat } from "./AboutUsCat";
 import { SearchButton } from "./SearchButton";
 import { Searchbar } from "./Searchbar";
+import { Politices } from "./Politices";
 
 export const NavBar = () => {
   const subMenuRef = useRef(null);
@@ -23,6 +25,7 @@ export const NavBar = () => {
   const [activeItem, setActiveItem] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [searchClick, setSearchClick] = useState(false);
+  const navigate = useNavigate();
 
   const renderSubMenu = (category) => {
     switch (category) {
@@ -32,6 +35,8 @@ export const NavBar = () => {
         return <AccesoriesCat />;
       case "Nosotros":
         return <AboutUsCat />;
+      case "Políticas":
+        return <Politices />;
       case "SearchBar":
         return (
           <Searchbar onSearchResult={handleSearchResults} click={searchClick} />
@@ -163,7 +168,7 @@ export const NavBar = () => {
   }, []);
 
   const handleSearchbarClick = () => {
-    setSearchClick(prev => !prev);
+    setSearchClick((prev) => !prev);
     if (searchBarView) {
       setIsSubMenuVisible(false);
       setSearchBarView(false);
@@ -185,6 +190,12 @@ export const NavBar = () => {
     }
   }, [isSubMenuVisible, searchBarView]);
 
+  const handleOnclick = (nav) => {
+    const lowercaseNav = nav.toLowerCase();
+    navigate(`/${lowercaseNav}`);
+    handleMouseLeave();
+  };
+
   return (
     <header onMouseLeave={handleMouseLeave}>
       <nav
@@ -203,6 +214,7 @@ export const NavBar = () => {
                 className={`cursor-pointer font-inter hover:text-[#FFCC00] transition-colors duration-300 ${
                   activeItem === nav ? "text-[#FFCC00]" : ""
                 }`}
+                onClick={() => handleOnclick(nav)}
                 onMouseEnter={() => handleMouseEnter(nav)}
               >
                 {nav}

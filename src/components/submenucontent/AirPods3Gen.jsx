@@ -20,7 +20,7 @@ export const AirPods3Gen = () => {
         height="63"
         viewBox="0 0 84 63"
         fill="none"
-        className="h-[40px]"
+        className="h-[36px]"
         xmlns="http://www.w3.org/2000/svg"
         style={{ transition: "fill 0.3s ease" }}
       >

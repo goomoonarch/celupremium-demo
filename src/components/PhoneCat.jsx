@@ -8,6 +8,7 @@ import { P14y14Pro } from "./submenucontent/P14y14Pro";
 import { P15 } from "./submenucontent/P15";
 import { P15Pro } from "./submenucontent/P15Pro";
 import { PSE } from "./submenucontent/PSE";
+import { PhoneLinks } from "./submenucontent/PhoneLinks";
 
 export const PhoneCat = ({ trigger }) => {
   const containerRef = useRef(null);
@@ -26,10 +27,10 @@ export const PhoneCat = ({ trigger }) => {
   }, [trigger]);
 
   return (
-    <div className="py-6">
+    <div className="font-inter mt-[24px] mb-[40px]">
       <div
         ref={containerRef}
-        className="grid grid-cols-[105px_105px_105px_105px_105px_105px_105px] gap-6"
+        className="grid grid-cols-[105px_105px_105px_105px_105px_105px_105px] gap-6 text-[15px]"
       >
         <P15Pro />
         <P15 />
@@ -39,6 +40,7 @@ export const PhoneCat = ({ trigger }) => {
         <P12 />
         <P11 />
       </div>
+      <PhoneLinks />
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { AirPodsPro2Gen } from "./submenucontent/AirPodsPro2Gen";
 import { AppleWatch9 } from "./submenucontent/AppleWatch9";
 import { MagSafe } from "./submenucontent/MagSafe";
 import gsap from "gsap";
+import { AccesoriesLinks } from "./submenucontent/AccesoriesLinks";
 
 export const AccesoriesCat = ({ trigger }) => {
   const containerRef = useRef(null);
@@ -24,10 +25,10 @@ export const AccesoriesCat = ({ trigger }) => {
     });
   }, [trigger]);
   return (
-    <div className="py-6">
+    <div className="font-inter mt-[24px] mb-[40px]">
       <div
         ref={containerRef}
-        className="grid grid-cols-[105px_105px_105px_105px_105px_105px] gap-7 items-baseline"
+        className="grid grid-cols-[105px_105px_105px_105px_105px_105px] gap-7 items-baseline text-[15px]"
       >
         <MagSafe />
         <AirPods2Gen />
@@ -36,6 +37,7 @@ export const AccesoriesCat = ({ trigger }) => {
         <AirPodsMax />
         <AppleWatch9 />
       </div>
+      <AccesoriesLinks />
     </div>
   );
 };

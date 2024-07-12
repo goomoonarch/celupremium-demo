@@ -4,7 +4,7 @@ export const OurStores = ({ classd }) => {
     <a
       href=""
       className={`${classd} flex items-center group hover:text-[#FFCC00] transition-all ease-out`}
-      style={{ opacity: 0, transform: 'translateX(-10px)' }}
+      style={{ opacity: 0, transform: 'translateX(-4px)' }}
     >
       <svg
         width="20"
@@ -31,7 +31,7 @@ export const OurStores = ({ classd }) => {
           </clipPath>
         </defs>
       </svg>
-      <p>Nuestras tiendas</p>
+      <p>Encuentra una tienda</p>
     </a>
   );
 };
