@@ -22,6 +22,7 @@ import phonedetails from "./data/landingPhoneDetails.json";
 import phonecarrouselinfo from "./data/landigPhoneCarrousel.json"
 import accesoriescarrouselinfo from "./data/landingAccesoriesCarrousel.json";
 import allstock from "./data/allStock.json";
+import defaultstock from "./data/defaultStock.json";
 
 export const large_video = hvm;
 export const small_video = svm;
@@ -45,3 +46,4 @@ export const erasetext = eratext;
 export const arright = arrowright;
 export const allStock = allstock;
 export const addiLogo = addilogo;
+export const defaultStock = defaultstock;

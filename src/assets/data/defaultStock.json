@@ -1,0 +1,22 @@
+[
+  {
+    "id": "i13rc",
+    "img": "/src/assets/images/iphone13_red_2x.jpg",
+    "search_img": "/src/assets/images/iphone13_red_2x.jpg",
+    "family_reference": "iPhone 13",
+    "swatch": "/src/assets/swatch_colors/iPhone13_colors_x2.png",
+    "price": "2'200.000",
+    "finance": "183.500",
+    "buylink": ""
+  },
+  {
+    "id": "airpromaxsl",
+    "img": "/src/assets/images/airpods_max_silver_2x.png",
+    "search_img": "/src/assets/images/airpods_max_silver_search.png",
+    "family_reference": "AirpodsMax",
+    "swatch": "/src/assets/swatch_colors/airpods_max_colors.png",
+    "price": "2'260.000",
+    "finance": "188.400",
+    "buylink": ""
+  }
+]

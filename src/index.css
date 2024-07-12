@@ -35,6 +35,12 @@
     clip-path: inset(10% 0 10% 0);
   }
 }
+
+.initial-hidden {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
 .search-button {
   color: #393939;
   transition: color 0.3s ease;

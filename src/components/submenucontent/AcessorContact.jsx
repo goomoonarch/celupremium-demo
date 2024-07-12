@@ -1,8 +1,10 @@
-export const AcessorContact = () => {
+/* eslint-disable react/prop-types */
+export const AcessorContact = ({ classd }) => {
   return (
     <a
       href=""
-      className="flex items-center group hover:text-[#FFCC00] transition-all ease-out"
+      className={`${classd} flex items-center group hover:text-[#FFCC00] transition-all ease-out`}
+      style={{ opacity: 0, transform: "translateX(-10px)" }}
     >
       <svg
         width="22"

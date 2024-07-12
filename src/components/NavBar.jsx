@@ -71,8 +71,8 @@ export const NavBar = () => {
       {
         height: 0,
         opacity: 0,
-        duration: 0.25,
-        ease: "power3.inOut",
+        duration: 0.3,
+        ease: "power2.inOut",
       },
       0
     );
@@ -96,7 +96,7 @@ export const NavBar = () => {
         {
           backgroundColor: "#F5F5F7",
           duration: 0.25,
-          ease: "power3.inOut",
+          ease: "power2.inOut",
         },
         0
       );
@@ -118,7 +118,7 @@ export const NavBar = () => {
           height: "1500px",
           opacity: 1,
           duration: 0.25,
-          ease: "power3.inOut",
+          ease: "power2.inOut",
         },
         0
       );
@@ -134,7 +134,6 @@ export const NavBar = () => {
   useEffect(() => {
     if (subMenuContentRef.current) {
       const height = subMenuContentRef.current.offsetHeight;
-
       setSubMenuHeight(height);
     }
   }, [subPage, searchResults]);
@@ -156,8 +155,8 @@ export const NavBar = () => {
 
   const handleMouseLeave = useCallback(() => {
     timeoutRef.current = setTimeout(() => {
-      setIsSubMenuVisible(!false);
-      setSearchBarView(!false);
+      setIsSubMenuVisible(false);
+      setSearchBarView(false);
       setIsSearchActive(false);
       setActiveItem("");
     }, 100);

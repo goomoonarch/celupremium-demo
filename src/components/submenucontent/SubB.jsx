@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 export const SubB = ({ b }) => {
-  const { title, url } = b;
+  const { title, url, classd } = b;
   return (
     <a
       href={url}
-      className="flex w-fit justify-start items-center mb-[5px] group hover:text-[#FFCC00] transition-all ease-out"
+      className={`${classd} flex w-fit justify-start items-center mb-[5px] group hover:text-[#FFCC00] transition-all ease-out`}
+      style={{ opacity: 0, transform: 'translateX(-10px)' }}
     >
       <svg
         width="16"
