@@ -1,0 +1,156 @@
+[
+  {
+    "title": "iPhone 15",
+    "color": "#FF7278",
+    "bcolor": "#FFC5C5",
+    "bgcolor": "#FFF7F9",
+    "leftOffset": 40,
+    "rightOffset": 0,
+    "subtitle": "El iPhone definitivo.",
+    "labelO": "iPhone 15 & iPhone 15 Plus",
+    "labelP": "iPhone 15 Pro & iPhone 15 Pro Max",
+    "img": "/src/assets/images/iPhone15_pink%203.png",
+    "left": "/src/assets/images/1pink.png",
+    "right": "/src/assets/images/5pink.png",
+    "stock": [
+      {
+        "iphone15": {
+          "id": "i15",
+          "img": "/src/assets/images/iphone15_blue_2x.jpg",
+          "search_img": "/src/assets/images/iphone15_blue_2x.jpg",
+          "family_reference": "iPhone 15",
+          "swatch": "/src/assets/swatch_colors/iPhone15Plus_x2.png",
+          "price": "4'320.000",
+          "finance": "360.000",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i15yellow256",
+              "img": "/src/assets/images/iphone15_yellow_2x.jpg",
+              "family_reference": "iPhone 15",
+              "color": "Amarillo",
+              "capacity": "256GB",
+              "price": "4'320.000",
+              "finance": "360.000",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone15plus": {
+          "id": "i15p",
+          "img": "/src/assets/images/iphone15_plus_black_2x.jpg",
+          "search_img": "/src/assets/images/iphone15_plus_black_2x.jpg",
+          "family_reference": "iPhone 15 Plus",
+          "swatch": "/src/assets/swatch_colors/iPhone15Plus_x2.png",
+          "price": "3'920.000",
+          "finance": "268.900",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i15plusblack128",
+              "img": "/src/assets/images/iphone15_plus_black_2x.jpg",
+              "family_reference": "iPhone 15 Plus",
+              "color": "Medianoche",
+              "capacity": "128GB",
+              "price": "3'920.000",
+              "finance": "268.900",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15plusgreen128",
+              "img": "/src/assets/images/iphone15_plus_green_2x.jpg",
+              "family_reference": "iPhone 15 Plus",
+              "color": "Verde",
+              "capacity": "128GB",
+              "price": "3'920.000",
+              "finance": "268.900",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone15pro": {
+          "id": "i15pro",
+          "img": "/src/assets/images/iphone15_pro_white_titanium_2x.jpg",
+          "search_img": "/src/assets/images/iphone15_pro_white_titanium_2x.jpg",
+          "family_reference": "iPhone 15 Pro",
+          "swatch": "/src/assets/swatch_colors/iPhone15Plus_x2.png",
+          "price": "4'600.000",
+          "finance": "384.000",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i15prowhite256",
+              "img": "/src/assets/images/iphone15_pro_white_titanium_2x.jpg",
+              "family_reference": "iPhone 15 Pro",
+              "color": "Titanio blanco",
+              "capacity": "256GB",
+              "price": "4'320.000",
+              "finance": "360.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15problack256",
+              "img": "/src/assets/images/iphone15_pro_black_titanium_2x.jpg",
+              "family_reference": "iPhone 15 Pro",
+              "color": "Titanio negro",
+              "capacity": "256GB",
+              "price": "4'320.000",
+              "finance": "360.000",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone15promax": {
+          "id": "i15promax",
+          "img": "/src/assets/images/iphone15_pro_max_white_titanium_2x.jpg",
+          "search_img": "/src/assets/images/iphone15_pro_max_white_titanium_2x.jpg",
+          "family_reference": "iPhone 15 Pro Max",
+          "swatch": "/src/assets/swatch_colors/iPhone15Plus_x2.png",
+          "price": "5'920.000",
+          "finance": "494.000",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i15promaxnatural1T",
+              "img": "/src/assets/images/iphone15_pro_white_titanium_2x.jpg",
+              "family_reference": "iPhone 15 Pro Max",
+              "color": "Titanio blanco",
+              "capacity": "1T",
+              "price": "5'920.000",
+              "finance": "494.000",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  {
+    "title": "iPhone 14",
+    "color": "#E4B0F7",
+    "bcolor": "#E4B0F7",
+    "bgcolor": "#FBF3FE",
+    "leftOffset": 40,
+    "rightOffset": -30,
+    "subtitle": "Inovación sin límites.",
+    "labelO": "iPhone 14 & iPhone 14 Plus",
+    "labelP": "iPhone 14 Pro & iPhone 14 Pro Max",
+    "img": "/src/assets/images/iPhone14_purple%203.png",
+    "left": "/src/assets/images/1purple.png",
+    "right": "/src/assets/images/4purple.png",
+    "stock": [{ "here1": "its3", "here2": "its4" }]
+  }
+]

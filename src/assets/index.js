@@ -6,24 +6,30 @@ import i15pro from "./IPhone_15_Pro_wordmark.png";
 import i14 from "./IPhone_14_wordmark.png";
 import ise from "./IPhone_SE_wordmark.png";
 import sc12m from "./swatch_colors/iPhone12_mini_colors.png";
-import sc13 from "./swatch_colors/iPhone13_colors.png"
-import sc14 from "./swatch_colors/iPhone14_colors.png"
+import sc13 from "./swatch_colors/iPhone13_colors.png";
+import sc14 from "./swatch_colors/iPhone14_colors.png";
 import sc15pro from "./swatch_colors/iPhone15Pro_colors.png";
 import scse from "./swatch_colors/iPhone_SE_3_colors.png";
 import yarrow from "./arrow.up.right.svg";
 import saiye from "./sales/promo_iPhone_yellow.png";
 import mg from "./svg/magnifyingglass.svg";
-import eratext from "./svg/erasetext.svg"
+import eratext from "./svg/erasetext.svg";
 import arrowright from "./svg/arrowright.svg";
 import addilogo from "./svg/addi_search_logo.png";
 import support from "./images/supportaggent.png";
+import maps_1 from "./images/celupremoum_map.png";
+import maps_2 from "./images/celupremoum_map_2.png";
+import i15phones from "./images/iPhone15_pink 3.png";
+import pink1 from "./images/1pink.png";
+import pink5 from "./images/5pink.png";
 
 //--->Data
 import phonedetails from "./data/landingPhoneDetails.json";
-import phonecarrouselinfo from "./data/landigPhoneCarrousel.json"
+import phonecarrouselinfo from "./data/landigPhoneCarrousel.json";
 import accesoriescarrouselinfo from "./data/landingAccesoriesCarrousel.json";
 import allstock from "./data/allStock.json";
 import defaultstock from "./data/defaultStock.json";
+import phonefamilies  from "./data/families.json";
 
 export const large_video = hvm;
 export const small_video = svm;
@@ -49,3 +55,9 @@ export const allStock = allstock;
 export const addiLogo = addilogo;
 export const defaultStock = defaultstock;
 export const supportAggent = support;
+export const mapcday = maps_1;
+export const mapcnight = maps_2;
+export const fa15 = i15phones;
+export const Pink1 = pink1;
+export const Pink5 = pink5;
+export const phoneFam = phonefamilies;

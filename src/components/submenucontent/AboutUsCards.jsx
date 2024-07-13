@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { supportAggent } from "../../assets";
+import { mapcday, supportAggent } from "../../assets";
 
 export const AboutUsCards = () => {
   useGSAP(() => {
@@ -18,7 +18,9 @@ export const AboutUsCards = () => {
         className="card  mr-[16px]"
         style={{ opacity: 0, transform: "scale(0.9)" }}
       >
-        <div className="w-[140px] h-[140px] bg-white rounded-[16px] overflow-clip cursor-pointer hover:scale-[1.03] ease-out transition-all duration-300"></div>
+        <div className="w-[140px] h-[140px] bg-white rounded-[16px] overflow-clip cursor-pointer hover:scale-[1.03] ease-out transition-all duration-300">
+          <img src={mapcday} alt="" />
+        </div>
       </div>
       <div className="card" style={{ opacity: 0, transform: "scale(0.9)" }}>
         <div className="w-[310px] h-[140px] overflow-clip bg-white rounded-[16px] cursor-pointer hover:scale-[1.03] ease-out transition-all duration-300">
