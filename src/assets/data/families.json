@@ -34,6 +34,50 @@
               "finance": "360.000",
               "buylink": "",
               "adtocartlink": ""
+            },
+            {
+              "id": "i15black512",
+              "img": "/src/assets/images/iphone15_black_2x.jpg",
+              "family_reference": "iPhone 15",
+              "color": "Negro",
+              "capacity": "512GB",
+              "price": "5'100.000",
+              "finance": "425.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15green256",
+              "img": "/src/assets/images/iphone15_green_2x.jpg",
+              "family_reference": "iPhone 15",
+              "color": "Verde",
+              "capacity": "256GB",
+              "price": "4'320.000",
+              "finance": "360.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15pink128",
+              "img": "/src/assets/images/iphone15_pink_2x.jpg",
+              "family_reference": "iPhone 15",
+              "color": "Rosa",
+              "capacity": "128GB",
+              "price": "3'800.000",
+              "finance": "316.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15blue512",
+              "img": "/src/assets/images/iphone15_blue_2x.jpg",
+              "family_reference": "iPhone 15",
+              "color": "Azul",
+              "capacity": "512GB",
+              "price": "5'100.000",
+              "finance": "425.000",
+              "buylink": "",
+              "adtocartlink": ""
             }
           ]
         }
@@ -65,6 +109,39 @@
               "img": "/src/assets/images/iphone15_plus_green_2x.jpg",
               "family_reference": "iPhone 15 Plus",
               "color": "Verde",
+              "capacity": "128GB",
+              "price": "3'920.000",
+              "finance": "268.900",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15plusblue128",
+              "img": "/src/assets/images/iphone15_plus_blue_2x.jpg",
+              "family_reference": "iPhone 15 Plus",
+              "color": "Azul",
+              "capacity": "128GB",
+              "price": "3'920.000",
+              "finance": "268.900",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15pluspink128",
+              "img": "/src/assets/images/iphone15_plus_pink_2x.jpg",
+              "family_reference": "iPhone 15 Plus",
+              "color": "Rosa",
+              "capacity": "128GB",
+              "price": "3'920.000",
+              "finance": "268.900",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15plusyellow128",
+              "img": "/src/assets/images/iphone15_plus_yellow_2x.jpg",
+              "family_reference": "iPhone 15 Plus",
+              "color": "Amarillo",
               "capacity": "128GB",
               "price": "3'920.000",
               "finance": "268.900",

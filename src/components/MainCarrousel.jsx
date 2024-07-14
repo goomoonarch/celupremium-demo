@@ -1,8 +1,5 @@
 /* eslint-disable react/prop-types */
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useState, useRef, useEffect } from "react";
-gsap.registerPlugin(ScrollTrigger);
 
 export const MainCarrousel = ({ references }) => {
   const sliderRef = useRef(null);
@@ -105,7 +102,7 @@ export const MainCarrousel = ({ references }) => {
         >
           <button
             onClick={handleLeftButtonClick}
-            className="bg-[#ffcc00c0] rounded-full hover:bg-[#ffd21ed1]"
+            className="bg-[#ffcc00c0] rounded-full hover:bg-[#ffd21edb]"
             disabled={!isScrolled}
             onMouseOver={handleMouseOver}
           >

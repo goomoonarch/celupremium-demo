@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { phoneFam } from "../assets";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useFamilyMap } from "../hooks/useFamilyMap";
 import { PhoneCarrousel } from "./PhoneCarrousel";
+gsap.registerPlugin(ScrollTrigger);
 
 export const IPhone = () => {
   const [index, setIndex] = useState(0);
@@ -52,6 +54,18 @@ export const IPhone = () => {
         y: 0,
         ease: "power3.out",
       });
+
+      //ScrollTrigger Prove
+      gsap.to(".p2", {
+        opacity: 1,
+        duration: 0.5,
+        y: -10,
+        scrollTrigger: {
+          trigger: ".p2",
+          start: "top 90%",
+          end: "top 20%",
+        },
+      });
     },
     { dependencies: [iphoneFamily], revertOnUpdate: true }
   );
@@ -99,40 +113,38 @@ export const IPhone = () => {
               className="absolute grid grid-cols-[200px_200px] gap-[500px] translate-y-4"
             >
               <div id="leftButton" className="flex justify-start">
-                <div>
-                  <button
-                    className={`rotate-180 ${
-                      index == 0 ? "opacity-50" : ""
-                    } transition-all ease-out duration-300`}
-                    style={{ color: iphoneFamily.bcolor }}
-                    onClick={handleLeftClick}
+                <button
+                  className={`rotate-180 ${
+                    index == 0 ? "opacity-50" : ""
+                  } transition-all ease-out duration-300`}
+                  style={{ color: iphoneFamily.bcolor }}
+                  onClick={handleLeftClick}
+                >
+                  <svg
+                    width="78"
+                    height="77"
+                    viewBox="0 0 78 77"
+                    className="w-[60px]"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      width="78"
-                      height="77"
-                      viewBox="0 0 78 77"
-                      className="w-[60px]"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g clipPath="url(#clip0_476_101)">
-                        <path
-                          d="M1.13055 38.519C1.13055 17.5051 18.5391 0.0379816 39.5653 0.0379834C60.5536 0.0379852 78 17.5051 78 38.519C78 59.5703 60.5913 77 39.6029 77C18.5767 77 1.13055 59.5703 1.13055 38.519ZM45.2927 54.0245L58.4058 40.8202C59.1971 40.0279 59.4985 39.4243 59.4985 38.5567C59.4985 37.6891 59.1217 37.0098 58.4058 36.2931L45.2927 23.1264C44.7653 22.5984 44.0869 22.2964 43.2579 22.2964C41.6376 22.2964 40.4318 23.5414 40.4318 25.1636C40.4318 25.9935 40.7711 26.7105 41.2984 27.2388L46.1217 32.0298L50.8319 35.9535L42.5798 35.6515L22.4201 35.6515C20.687 35.6515 19.4812 36.8588 19.4812 38.5567C19.4812 40.2922 20.7246 41.4994 22.4201 41.4994L42.5798 41.4995L50.7942 41.1598L46.1217 45.0833L41.2984 49.8746C40.8087 50.4405 40.4318 51.1573 40.4318 51.9873C40.4318 53.6095 41.6376 54.8168 43.2579 54.8168C44.0869 54.8168 44.7653 54.5527 45.2927 54.0245Z"
-                          fill="currentColor"
+                    <g clipPath="url(#clip0_476_101)">
+                      <path
+                        d="M1.13055 38.519C1.13055 17.5051 18.5391 0.0379816 39.5653 0.0379834C60.5536 0.0379852 78 17.5051 78 38.519C78 59.5703 60.5913 77 39.6029 77C18.5767 77 1.13055 59.5703 1.13055 38.519ZM45.2927 54.0245L58.4058 40.8202C59.1971 40.0279 59.4985 39.4243 59.4985 38.5567C59.4985 37.6891 59.1217 37.0098 58.4058 36.2931L45.2927 23.1264C44.7653 22.5984 44.0869 22.2964 43.2579 22.2964C41.6376 22.2964 40.4318 23.5414 40.4318 25.1636C40.4318 25.9935 40.7711 26.7105 41.2984 27.2388L46.1217 32.0298L50.8319 35.9535L42.5798 35.6515L22.4201 35.6515C20.687 35.6515 19.4812 36.8588 19.4812 38.5567C19.4812 40.2922 20.7246 41.4994 22.4201 41.4994L42.5798 41.4995L50.7942 41.1598L46.1217 45.0833L41.2984 49.8746C40.8087 50.4405 40.4318 51.1573 40.4318 51.9873C40.4318 53.6095 41.6376 54.8168 43.2579 54.8168C44.0869 54.8168 44.7653 54.5527 45.2927 54.0245Z"
+                        fill="currentColor"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_476_101">
+                        <rect
+                          width="78"
+                          height="77"
+                          fill="white"
+                          transform="translate(78 77) rotate(-180)"
                         />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_476_101">
-                          <rect
-                            width="78"
-                            height="77"
-                            fill="white"
-                            transform="translate(78 77) rotate(-180)"
-                          />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </button>
-                </div>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
               </div>
               <div id="rightButton" className="flex justify-end">
                 <div>
@@ -180,11 +192,11 @@ export const IPhone = () => {
         ></div>
       </div>
       <div
-        className="w-full h-[1000px] z-20 pt-[80px]"
+        className="w-full z-20 pt-[80px]"
         style={{ background: `${iphoneFamily.bgcolor}` }}
       >
-        <div id="iphone&iphoneplus">
-          <p className="text-[26px] font-medium text-[1d1d1f] mb-8 w-fit slide-center">
+        <div id="iphone15&iphone15plus">
+          <p className="p2 text-[26px] font-medium text-[#1d1d1f] mb-6 w-fit slide-center opacity-0">
             {iphoneFamily.labelO}
           </p>
           <PhoneCarrousel
@@ -194,20 +206,17 @@ export const IPhone = () => {
             }}
           />
         </div>
-
-        <h2>Regular iPhones</h2>
-        {regularphones.map((phone) => (
-          <div key={phone.id}>
-            {phone.family_reference} - {phone.color}
-          </div>
-        ))}
-
-        <h2>Pro iPhones</h2>
-        {prophones.map((phone) => (
-          <div key={phone.id}>
-            {phone.family_reference} - {phone.color}
-          </div>
-        ))}
+        <div id="iphone15pro&iphonepromax">
+          <p className="text-[26px] font-medium text-[#1d1d1f] mb-6 w-fit slide-center">
+            {iphoneFamily.labelP}
+          </p>
+          <PhoneCarrousel
+            references={{
+              regularphones: prophones,
+              bcolor: iphoneFamily.color,
+            }}
+          />
+        </div>
       </div>
     </div>
   );
