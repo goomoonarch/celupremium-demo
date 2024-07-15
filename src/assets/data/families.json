@@ -183,6 +183,28 @@
               "finance": "360.000",
               "buylink": "",
               "adtocartlink": ""
+            },
+            {
+              "id": "i15problue256",
+              "img": "/src/assets/images/iphone15_pro_blue_titanium_2x.jpg",
+              "family_reference": "iPhone 15 Pro",
+              "color": "Titanio azul",
+              "capacity": "256GB",
+              "price": "4'320.000",
+              "finance": "360.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15pronatural512",
+              "img": "/src/assets/images/iphone15_pro_natural_titanium_2x.jpg",
+              "family_reference": "iPhone 15 Pro",
+              "color": "Titanio natural",
+              "capacity": "512GB",
+              "price": "4'800.000",
+              "finance": "400.000",
+              "buylink": "",
+              "adtocartlink": ""
             }
           ]
         }
@@ -199,13 +221,46 @@
           "buylink": "",
           "allstockrefenreces": [
             {
-              "id": "i15promaxnatural1T",
-              "img": "/src/assets/images/iphone15_pro_white_titanium_2x.jpg",
+              "id": "i15promaxwhite256",
+              "img": "/src/assets/images/iphone15_pro_max_white_titanium_2x.jpg",
               "family_reference": "iPhone 15 Pro Max",
               "color": "Titanio blanco",
-              "capacity": "1T",
-              "price": "5'920.000",
-              "finance": "494.000",
+              "capacity": "256GB",
+              "price": "4'950.000",
+              "finance": "412.500",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15promaxblack256",
+              "img": "/src/assets/images/iphone15_pro_max_black_titanium_2x.jpg",
+              "family_reference": "iPhone 15 Pro Max",
+              "color": "Titanio negro",
+              "capacity": "256GB",
+              "price": "4'950.000",
+              "finance": "412.500",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15promaxblue256",
+              "img": "/src/assets/images/iphone15_pro_max_blue_titanium_2x.jpg",
+              "family_reference": "iPhone 15 Pro Max",
+              "color": "Titanio azul",
+              "capacity": "256GB",
+              "price": "4'950.000",
+              "finance": "412.500",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i15promaxnatural256",
+              "img": "/src/assets/images/iphone15_pro_max_natural_titanium_2x.jpg",
+              "family_reference": "iPhone 15 Pro Max",
+              "color": "Titanio natural",
+              "capacity": "256GB",
+              "price": "4'950.000",
+              "finance": "412.500",
               "buylink": "",
               "adtocartlink": ""
             }
@@ -214,7 +269,6 @@
       }
     ]
   },
-
   {
     "title": "iPhone 14",
     "color": "#E4B0F7",
@@ -222,12 +276,1019 @@
     "bgcolor": "#FBF3FE",
     "leftOffset": 40,
     "rightOffset": -30,
-    "subtitle": "Inovación sin límites.",
+    "subtitle": "Innovación sin límites.",
     "labelO": "iPhone 14 & iPhone 14 Plus",
     "labelP": "iPhone 14 Pro & iPhone 14 Pro Max",
     "img": "/src/assets/images/iPhone14_purple%203.png",
     "left": "/src/assets/images/1purple.png",
     "right": "/src/assets/images/4purple.png",
-    "stock": [{ "here1": "its3", "here2": "its4" }]
+    "stock": [
+      {
+        "iphone14": {
+          "id": "i14",
+          "img": "/src/assets/images/iphone14_blue_2x.jpg",
+          "search_img": "/src/assets/images/iphone14_blue_2x.jpg",
+          "family_reference": "iPhone 14",
+          "swatch": "/src/assets/swatch_colors/iPhone14Plus_x2.png",
+          "price": "3'700.000",
+          "finance": "308.333",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i14blue128",
+              "img": "/src/assets/images/iphone14_blue_2x.jpg",
+              "family_reference": "iPhone 14",
+              "color": "Azul",
+              "capacity": "128GB",
+              "price": "3'800.000",
+              "finance": "316.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14purple256",
+              "img": "/src/assets/images/iphone14_purple_2x.jpg",
+              "family_reference": "iPhone 14",
+              "color": "Morado",
+              "capacity": "256GB",
+              "price": "4'320.000",
+              "finance": "360.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14midnight512",
+              "img": "/src/assets/images/iphone14_midnight_2x.jpg",
+              "family_reference": "iPhone 14",
+              "color": "Medianoche",
+              "capacity": "512GB",
+              "price": "5'100.000",
+              "finance": "425.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14starlight128",
+              "img": "/src/assets/images/iphone14_starlight_2x.jpg",
+              "family_reference": "iPhone 14",
+              "color": "Blanco estelar",
+              "capacity": "128GB",
+              "price": "3'800.000",
+              "finance": "316.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14red256",
+              "img": "/src/assets/images/iphone14_red_2x.jpg",
+              "family_reference": "iPhone 14",
+              "color": "Rojo",
+              "capacity": "256GB",
+              "price": "4'320.000",
+              "finance": "360.000",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone14plus": {
+          "id": "i14p",
+          "img": "/src/assets/images/iphone14_plus_black_2x.jpg",
+          "search_img": "/src/assets/images/iphone14_plus_black_2x.jpg",
+          "family_reference": "iPhone 14 Plus",
+          "swatch": "/src/assets/swatch_colors/iPhone14Plus_x2.png",
+          "price": "3'920.000",
+          "finance": "268.900",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i14plusblue128",
+              "img": "/src/assets/images/iphone14_plus_blue_2x.jpg",
+              "family_reference": "iPhone 14 Plus",
+              "color": "Azul",
+              "capacity": "128GB",
+              "price": "4'320.000",
+              "finance": "360.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14pluspurple256",
+              "img": "/src/assets/images/iphone14_plus_purple_2x.jpg",
+              "family_reference": "iPhone 14 Plus",
+              "color": "Morado",
+              "capacity": "256GB",
+              "price": "4'840.000",
+              "finance": "403.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14plusmidnight512",
+              "img": "/src/assets/images/iphone14_plus_midnight_2x.jpg",
+              "family_reference": "iPhone 14 Plus",
+              "color": "Medianoche",
+              "capacity": "512GB",
+              "price": "5'620.000",
+              "finance": "468.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14plusstarlight128",
+              "img": "/src/assets/images/iphone14_plus_starlight_2x.jpg",
+              "family_reference": "iPhone 14 Plus",
+              "color": "Blanco estelar",
+              "capacity": "128GB",
+              "price": "4'320.000",
+              "finance": "360.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14plusred256",
+              "img": "/src/assets/images/iphone14_plus_red_2x.jpg",
+              "family_reference": "iPhone 14 Plus",
+              "color": "Rojo",
+              "capacity": "256GB",
+              "price": "4'840.000",
+              "finance": "403.333",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone14pro": {
+          "id": "i14pro",
+          "img": "/src/assets/images/iphone14_pro_white_2x.jpg",
+          "search_img": "/src/assets/images/iphone14_pro_white_2x.jpg",
+          "family_reference": "iPhone 14 Pro",
+          "swatch": "/src/assets/swatch_colors/iPhone14Pro_x2.png",
+          "price": "4'600.000",
+          "finance": "384.000",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i14prodeeppurple128",
+              "img": "/src/assets/images/iphone14_pro_deep_purple_2x.jpg",
+              "family_reference": "iPhone 14 Pro",
+              "color": "Morado oscuro",
+              "capacity": "128GB",
+              "price": "5'100.000",
+              "finance": "425.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14progold256",
+              "img": "/src/assets/images/iphone14_pro_gold_2x.jpg",
+              "family_reference": "iPhone 14 Pro",
+              "color": "Oro",
+              "capacity": "256GB",
+              "price": "5'620.000",
+              "finance": "468.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14prosilver512",
+              "img": "/src/assets/images/iphone14_pro_silver_2x.jpg",
+              "family_reference": "iPhone 14 Pro",
+              "color": "Plata",
+              "capacity": "512GB",
+              "price": "6'400.000",
+              "finance": "533.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14prospace1tb",
+              "img": "/src/assets/images/iphone14_pro_space_black_2x.jpg",
+              "family_reference": "iPhone 14 Pro",
+              "color": "Negro espacial",
+              "capacity": "1TB",
+              "price": "7'180.000",
+              "finance": "598.333",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone14promax": {
+          "id": "i14promax",
+          "img": "/src/assets/images/iphone14_pro_max_white_2x.jpg",
+          "search_img": "/src/assets/images/iphone14_pro_max_white_2x.jpg",
+          "family_reference": "iPhone 14 Pro Max",
+          "swatch": "/src/assets/swatch_colors/iPhone14Pro_x2.png",
+          "price": "5'920.000",
+          "finance": "494.000",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i14promaxdeeppurple128",
+              "img": "/src/assets/images/iphone14_pro_max_deep_purple_2x.jpg",
+              "family_reference": "iPhone 14 Pro Max",
+              "color": "Morado oscuro",
+              "capacity": "128GB",
+              "price": "5'620.000",
+              "finance": "468.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14promaxgold256",
+              "img": "/src/assets/images/iphone14_pro_max_gold_2x.jpg",
+              "family_reference": "iPhone 14 Pro Max",
+              "color": "Oro",
+              "capacity": "256GB",
+              "price": "6'140.000",
+              "finance": "511.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14promaxsilver512",
+              "img": "/src/assets/images/iphone14_pro_max_silver_2x.jpg",
+              "family_reference": "iPhone 14 Pro Max",
+              "color": "Plata",
+              "capacity": "512GB",
+              "price": "6'920.000",
+              "finance": "576.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i14promaxspace1tb",
+              "img": "/src/assets/images/iphone14_pro_max_space_black_2x.jpg",
+              "family_reference": "iPhone 14 Pro Max",
+              "color": "Negro espacial",
+              "capacity": "1TB",
+              "price": "7'700.000",
+              "finance": "641.667",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "title": "iPhone 13",
+    "color": "#7CD3FD",
+    "bcolor": "#7CD3FD",
+    "bgcolor": "#F3FBFF",
+    "leftOffset": 56,
+    "rightOffset": -20,
+    "subtitle": "Tu compañero perfecto.",
+    "labelO": "iPhone 13 & iPhone 13 mini",
+    "labelP": "iPhone 13 Pro & iPhone 13 Pro Max",
+    "img": "/src/assets/images/iPhone13_blue%203.png",
+    "left": "/src/assets/images/1blue.png",
+    "right": "/src/assets/images/3blue.png",
+    "stock": [
+      {
+        "iphone13": {
+          "id": "i13",
+          "img": "/src/assets/images/iphone13_blue_2x.jpg",
+          "search_img": "/src/assets/images/iphone13_blue_2x.jpg",
+          "family_reference": "iPhone 13",
+          "swatch": "/src/assets/swatch_colors/iPhone13_x2.png",
+          "price": "3'280.000",
+          "finance": "273.333",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i13blue128",
+              "img": "/src/assets/images/iphone13_blue_2x.jpg",
+              "family_reference": "iPhone 13",
+              "color": "Azul",
+              "capacity": "128GB",
+              "price": "3'280.000",
+              "finance": "273.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13pink256",
+              "img": "/src/assets/images/iphone13_pink_2x.jpg",
+              "family_reference": "iPhone 13",
+              "color": "Rosa",
+              "capacity": "256GB",
+              "price": "3'800.000",
+              "finance": "316.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13midnight512",
+              "img": "/src/assets/images/iphone13_midnight_2x.jpg",
+              "family_reference": "iPhone 13",
+              "color": "Medianoche",
+              "capacity": "512GB",
+              "price": "4'580.000",
+              "finance": "381.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13starlight128",
+              "img": "/src/assets/images/iphone13_starlight_2x.jpg",
+              "family_reference": "iPhone 13",
+              "color": "Blanco estelar",
+              "capacity": "128GB",
+              "price": "3'280.000",
+              "finance": "273.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13green256",
+              "img": "/src/assets/images/iphone13_green_2x.jpg",
+              "family_reference": "iPhone 13",
+              "color": "Verde",
+              "capacity": "256GB",
+              "price": "3'800.000",
+              "finance": "316.667",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone13mini": {
+          "id": "i13mini",
+          "img": "/src/assets/images/iphone13_mini_blue_2x.jpg",
+          "search_img": "/src/assets/images/iphone13_mini_blue_2x.jpg",
+          "family_reference": "iPhone 13 mini",
+          "swatch": "/src/assets/swatch_colors/iPhone13mini_x2.png",
+          "price": "2'760.000",
+          "finance": "230.000",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i13miniblue128",
+              "img": "/src/assets/images/iphone13_mini_blue_2x.jpg",
+              "family_reference": "iPhone 13 mini",
+              "color": "Azul",
+              "capacity": "128GB",
+              "price": "2'760.000",
+              "finance": "230.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13minipink256",
+              "img": "/src/assets/images/iphone13_mini_pink_2x.jpg",
+              "family_reference": "iPhone 13 mini",
+              "color": "Rosa",
+              "capacity": "256GB",
+              "price": "3'280.000",
+              "finance": "273.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13minimidnight512",
+              "img": "/src/assets/images/iphone13_mini_midnight_2x.jpg",
+              "family_reference": "iPhone 13 mini",
+              "color": "Medianoche",
+              "capacity": "512GB",
+              "price": "4'060.000",
+              "finance": "338.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13ministarlight128",
+              "img": "/src/assets/images/iphone13_mini_starlight_2x.jpg",
+              "family_reference": "iPhone 13 mini",
+              "color": "Blanco estelar",
+              "capacity": "128GB",
+              "price": "2'760.000",
+              "finance": "230.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13minigreen256",
+              "img": "/src/assets/images/iphone13_mini_green_2x.jpg",
+              "family_reference": "iPhone 13 mini",
+              "color": "Verde",
+              "capacity": "256GB",
+              "price": "3'280.000",
+              "finance": "273.333",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone13pro": {
+          "id": "i13pro",
+          "img": "/src/assets/images/iphone13_pro_graphite_2x.jpg",
+          "search_img": "/src/assets/images/iphone13_pro_graphite_2x.jpg",
+          "family_reference": "iPhone 13 Pro",
+          "swatch": "/src/assets/swatch_colors/iPhone13Pro_x2.png",
+          "price": "4'580.000",
+          "finance": "381.667",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i13prographite128",
+              "img": "/src/assets/images/iphone13_pro_graphite_2x.jpg",
+              "family_reference": "iPhone 13 Pro",
+              "color": "Grafito",
+              "capacity": "128GB",
+              "price": "4'580.000",
+              "finance": "381.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13progold256",
+              "img": "/src/assets/images/iphone13_pro_gold_2x.jpg",
+              "family_reference": "iPhone 13 Pro",
+              "color": "Oro",
+              "capacity": "256GB",
+              "price": "5'100.000",
+              "finance": "425.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13prosilver512",
+              "img": "/src/assets/images/iphone13_pro_silver_2x.jpg",
+              "family_reference": "iPhone 13 Pro",
+              "color": "Plata",
+              "capacity": "512GB",
+              "price": "5'880.000",
+              "finance": "490.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13problue1tb",
+              "img": "/src/assets/images/iphone13_pro_sierra_blue_2x.jpg",
+              "family_reference": "iPhone 13 Pro",
+              "color": "Azul Sierra",
+              "capacity": "1TB",
+              "price": "6'660.000",
+              "finance": "555.000",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone13promax": {
+          "id": "i13promax",
+          "img": "/src/assets/images/iphone13_pro_max_graphite_2x.jpg",
+          "search_img": "/src/assets/images/iphone13_pro_max_graphite_2x.jpg",
+          "family_reference": "iPhone 13 Pro Max",
+          "swatch": "/src/assets/swatch_colors/iPhone13ProMax_x2.png",
+          "price": "5'100.000",
+          "finance": "425.000",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i13promaxgraphite128",
+              "img": "/src/assets/images/iphone13_pro_max_graphite_2x.jpg",
+              "family_reference": "iPhone 13 Pro Max",
+              "color": "Grafito",
+              "capacity": "128GB",
+              "price": "5'100.000",
+              "finance": "425.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13promaxgold256",
+              "img": "/src/assets/images/iphone13_pro_max_gold_2x.jpg",
+              "family_reference": "iPhone 13 Pro Max",
+              "color": "Oro",
+              "capacity": "256GB",
+              "price": "5'620.000",
+              "finance": "468.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13promaxsilver512",
+              "img": "/src/assets/images/iphone13_pro_max_silver_2x.jpg",
+              "family_reference": "iPhone 13 Pro Max",
+              "color": "Plata",
+              "capacity": "512GB",
+              "price": "6'400.000",
+              "finance": "533.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i13promaxblue1tb",
+              "img": "/src/assets/images/iphone13_pro_max_sierra_blue_2x.jpg",
+              "family_reference": "iPhone 13 Pro Max",
+              "color": "Azul Sierra",
+              "capacity": "1TB",
+              "price": "7'180.000",
+              "finance": "598.333",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "title": "iPhone 12",
+    "color": "#5AC8FA",
+    "bcolor": "#5AC8FA",
+    "bgcolor": "#EFFAFF",
+    "leftOffset": 40,
+    "rightOffset": -30,
+    "subtitle": "Potencia y estilo.",
+    "labelO": "iPhone 12 & iPhone 12 mini",
+    "labelP": "iPhone 12 Pro & iPhone 12 Pro Max",
+    "img": "/src/assets/images/iPhone12_blue%203.png",
+    "left": "/src/assets/images/1blue.png",
+    "right": "/src/assets/images/4blue.png",
+    "stock": [
+      {
+        "iphone12": {
+          "id": "i12",
+          "img": "/src/assets/images/iphone12_blue_2x.jpg",
+          "search_img": "/src/assets/images/iphone12_blue_2x.jpg",
+          "family_reference": "iPhone 12",
+          "swatch": "/src/assets/swatch_colors/iPhone12_x2.png",
+          "price": "2'760.000",
+          "finance": "230.000",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i12blue64",
+              "img": "/src/assets/images/iphone12_blue_2x.jpg",
+              "family_reference": "iPhone 12",
+              "color": "Azul",
+              "capacity": "64GB",
+              "price": "2'760.000",
+              "finance": "230.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12purple128",
+              "img": "/src/assets/images/iphone12_purple_2x.jpg",
+              "family_reference": "iPhone 12",
+              "color": "Morado",
+              "capacity": "128GB",
+              "price": "3'020.000",
+              "finance": "251.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12green256",
+              "img": "/src/assets/images/iphone12_green_2x.jpg",
+              "family_reference": "iPhone 12",
+              "color": "Verde",
+              "capacity": "256GB",
+              "price": "3'540.000",
+              "finance": "295.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12white64",
+              "img": "/src/assets/images/iphone12_white_2x.jpg",
+              "family_reference": "iPhone 12",
+              "color": "Blanco",
+              "capacity": "64GB",
+              "price": "2'760.000",
+              "finance": "230.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12black128",
+              "img": "/src/assets/images/iphone12_black_2x.jpg",
+              "family_reference": "iPhone 12",
+              "color": "Negro",
+              "capacity": "128GB",
+              "price": "3'020.000",
+              "finance": "251.667",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone12mini": {
+          "id": "i12mini",
+          "img": "/src/assets/images/iphone12_mini_blue_2x.jpg",
+          "search_img": "/src/assets/images/iphone12_mini_blue_2x.jpg",
+          "family_reference": "iPhone 12 mini",
+          "swatch": "/src/assets/swatch_colors/iPhone12mini_x2.png",
+          "price": "2'240.000",
+          "finance": "186.667",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i12miniblue64",
+              "img": "/src/assets/images/iphone12_mini_blue_2x.jpg",
+              "family_reference": "iPhone 12 mini",
+              "color": "Azul",
+              "capacity": "64GB",
+              "price": "2'240.000",
+              "finance": "186.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12minipurple128",
+              "img": "/src/assets/images/iphone12_mini_purple_2x.jpg",
+              "family_reference": "iPhone 12 mini",
+              "color": "Morado",
+              "capacity": "128GB",
+              "price": "2'500.000",
+              "finance": "208.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12minigreen256",
+              "img": "/src/assets/images/iphone12_mini_green_2x.jpg",
+              "family_reference": "iPhone 12 mini",
+              "color": "Verde",
+              "capacity": "256GB",
+              "price": "3'020.000",
+              "finance": "251.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12miniwhite64",
+              "img": "/src/assets/images/iphone12_mini_white_2x.jpg",
+              "family_reference": "iPhone 12 mini",
+              "color": "Blanco",
+              "capacity": "64GB",
+              "price": "2'240.000",
+              "finance": "186.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12miniblack128",
+              "img": "/src/assets/images/iphone12_mini_black_2x.jpg",
+              "family_reference": "iPhone 12 mini",
+              "color": "Negro",
+              "capacity": "128GB",
+              "price": "2'500.000",
+              "finance": "208.333",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone12pro": {
+          "id": "i12pro",
+          "img": "/src/assets/images/iphone12_pro_graphite_2x.jpg",
+          "search_img": "/src/assets/images/iphone12_pro_graphite_2x.jpg",
+          "family_reference": "iPhone 12 Pro",
+          "swatch": "/src/assets/swatch_colors/iPhone12Pro_x2.png",
+          "price": "4'060.000",
+          "finance": "338.333",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i12prographite128",
+              "img": "/src/assets/images/iphone12_pro_graphite_2x.jpg",
+              "family_reference": "iPhone 12 Pro",
+              "color": "Grafito",
+              "capacity": "128GB",
+              "price": "4'060.000",
+              "finance": "338.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12progold256",
+              "img": "/src/assets/images/iphone12_pro_gold_2x.jpg",
+              "family_reference": "iPhone 12 Pro",
+              "color": "Oro",
+              "capacity": "256GB",
+              "price": "4'580.000",
+              "finance": "381.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12prosilver512",
+              "img": "/src/assets/images/iphone12_pro_silver_2x.jpg",
+              "family_reference": "iPhone 12 Pro",
+              "color": "Plata",
+              "capacity": "512GB",
+              "price": "5'360.000",
+              "finance": "446.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12problue256",
+              "img": "/src/assets/images/iphone12_pro_pacific_blue_2x.jpg",
+              "family_reference": "iPhone 12 Pro",
+              "color": "Azul Pacífico",
+              "capacity": "256GB",
+              "price": "4'580.000",
+              "finance": "381.667",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone12promax": {
+          "id": "i12promax",
+          "img": "/src/assets/images/iphone12_pro_max_graphite_2x.jpg",
+          "search_img": "/src/assets/images/iphone12_pro_max_graphite_2x.jpg",
+          "family_reference": "iPhone 12 Pro Max",
+          "swatch": "/src/assets/swatch_colors/iPhone12ProMax_x2.png",
+          "price": "4'580.000",
+          "finance": "381.667",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i12promaxgraphite128",
+              "img": "/src/assets/images/iphone12_pro_max_graphite_2x.jpg",
+              "family_reference": "iPhone 12 Pro Max",
+              "color": "Grafito",
+              "capacity": "128GB",
+              "price": "4'580.000",
+              "finance": "381.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12promaxgold256",
+              "img": "/src/assets/images/iphone12_pro_max_gold_2x.jpg",
+              "family_reference": "iPhone 12 Pro Max",
+              "color": "Oro",
+              "capacity": "256GB",
+              "price": "5'100.000",
+              "finance": "425.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12promaxsilver512",
+              "img": "/src/assets/images/iphone12_pro_max_silver_2x.jpg",
+              "family_reference": "iPhone 12 Pro Max",
+              "color": "Plata",
+              "capacity": "512GB",
+              "price": "5'880.000",
+              "finance": "490.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i12promaxblue256",
+              "img": "/src/assets/images/iphone12_pro_max_pacific_blue_2x.jpg",
+              "family_reference": "iPhone 12 Pro Max",
+              "color": "Azul Pacífico",
+              "capacity": "256GB",
+              "price": "5'100.000",
+              "finance": "425.000",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "title": "iPhone 11",
+    "color": "#30D158",
+    "bcolor": "#30D158",
+    "bgcolor": "#F2FBF6",
+    "leftOffset": 40,
+    "rightOffset": -30,
+    "subtitle": "Asequible y potente.",
+    "labelO": "iPhone 11",
+    "labelP": "iPhone 11 Pro & iPhone 11 Pro Max",
+    "img": "/src/assets/images/iPhone11_green%203.png",
+    "left": "/src/assets/images/1green.png",
+    "right": "/src/assets/images/4green.png",
+    "stock": [
+      {
+        "iphone11": {
+          "id": "i11",
+          "img": "/src/assets/images/iphone11_green_2x.jpg",
+          "search_img": "/src/assets/images/iphone11_green_2x.jpg",
+          "family_reference": "iPhone 11",
+          "swatch": "/src/assets/swatch_colors/iPhone11_x2.png",
+          "price": "1'980.000",
+          "finance": "165.000",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i11green64",
+              "img": "/src/assets/images/iphone11_green_2x.jpg",
+              "family_reference": "iPhone 11",
+              "color": "Verde",
+              "capacity": "64GB",
+              "price": "1'980.000",
+              "finance": "165.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i11purple128",
+              "img": "/src/assets/images/iphone11_purple_2x.jpg",
+              "family_reference": "iPhone 11",
+              "color": "Morado",
+              "capacity": "128GB",
+              "price": "2'240.000",
+              "finance": "186.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i11yellow256",
+              "img": "/src/assets/images/iphone11_yellow_2x.jpg",
+              "family_reference": "iPhone 11",
+              "color": "Amarillo",
+              "capacity": "256GB",
+              "price": "2'760.000",
+              "finance": "230.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i11white64",
+              "img": "/src/assets/images/iphone11_white_2x.jpg",
+              "family_reference": "iPhone 11",
+              "color": "Blanco",
+              "capacity": "64GB",
+              "price": "1'980.000",
+              "finance": "165.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i11black128",
+              "img": "/src/assets/images/iphone11_black_2x.jpg",
+              "family_reference": "iPhone 11",
+              "color": "Negro",
+              "capacity": "128GB",
+              "price": "2'240.000",
+              "finance": "186.667",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i11red256",
+              "img": "/src/assets/images/iphone11_red_2x.jpg",
+              "family_reference": "iPhone 11",
+              "color": "Rojo",
+              "capacity": "256GB",
+              "price": "2'760.000",
+              "finance": "230.000",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone11pro": {
+          "id": "i11pro",
+          "img": "/src/assets/images/iphone11_pro_midnight_green_2x.jpg",
+          "search_img": "/src/assets/images/iphone11_pro_midnight_green_2x.jpg",
+          "family_reference": "iPhone 11 Pro",
+          "swatch": "/src/assets/swatch_colors/iPhone11Pro_x2.png",
+          "price": "3'540.000",
+          "finance": "295.000",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i11promidnightgreen64",
+              "img": "/src/assets/images/iphone11_pro_midnight_green_2x.jpg",
+              "family_reference": "iPhone 11 Pro",
+              "color": "Verde medianoche",
+              "capacity": "64GB",
+              "price": "3'540.000",
+              "finance": "295.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i11progold256",
+              "img": "/src/assets/images/iphone11_pro_gold_2x.jpg",
+              "family_reference": "iPhone 11 Pro",
+              "color": "Oro",
+              "capacity": "256GB",
+              "price": "4'320.000",
+              "finance": "360.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i11prosilver512",
+              "img": "/src/assets/images/iphone11_pro_silver_2x.jpg",
+              "family_reference": "iPhone 11 Pro",
+              "color": "Plata",
+              "capacity": "512GB",
+              "price": "5'100.000",
+              "finance": "425.000",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i11prospace256",
+              "img": "/src/assets/images/iphone11_pro_space_gray_2x.jpg",
+              "family_reference": "iPhone 11 Pro",
+              "color": "Gris espacial",
+              "capacity": "256GB",
+              "price": "4'320.000",
+              "finance": "360.000",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      },
+      {
+        "iphone11promax": {
+          "id": "i11promax",
+          "img": "/src/assets/images/iphone11_pro_max_midnight_green_2x.jpg",
+          "search_img": "/src/assets/images/iphone11_pro_max_midnight_green_2x.jpg",
+          "family_reference": "iPhone 11 Pro Max",
+          "swatch": "/src/assets/swatch_colors/iPhone11ProMax_x2.png",
+          "price": "4'060.000",
+          "finance": "338.333",
+          "buylink": "",
+          "allstockrefenreces": [
+            {
+              "id": "i11promaxmidnightgreen64",
+              "img": "/src/assets/images/iphone11_pro_max_midnight_green_2x.jpg",
+              "family_reference": "iPhone 11 Pro Max",
+              "color": "Verde medianoche",
+              "capacity": "64GB",
+              "price": "4'060.000",
+              "finance": "338.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i11promaxgold256",
+              "img": "/src/assets/images/iphone11_pro_max_gold_2x.jpg",
+              "family_reference": "iPhone 11 Pro Max",
+              "color": "Oro",
+              "capacity": "256GB",
+              "price": "4'840.000",
+              "finance": "403.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i11promaxsilver512",
+              "img": "/src/assets/images/iphone11_pro_max_silver_2x.jpg",
+              "family_reference": "iPhone 11 Pro Max",
+              "color": "Plata",
+              "capacity": "512GB",
+              "price": "5'620.000",
+              "finance": "468.333",
+              "buylink": "",
+              "adtocartlink": ""
+            },
+            {
+              "id": "i11promaxspace256",
+              "img": "/src/assets/images/iphone11_pro_max_space_gray_2x.jpg",
+              "family_reference": "iPhone 11 Pro Max",
+              "color": "Gris espacial",
+              "capacity": "256GB",
+              "price": "4'840.000",
+              "finance": "403.333",
+              "buylink": "",
+              "adtocartlink": ""
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

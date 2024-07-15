@@ -1,5 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState, useRef, useEffect } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export const MainCarrousel = ({ references }) => {
   const sliderRef = useRef(null);
@@ -39,6 +43,23 @@ export const MainCarrousel = ({ references }) => {
     slider.addEventListener("scroll", checkScrollPosition);
     return () => slider.removeEventListener("scroll", checkScrollPosition);
   }, []);
+
+  useGSAP(
+    () => {
+      gsap.to(".slide-center", {
+        opacity: 1,
+        duration: 0.5,
+        scale: 1,
+        ease: "power3.out",
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: ".slide-center",
+          start: "top 110%",
+        },
+      });
+    },
+    { dependencies: [references], revertOnUpdate: true }
+  );
 
   return (
     <div className="relative mb-10">

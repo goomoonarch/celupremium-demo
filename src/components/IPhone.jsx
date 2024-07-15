@@ -11,9 +11,10 @@ export const IPhone = () => {
   const [index, setIndex] = useState(0);
   const [iphoneFamily, setIphoneFamily] = useState(phoneFam[0]);
 
+
   const handleRightClick = () => {
     let value = index + 1;
-    if (value <= 1 && value >= 0) {
+    if (value <= 4 && value >= 0) {
       setIndex(value);
       setIphoneFamily(phoneFam[value]);
     } else {
@@ -196,23 +197,23 @@ export const IPhone = () => {
         style={{ background: `${iphoneFamily.bgcolor}` }}
       >
         <div id="iphone15&iphone15plus">
-          <p className="p2 text-[26px] font-medium text-[#1d1d1f] mb-6 w-fit slide-center opacity-0">
+          <p className="p2 slide-center-text text-[26px] font-medium text-[#1d1d1f] mb-2 w-fit opacity-0">
             {iphoneFamily.labelO}
           </p>
           <PhoneCarrousel
             references={{
-              regularphones: regularphones,
+              phones: regularphones,
               bcolor: iphoneFamily.color,
             }}
           />
         </div>
         <div id="iphone15pro&iphonepromax">
-          <p className="text-[26px] font-medium text-[#1d1d1f] mb-6 w-fit slide-center">
+          <p className="p2 slide-center-text text-[26px] font-medium text-[#1d1d1f] mb-2 w-fit opacity-0">
             {iphoneFamily.labelP}
           </p>
           <PhoneCarrousel
             references={{
-              regularphones: prophones,
+              phones: prophones,
               bcolor: iphoneFamily.color,
             }}
           />

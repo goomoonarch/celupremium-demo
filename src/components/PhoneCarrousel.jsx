@@ -3,20 +3,16 @@ import { ButtonSet } from "./ButtonSet";
 import { PhoneCard } from "./PhoneCard";
 
 /* eslint-disable react/prop-types */
-export const PhoneCarrousel = ({ references }) => {
+export const PhoneCarrousel = ({ references: { phones, bcolor } }) => {
   const slideRef = useRef();
-  const { regularphones, bcolor } = references;
-
-
-
 
   return (
-    <div className="flex flex-col relative mb-10">
+    <div className="mb-20 relative">
       <ul
         ref={slideRef}
-        className="flex overflow-x-auto scrollbar-hide bg-inherit h-[490px] items-center snap-x snap-mandatory"
+        className="flex overflow-x-auto scrollbar-hide bg-inherit items-center snap-x snap-mandatory h-[500px]"
       >
-        {regularphones.map((list) => (
+        {phones.map((list) => (
           <PhoneCard key={list.id} arg={{ list: list, bcolor: bcolor }} />
         ))}
       </ul>
