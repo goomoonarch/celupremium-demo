@@ -154,10 +154,10 @@
       {
         "iphone15pro": {
           "id": "i15pro",
-          "img": "/src/assets/images/iphone15_pro_white_titanium_2x.jpg",
-          "search_img": "/src/assets/images/iphone15_pro_white_titanium_2x.jpg",
+          "img": "/src/assets/images/iphone15_pro_natural_titanium_2x.jpg",
+          "search_img": "/src/assets/images/iphone15_pro_natural_titanium_2x.jpg",
           "family_reference": "iPhone 15 Pro",
-          "swatch": "/src/assets/swatch_colors/iPhone15Plus_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone15_pro_colors.png",
           "price": "4'600.000",
           "finance": "384.000",
           "buylink": "",
@@ -215,7 +215,7 @@
           "img": "/src/assets/images/iphone15_pro_max_white_titanium_2x.jpg",
           "search_img": "/src/assets/images/iphone15_pro_max_white_titanium_2x.jpg",
           "family_reference": "iPhone 15 Pro Max",
-          "swatch": "/src/assets/swatch_colors/iPhone15Plus_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone15_pro_colors.png",
           "price": "5'920.000",
           "finance": "494.000",
           "buylink": "",
@@ -286,10 +286,10 @@
       {
         "iphone14": {
           "id": "i14",
-          "img": "/src/assets/images/iphone14_blue_2x.jpg",
-          "search_img": "/src/assets/images/iphone14_blue_2x.jpg",
+          "img": "/src/assets/images/iphone14_yellow_2x.jpg",
+          "search_img": "/src/assets/images/iphone14_yellow_2x.jpg",
           "family_reference": "iPhone 14",
-          "swatch": "/src/assets/swatch_colors/iPhone14Plus_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone14_colors_x2.png",
           "price": "3'700.000",
           "finance": "308.333",
           "buylink": "",
@@ -355,10 +355,10 @@
       {
         "iphone14plus": {
           "id": "i14p",
-          "img": "/src/assets/images/iphone14_plus_black_2x.jpg",
-          "search_img": "/src/assets/images/iphone14_plus_black_2x.jpg",
+          "img": "/src/assets/images/iphone14_plus_purple_2x.jpg",
+          "search_img": "/src/assets/images/iphone14_plus_purple_2x.jpg",
           "family_reference": "iPhone 14 Plus",
-          "swatch": "/src/assets/swatch_colors/iPhone14Plus_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone14_colors_x2.png",
           "price": "3'920.000",
           "finance": "268.900",
           "buylink": "",
@@ -424,10 +424,10 @@
       {
         "iphone14pro": {
           "id": "i14pro",
-          "img": "/src/assets/images/iphone14_pro_white_2x.jpg",
-          "search_img": "/src/assets/images/iphone14_pro_white_2x.jpg",
+          "img": "/src/assets/images/iphone14_pro_deep_purple_2x.jpg",
+          "search_img": "/src/assets/images/iphone14_pro_deep_purple_2x.jpg",
           "family_reference": "iPhone 14 Pro",
-          "swatch": "/src/assets/swatch_colors/iPhone14Pro_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone14_pro_colors.png",
           "price": "4'600.000",
           "finance": "384.000",
           "buylink": "",
@@ -482,10 +482,10 @@
       {
         "iphone14promax": {
           "id": "i14promax",
-          "img": "/src/assets/images/iphone14_pro_max_white_2x.jpg",
-          "search_img": "/src/assets/images/iphone14_pro_max_white_2x.jpg",
+          "img": "/src/assets/images/iphone14_pro_max_silver_2x.jpg",
+          "search_img": "/src/assets/images/iphone14_pro_max_silver_2x.jpg",
           "family_reference": "iPhone 14 Pro Max",
-          "swatch": "/src/assets/swatch_colors/iPhone14Pro_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone14_pro_colors.png",
           "price": "5'920.000",
           "finance": "494.000",
           "buylink": "",
@@ -697,7 +697,7 @@
           "img": "/src/assets/images/iphone13_pro_graphite_2x.jpg",
           "search_img": "/src/assets/images/iphone13_pro_graphite_2x.jpg",
           "family_reference": "iPhone 13 Pro",
-          "swatch": "/src/assets/swatch_colors/iPhone13Pro_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone13_pro_colors_x2.png",
           "price": "4'580.000",
           "finance": "381.667",
           "buylink": "",
@@ -811,17 +811,17 @@
   },
   {
     "title": "iPhone 12",
-    "color": "#5AC8FA",
-    "bcolor": "#5AC8FA",
-    "bgcolor": "#EFFAFF",
+    "color": "#B2E5B4",
+    "bcolor": "#B2E5B4",
+    "bgcolor": "#F7FCF7",
     "leftOffset": 40,
     "rightOffset": -30,
     "subtitle": "Potencia y estilo.",
     "labelO": "iPhone 12 & iPhone 12 mini",
     "labelP": "iPhone 12 Pro & iPhone 12 Pro Max",
     "img": "/src/assets/images/iPhone12_blue%203.png",
-    "left": "/src/assets/images/1blue.png",
-    "right": "/src/assets/images/4blue.png",
+    "left": "/src/assets/images/1green.png",
+    "right": "/src/assets/images/2green.png",
     "stock": [
       {
         "iphone12": {
@@ -1081,17 +1081,17 @@
   },
   {
     "title": "iPhone 11",
-    "color": "#30D158",
-    "bcolor": "#30D158",
-    "bgcolor": "#F2FBF6",
+    "color": "#FEE682",
+    "bcolor": "#FEE682",
+    "bgcolor": "#FFFAF0",
     "leftOffset": 40,
     "rightOffset": -30,
     "subtitle": "Asequible y potente.",
     "labelO": "iPhone 11",
     "labelP": "iPhone 11 Pro & iPhone 11 Pro Max",
     "img": "/src/assets/images/iPhone11_green%203.png",
-    "left": "/src/assets/images/1green.png",
-    "right": "/src/assets/images/4green.png",
+    "left": "/src/assets/images/1yellow.png",
+    "right": "/src/assets/images/1yellow.png",
     "stock": [
       {
         "iphone11": {
@@ -1186,7 +1186,7 @@
           "allstockrefenreces": [
             {
               "id": "i11promidnightgreen64",
-              "img": "/src/assets/images/iphone11_pro_midnight_green_2x.jpg",
+              "img": "/src/assets/images/iphone11_pro_midnightgreen_2x.jpg",
               "family_reference": "iPhone 11 Pro",
               "color": "Verde medianoche",
               "capacity": "64GB",
@@ -1219,7 +1219,7 @@
             },
             {
               "id": "i11prospace256",
-              "img": "/src/assets/images/iphone11_pro_space_gray_2x.jpg",
+              "img": "/src/assets/images/iphone11_pro_spacegrey_2x.jpg",
               "family_reference": "iPhone 11 Pro",
               "color": "Gris espacial",
               "capacity": "256GB",
@@ -1234,8 +1234,8 @@
       {
         "iphone11promax": {
           "id": "i11promax",
-          "img": "/src/assets/images/iphone11_pro_max_midnight_green_2x.jpg",
-          "search_img": "/src/assets/images/iphone11_pro_max_midnight_green_2x.jpg",
+          "img": "/src/assets/images/iphone11_pro_max_midnightgreen_2x.jpg",
+          "search_img": "/src/assets/images/iphone11_pro_max_midnightgreen_2x.jpg",
           "family_reference": "iPhone 11 Pro Max",
           "swatch": "/src/assets/swatch_colors/iPhone11ProMax_x2.png",
           "price": "4'060.000",
@@ -1244,7 +1244,7 @@
           "allstockrefenreces": [
             {
               "id": "i11promaxmidnightgreen64",
-              "img": "/src/assets/images/iphone11_pro_max_midnight_green_2x.jpg",
+              "img": "/src/assets/images/iphone11_pro_max_midnightgreen_2x.jpg",
               "family_reference": "iPhone 11 Pro Max",
               "color": "Verde medianoche",
               "capacity": "64GB",
@@ -1277,7 +1277,7 @@
             },
             {
               "id": "i11promaxspace256",
-              "img": "/src/assets/images/iphone11_pro_max_space_gray_2x.jpg",
+              "img": "/src/assets/images/iphone11_pro_max_spacegrey_2x.jpg",
               "family_reference": "iPhone 11 Pro Max",
               "color": "Gris espacial",
               "capacity": "256GB",
@@ -1287,6 +1287,34 @@
               "adtocartlink": ""
             }
           ]
+        }
+      }
+    ]
+  },
+  {
+    "title": "AirPodsMax",
+    "color": "#FEE682",
+    "bcolor": "#FEE682",
+    "bgcolor": "#FFFAF0",
+    "leftOffset": 40,
+    "rightOffset": -30,
+    "subtitle": "Asequible y potente.",
+    "labelO": "iPhone 11",
+    "labelP": "iPhone 11 Pro & iPhone 11 Pro Max",
+    "img": "/src/assets/images/iPhone11_green%203.png",
+    "left": "/src/assets/images/1yellow.png",
+    "right": "/src/assets/images/1yellow.png",
+    "stock": [
+      {
+        "AirPods Max": {
+          "id": "airpromaxsl",
+          "img": "/src/assets/images/airpods_max_silver_2x.png",
+          "search_img": "/src/assets/images/airpods_max_silver_search.png",
+          "family_reference": "Airpods Max",
+          "swatch": "/src/assets/swatch_colors/airpods_max_colors.png",
+          "price": "2'260.000",
+          "finance": "188.400",
+          "buylink": ""
         }
       }
     ]

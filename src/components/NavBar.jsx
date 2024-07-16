@@ -160,8 +160,8 @@ export const NavBar = () => {
 
   const handleMouseLeave = useCallback(() => {
     timeoutRef.current = setTimeout(() => {
-      setIsSubMenuVisible(false);
-      setSearchBarView(false);
+      setIsSubMenuVisible(!false);
+      setSearchBarView(!false);
       setIsSearchActive(false);
       setActiveItem("");
     }, 100);

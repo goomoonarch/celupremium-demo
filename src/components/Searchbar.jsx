@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
 import { SearchInput } from "./submenucontent/SearchInput";
-import { allStock } from "../assets";
+import { phoneFam } from "../assets";
 import { useDebounce } from "../hooks/useDebounce";
 import { SearchLinks } from "./submenucontent/SearchLinks";
 import { DefaultSearchResult } from "./submenucontent/DefaultSearchResult";
@@ -43,10 +43,23 @@ export const Searchbar = ({ onSearchResult, click }) => {
       return;
     }
 
-    const results = allStock.filter((item) =>
-      item.family_reference
-        .toLowerCase()
-        .includes(debouncedSearchTerm.toLowerCase())
+    const results = phoneFam.flatMap(family => 
+      family.stock.flatMap(item => {
+        const product = Object.values(item)[0];
+        if (product.family_reference.toLowerCase().includes(debouncedSearchTerm.toLowerCase())) {
+          return [{
+            id: product.id,
+            img: product.img,
+            search_img: product.search_img,
+            family_reference: product.family_reference,
+            swatch: product.swatch,
+            price: product.price,
+            finance: product.finance,
+            buylink: product.buylink
+          }];
+        }
+        return [];
+      })
     );
     setSearchResults(results);
     onSearchResult(results);

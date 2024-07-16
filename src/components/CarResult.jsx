@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { addiLogo } from "../assets";
 
 export const CardResult = ({ item }) => {
+  console.log(item);
   return (
     <div className="bg-white overflow-clip flex rounded-[8px] p-[14px] w-[380px] h-[140px] cursor-pointer hover:scale-[1.03] ease-out transition-all duration-300">
       <img
