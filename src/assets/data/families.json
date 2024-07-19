@@ -556,15 +556,27 @@
       {
         "iphone13": {
           "id": "i13",
-          "img": "/src/assets/images/iphone13_blue_2x.jpg",
-          "search_img": "/src/assets/images/iphone13_blue_2x.jpg",
+          "img": "/src/assets/images/iphone13_pink_2x.jpg",
+          "search_img": "/src/assets/images/iphone13_pink_2x.jpg",
           "family_reference": "iPhone 13",
-          "swatch": "/src/assets/swatch_colors/iPhone13_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone13_colors_x2.png",
           "price": "3'280.000",
           "finance": "273.333",
-          "buylink": "",
+          "slug": "iphone13",
+          "subtitle": "Tu compañero perfecto.",
+          "buylink": "iphone13/iphone13pink256",
+          "swatch_colors": {
+            "blue": "/src/assets/swatch_colors/diferential/iphone13_blue_swatch_circle.png",
+            "pink": "/src/assets/swatch_colors/diferential/iphone13_pink_swatch_circle.png",
+            "midnight": "/src/assets/swatch_colors/diferential/iphone13_midnight_swatch_circle.png",
+            "starlight": "/src/assets/swatch_colors/diferential/iphone13_starlight_swatch_circle.png",
+            "green": "/src/assets/swatch_colors/diferential/iphone13_green_swatch_circle.png",
+            "red": "/src/assets/swatch_colors/diferential/iphone13_red_swatch_circle.png"
+          },
+          "capacities": [128, 256, 512],
           "allstockrefenreces": [
             {
+              "choices": { "color": "blue", "capacity": 128 },
               "id": "i13blue128",
               "img": "/src/assets/images/iphone13_blue_2x.jpg",
               "family_reference": "iPhone 13",
@@ -572,10 +584,12 @@
               "capacity": "128GB",
               "price": "3'280.000",
               "finance": "273.333",
-              "buylink": "",
+              "slug": "iphone13blue128",
+              "stock": 0,
               "adtocartlink": ""
             },
-            {
+            { 
+              "choices": { "color": "pink", "capacity": 256 },
               "id": "i13pink256",
               "img": "/src/assets/images/iphone13_pink_2x.jpg",
               "family_reference": "iPhone 13",
@@ -583,10 +597,53 @@
               "capacity": "256GB",
               "price": "3'800.000",
               "finance": "316.667",
-              "buylink": "",
+              "slug": "iphone13pink256",
+              "bgColor": "#35283C",
+              "lgfrontimg": "/src/assets/images/iPhone13_pink_front_photoStudio.png",
+              "backcameraimg": "/src/assets/images/iPhone_13_pink_back_focus_on_camera.png",
+              "lateralimg": "/src/assets/images/pink_flat_edge.png",
+              "dubleviewimg": "/src/assets/images/iPhone_13_pink_front_and_back.png",
+              "stock": 2,
               "adtocartlink": ""
             },
             {
+              "choices": { "color": "pink", "capacity": 128 },
+              "id": "i13pink128",
+              "img": "/src/assets/images/iphone13_pink_2x.jpg",
+              "family_reference": "iPhone 13",
+              "color": "Rosa",
+              "capacity": "128GB",
+              "price": "2'800.000",
+              "finance": "316.667",
+              "slug": "iphone13pink128",
+              "bgColor": "#35283C",
+              "lgfrontimg": "/src/assets/images/iPhone13_pink_front_photoStudio.png",
+              "backcameraimg": "/src/assets/images/iPhone_13_pink_back_focus_on_camera.png",
+              "lateralimg": "/src/assets/images/pink_flat_edge.png",
+              "dubleviewimg": "/src/assets/images/iPhone_13_pink_front_and_back.png",
+              "stock": 1,
+              "adtocartlink": ""
+            },
+            {
+              "choices": { "color": "pink", "capacity": 512 },
+              "id": "i13pink512",
+              "img": "/src/assets/images/iphone13_pink_2x.jpg",
+              "family_reference": "iPhone 13",
+              "color": "Rosa",
+              "capacity": "512GB",
+              "price": "4'200.000",
+              "finance": "316.667",
+              "slug": "iphone13pink512",
+              "bgColor": "#35283C",
+              "lgfrontimg": "/src/assets/images/iPhone13_pink_front_photoStudio.png",
+              "backcameraimg": "/src/assets/images/iPhone_13_pink_back_focus_on_camera.png",
+              "lateralimg": "/src/assets/images/pink_flat_edge.png",
+              "dubleviewimg": "/src/assets/images/iPhone_13_pink_front_and_back.png",
+              "stock": 0,
+              "adtocartlink": ""
+            },
+            {
+              "choices": { "color": "midnight", "capacity": 512 },
               "id": "i13midnight512",
               "img": "/src/assets/images/iphone13_midnight_2x.jpg",
               "family_reference": "iPhone 13",
@@ -594,10 +651,12 @@
               "capacity": "512GB",
               "price": "4'580.000",
               "finance": "381.667",
-              "buylink": "",
+              "slug": "iphone13mindnight512",
+              "stock": 0,
               "adtocartlink": ""
             },
             {
+              "choices": { "color": "starlight", "capacity": 128 },
               "id": "i13starlight128",
               "img": "/src/assets/images/iphone13_starlight_2x.jpg",
               "family_reference": "iPhone 13",
@@ -605,10 +664,53 @@
               "capacity": "128GB",
               "price": "3'280.000",
               "finance": "273.333",
-              "buylink": "",
+              "slug": "iphone13stralight128",
+              "bgColor": "#2E2E3A",
+              "lgfrontimg": "/src/assets/images/iPhone13_starlight_photoStudio.png",
+              "backcameraimg": "/src/assets/images/iPhone_13_starlight_back_focus_on_camera.png",
+              "lateralimg": "/src/assets/images/starlight_flat_edge.png",
+              "dubleviewimg": "/src/assets/images/iPhone_13_starlight_front_and_back.png",
+              "stock": 1,
               "adtocartlink": ""
             },
             {
+              "choices": { "color": "starlight", "capacity": 512 },
+              "id": "i13starlight512",
+              "img": "/src/assets/images/iphone13_starlight_2x.jpg",
+              "family_reference": "iPhone 13",
+              "color": "Blanco estelar",
+              "capacity": "512GB",
+              "price": "3'280.000",
+              "finance": "273.333",
+              "slug": "iphone13stralight128",
+              "bgColor": "#2E2E3A",
+              "lgfrontimg": "/src/assets/images/iPhone13_starlight_photoStudio.png",
+              "backcameraimg": "/src/assets/images/iPhone_13_starlight_back_focus_on_camera.png",
+              "lateralimg": "/src/assets/images/starlight_flat_edge.png",
+              "dubleviewimg": "/src/assets/images/iPhone_13_starlight_front_and_back.png",
+              "stock": 2,
+              "adtocartlink": ""
+            },
+            {
+              "choices": { "color": "starlight", "capacity": 256 },
+              "id": "i13starlight256",
+              "img": "/src/assets/images/iphone13_starlight_2x.jpg",
+              "family_reference": "iPhone 13",
+              "color": "Blanco estelar",
+              "capacity": "256GB",
+              "price": "3'280.000",
+              "finance": "273.333",
+              "slug": "iphone13stralight128",
+              "bgColor": "#2E2E3A",
+              "lgfrontimg": "/src/assets/images/iPhone13_starlight_photoStudio.png",
+              "backcameraimg": "/src/assets/images/iPhone_13_pink_back_focus_on_camera.png",
+              "lateralimg": "/src/assets/images/starlight_flat_edge.png",
+              "dubleviewimg": "/src/assets/images/iPhone_13_starlight_front_and_back.png",
+              "stock": 0,
+              "adtocartlink": ""
+            },
+            {
+              "choices": { "color": "green", "capacity": 256 },
               "id": "i13green256",
               "img": "/src/assets/images/iphone13_green_2x.jpg",
               "family_reference": "iPhone 13",
@@ -616,7 +718,8 @@
               "capacity": "256GB",
               "price": "3'800.000",
               "finance": "316.667",
-              "buylink": "",
+              "slug": "iphone13green256",
+              "stock": 0,
               "adtocartlink": ""
             }
           ]
@@ -625,10 +728,10 @@
       {
         "iphone13mini": {
           "id": "i13mini",
-          "img": "/src/assets/images/iphone13_mini_blue_2x.jpg",
-          "search_img": "/src/assets/images/iphone13_mini_blue_2x.jpg",
+          "img": "/src/assets/images/iphone13_mini_starlight_2x.jpg",
+          "search_img": "/src/assets/images/iphone13_mini_starlight_2x.jpg",
           "family_reference": "iPhone 13 mini",
-          "swatch": "/src/assets/swatch_colors/iPhone13mini_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone13_colors_x2.png",
           "price": "2'760.000",
           "finance": "230.000",
           "buylink": "",
@@ -752,10 +855,10 @@
       {
         "iphone13promax": {
           "id": "i13promax",
-          "img": "/src/assets/images/iphone13_pro_max_graphite_2x.jpg",
-          "search_img": "/src/assets/images/iphone13_pro_max_graphite_2x.jpg",
+          "img": "/src/assets/images/iphone13_pro_max_gold_2x.jpg",
+          "search_img": "/src/assets/images/iphone13_pro_max_gold_2x.jpg",
           "family_reference": "iPhone 13 Pro Max",
-          "swatch": "/src/assets/swatch_colors/iPhone13ProMax_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone13_pro_colors_x2.png",
           "price": "5'100.000",
           "finance": "425.000",
           "buylink": "",
@@ -826,10 +929,10 @@
       {
         "iphone12": {
           "id": "i12",
-          "img": "/src/assets/images/iphone12_blue_2x.jpg",
-          "search_img": "/src/assets/images/iphone12_blue_2x.jpg",
+          "img": "/src/assets/images/iphone12_pruple_2x.jpg",
+          "search_img": "/src/assets/images/iphone12_purple_2x.jpg",
           "family_reference": "iPhone 12",
-          "swatch": "/src/assets/swatch_colors/iPhone12_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone12_colors_x2.png",
           "price": "2'760.000",
           "finance": "230.000",
           "buylink": "",
@@ -895,10 +998,10 @@
       {
         "iphone12mini": {
           "id": "i12mini",
-          "img": "/src/assets/images/iphone12_mini_blue_2x.jpg",
-          "search_img": "/src/assets/images/iphone12_mini_blue_2x.jpg",
+          "img": "/src/assets/images/iphone12_mini_green_2x.jpg",
+          "search_img": "/src/assets/images/iphone12_mini_green_2x.jpg",
           "family_reference": "iPhone 12 mini",
-          "swatch": "/src/assets/swatch_colors/iPhone12mini_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone12_colors_x2.png",
           "price": "2'240.000",
           "finance": "186.667",
           "buylink": "",
@@ -964,10 +1067,10 @@
       {
         "iphone12pro": {
           "id": "i12pro",
-          "img": "/src/assets/images/iphone12_pro_graphite_2x.jpg",
-          "search_img": "/src/assets/images/iphone12_pro_graphite_2x.jpg",
+          "img": "/src/assets/images/iphone12_pro_pacific_blue_2x.jpg",
+          "search_img": "/src/assets/images/iphone12_pro_pacific_blue_2x.jpg",
           "family_reference": "iPhone 12 Pro",
-          "swatch": "/src/assets/swatch_colors/iPhone12Pro_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone12Pro_colors.png",
           "price": "4'060.000",
           "finance": "338.333",
           "buylink": "",
@@ -1025,7 +1128,7 @@
           "img": "/src/assets/images/iphone12_pro_max_graphite_2x.jpg",
           "search_img": "/src/assets/images/iphone12_pro_max_graphite_2x.jpg",
           "family_reference": "iPhone 12 Pro Max",
-          "swatch": "/src/assets/swatch_colors/iPhone12ProMax_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone12Pro_colors.png",
           "price": "4'580.000",
           "finance": "381.667",
           "buylink": "",
@@ -1096,10 +1199,10 @@
       {
         "iphone11": {
           "id": "i11",
-          "img": "/src/assets/images/iphone11_green_2x.jpg",
-          "search_img": "/src/assets/images/iphone11_green_2x.jpg",
+          "img": "/src/assets/images/iphone11_yellow_2x.jpg",
+          "search_img": "/src/assets/images/iphone11_yellow_2x.jpg",
           "family_reference": "iPhone 11",
-          "swatch": "/src/assets/swatch_colors/iPhone11_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone11_colors.png",
           "price": "1'980.000",
           "finance": "165.000",
           "buylink": "",
@@ -1176,10 +1279,10 @@
       {
         "iphone11pro": {
           "id": "i11pro",
-          "img": "/src/assets/images/iphone11_pro_midnight_green_2x.jpg",
-          "search_img": "/src/assets/images/iphone11_pro_midnight_green_2x.jpg",
+          "img": "/src/assets/images/iphone11_pro_spacegrey_2x.jpg",
+          "search_img": "/src/assets/images/iphone11_pro_spacegrey_2x.jpg",
           "family_reference": "iPhone 11 Pro",
-          "swatch": "/src/assets/swatch_colors/iPhone11Pro_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone11Pro_colors.png",
           "price": "3'540.000",
           "finance": "295.000",
           "buylink": "",
@@ -1234,10 +1337,10 @@
       {
         "iphone11promax": {
           "id": "i11promax",
-          "img": "/src/assets/images/iphone11_pro_max_midnightgreen_2x.jpg",
-          "search_img": "/src/assets/images/iphone11_pro_max_midnightgreen_2x.jpg",
+          "img": "/src/assets/images/iphone11_pro_max_silver_2x.jpg",
+          "search_img": "/src/assets/images/iphone11_pro_max_silver_2x.jpg",
           "family_reference": "iPhone 11 Pro Max",
-          "swatch": "/src/assets/swatch_colors/iPhone11ProMax_x2.png",
+          "swatch": "/src/assets/swatch_colors/iPhone11Pro_colors.png",
           "price": "4'060.000",
           "finance": "338.333",
           "buylink": "",
@@ -1306,7 +1409,7 @@
     "right": "/src/assets/images/1yellow.png",
     "stock": [
       {
-        "AirPods Max": {
+        "AirPodsMax": {
           "id": "airpromaxsl",
           "img": "/src/assets/images/airpods_max_silver_2x.png",
           "search_img": "/src/assets/images/airpods_max_silver_search.png",
@@ -1314,6 +1417,114 @@
           "swatch": "/src/assets/swatch_colors/airpods_max_colors.png",
           "price": "2'260.000",
           "finance": "188.400",
+          "buylink": ""
+        }
+      }
+    ]
+  },
+  {
+    "title": "AirPods",
+    "color": "#FEE682",
+    "bcolor": "#FEE682",
+    "bgcolor": "#FFFAF0",
+    "leftOffset": 40,
+    "rightOffset": -30,
+    "subtitle": "Asequible y potente.",
+    "labelO": "iPhone 11",
+    "labelP": "iPhone 11 Pro & iPhone 11 Pro Max",
+    "img": "/src/assets/images/iPhone11_green%203.png",
+    "left": "/src/assets/images/1yellow.png",
+    "right": "/src/assets/images/1yellow.png",
+    "stock": [
+      {
+        "AirPods3Gen": {
+          "id": "air3gl",
+          "img": "/src/assets/images/airpods3gen_2x.png",
+          "search_img": "/src/assets/images/airpods3gen_search.png",
+          "family_reference": "AirPods 3Gen",
+          "swatch": "/src/assets/swatch_colors/airpods_3gen_x2.png",
+          "price": "820.000",
+          "finance": "68.500",
+          "buylink": ""
+        }
+      },
+      {
+        "AirPodsPro2Gen": {
+          "id": "airpodspro2gen",
+          "img": "/src/assets/images/airpods_pro_2gen_2x.png",
+          "search_img": "/src/assets/images/airpods_pro_2gen_search.png",
+          "family_reference": "AirPods Pro 2Gen",
+          "swatch": "/src/assets/swatch_colors/airpods_3gen_x2.png",
+          "price": "920.000",
+          "finance": "76.700",
+          "buylink": ""
+        }
+      }
+    ]
+  },
+  {
+    "title": "PowerAccesories",
+    "color": "#FEE682",
+    "bcolor": "#FEE682",
+    "bgcolor": "#FFFAF0",
+    "leftOffset": 40,
+    "rightOffset": -30,
+    "subtitle": "Asequible y potente.",
+    "labelO": "iPhone 11",
+    "labelP": "iPhone 11 Pro & iPhone 11 Pro Max",
+    "img": "/src/assets/images/iPhone11_green%203.png",
+    "left": "/src/assets/images/1yellow.png",
+    "right": "/src/assets/images/1yellow.png",
+    "stock": [
+      {
+        "MagSafeCable": {
+          "id": "magsafelanding",
+          "img": "/src/assets/images/magsafe.png",
+          "search_img": "/src/assets/images/magsafe_search.png",
+          "family_reference": "Cargador MagSafe",
+          "swatch": "/src/assets/swatch_colors/magsafe_colors_x2.png",
+          "price": "180.000",
+          "finance": "15.000",
+          "buylink": ""
+        }
+      },
+      {
+        "20w powerad apter": {
+          "id": "20wpoweradapter",
+          "img": "/src/assets/images/20wpoweradapter.png",
+          "search_img": "/src/assets/images/20wpoweradapter_search.png",
+          "family_reference": "Adaptador de 20W",
+          "swatch": "/src/assets/swatch_colors/airpods_3gen_x2.png",
+          "price": "98.000",
+          "finance": "8.200",
+          "buylink": ""
+        }
+      }
+    ]
+  },
+  {
+    "title": "Cases",
+    "color": "#FEE682",
+    "bcolor": "#FEE682",
+    "bgcolor": "#FFFAF0",
+    "leftOffset": 40,
+    "rightOffset": -30,
+    "subtitle": "Asequible y potente.",
+    "labelO": "iPhone 11",
+    "labelP": "iPhone 11 Pro & iPhone 11 Pro Max",
+    "img": "/src/assets/images/iPhone11_green%203.png",
+    "left": "/src/assets/images/1yellow.png",
+    "right": "/src/assets/images/1yellow.png",
+    "stock": [
+      {
+        "Silicon Case iPhone 15": {
+          "id": "i1wc",
+          "img": "/src/assets/images/siliconmagsafecover_pink_2x.png",
+          "search_img": "/src/assets/images/siliconmagsafecover_pink_search.png",
+          "family_reference": "Case de silicona",
+          "swatch": "/src/assets/swatch_colors/silicon_case_magsafe_colors_x2.png",
+          "price": "269.900",
+          "finance": "22.500",
           "buylink": ""
         }
       }

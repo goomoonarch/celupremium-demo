@@ -30,6 +30,13 @@
   .ease-custom {
     transition-timing-function: cubic-bezier(0, 0, 0.5, 1);
   }
+  .left-cp-content {
+    transform: translateX(
+      calc(
+        max(1070px, 100vw) / 2 - calc(1070px / 2)
+      )
+    );
+  }
 }
 
 @keyframes scroll {

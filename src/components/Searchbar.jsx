@@ -5,11 +5,9 @@ import { phoneFam } from "../assets";
 import { useDebounce } from "../hooks/useDebounce";
 import { SearchLinks } from "./submenucontent/SearchLinks";
 import { DefaultSearchResult } from "./submenucontent/DefaultSearchResult";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { GrandCardResult } from "./submenucontent/GrandCardResult";
 
-export const Searchbar = ({ onSearchResult, click }) => {
+export const Searchbar = ({ onSearchResult, click, onLeave }) => {
   const searchInputRef = useRef(null);
   const linksRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -23,19 +21,6 @@ export const Searchbar = ({ onSearchResult, click }) => {
     setSearchTerm(term);
   };
 
-  useGSAP(
-    () => {
-      gsap.to(".pt", {
-        opacity: 1,
-        x: 0,
-        ease: "power3.out",
-        duration: 0.5,
-      });
-    },
-
-    { dependencies: [searchResults] }
-  );
-
   useEffect(() => {
     if (debouncedSearchTerm.trim() === "") {
       setSearchResults([]);
@@ -43,20 +28,26 @@ export const Searchbar = ({ onSearchResult, click }) => {
       return;
     }
 
-    const results = phoneFam.flatMap(family => 
-      family.stock.flatMap(item => {
+    const results = phoneFam.flatMap((family) =>
+      family.stock.flatMap((item) => {
         const product = Object.values(item)[0];
-        if (product.family_reference.toLowerCase().includes(debouncedSearchTerm.toLowerCase())) {
-          return [{
-            id: product.id,
-            img: product.img,
-            search_img: product.search_img,
-            family_reference: product.family_reference,
-            swatch: product.swatch,
-            price: product.price,
-            finance: product.finance,
-            buylink: product.buylink
-          }];
+        if (
+          product.family_reference
+            .toLowerCase()
+            .includes(debouncedSearchTerm.toLowerCase())
+        ) {
+          return [
+            {
+              id: product.id,
+              img: product.img,
+              search_img: product.search_img,
+              family_reference: product.family_reference,
+              swatch: product.swatch,
+              price: product.price,
+              finance: product.finance,
+              buylink: product.buylink,
+            },
+          ];
         }
         return [];
       })
@@ -103,7 +94,10 @@ export const Searchbar = ({ onSearchResult, click }) => {
         )}
       </div>
       {searchResults.length > 0 ? (
-        <GrandCardResult data={{ searchResults, searchTerm }} />
+        <GrandCardResult
+          data={{ searchResults, searchTerm }}
+          onLeave={onLeave}
+        />
       ) : null}
     </div>
   );

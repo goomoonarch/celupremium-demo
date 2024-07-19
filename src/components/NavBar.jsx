@@ -39,7 +39,7 @@ export const NavBar = () => {
         return <Politices />;
       case "SearchBar":
         return (
-          <Searchbar onSearchResult={handleSearchResults} click={searchClick} />
+          <Searchbar onSearchResult={handleSearchResults} click={searchClick} onLeave={handleMouseLeave} />
         );
       default:
         return null;
@@ -160,8 +160,8 @@ export const NavBar = () => {
 
   const handleMouseLeave = useCallback(() => {
     timeoutRef.current = setTimeout(() => {
-      setIsSubMenuVisible(!false);
-      setSearchBarView(!false);
+      setIsSubMenuVisible(false);
+      setSearchBarView(false);
       setIsSearchActive(false);
       setActiveItem("");
     }, 100);
@@ -204,7 +204,11 @@ export const NavBar = () => {
         style={{ backgroundColor: "white" }}
       >
         <div className="flex justify-between items-center w-[70%]">
-          <a href="/" onMouseEnter={handleMouseLeave}>
+          <a
+            onClick={() => navigate("/")}
+            onMouseEnter={handleMouseLeave}
+            className=" cursor-pointer"
+          >
             <img src={celupremiumLogo} alt="cp_logo" className="w-[50px]" />
           </a>
           <div className="grid grid-cols-[100px_100px_100px_100px] gap-6 text-center items-center">
@@ -240,7 +244,7 @@ export const NavBar = () => {
       </nav>
       <div
         ref={subMenuRef}
-        className="absolute w-full z-20 overflow-hidden bg-[#F5F5F7]"
+        className="absolute w-full z-30 overflow-hidden bg-[#F5F5F7]"
         style={{ height: 0, opacity: 0 }}
       >
         <div
@@ -256,7 +260,7 @@ export const NavBar = () => {
         id="blur"
         ref={blurRef}
         onMouseEnter={handleMouseLeave}
-        className="absolute z-10 overflow-hidden w-full backdrop-blur-[12px] bg-[#ffffff30]"
+        className="absolute z-20 overflow-hidden w-full h-full backdrop-blur-[12px] bg-[#ffffff30]"
         style={{ height: 0, opacity: 0 }}
       />
     </header>

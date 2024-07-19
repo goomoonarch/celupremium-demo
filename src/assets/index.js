@@ -30,6 +30,7 @@ import accesoriescarrouselinfo from "./data/landingAccesoriesCarrousel.json";
 import allstock from "./data/allStock.json";
 import defaultstock from "./data/defaultStock.json";
 import phonefamilies  from "./data/families.json";
+import probe_1 from "./data/probe_1.json";
 
 export const large_video = hvm;
 export const small_video = svm;
@@ -61,3 +62,4 @@ export const fa15 = i15phones;
 export const Pink1 = pink1;
 export const Pink5 = pink5;
 export const phoneFam = phonefamilies;
+export const probe1 = probe_1;

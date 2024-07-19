@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { CardResult } from "../CarResult";
 import gsap from "gsap";
 
-export const GrandCardResult = ({ data }) => {
+export const GrandCardResult = ({ data, onLeave }) => {
   const { searchResults, searchTerm } = data;
   useGSAP(
     () => {
@@ -14,7 +14,7 @@ export const GrandCardResult = ({ data }) => {
         duration: 0.25,
         stagger: 0.125,
       });
-      
+
       gsap.to(".card", {
         opacity: 1,
         scale: 1,
@@ -42,7 +42,7 @@ export const GrandCardResult = ({ data }) => {
             key={index}
             style={{ opacity: 0, transform: "scale(0.9)" }}
           >
-            <CardResult item={item} />
+            <CardResult item={item} onLeave={onLeave} />
           </div>
         ))}
       </div>

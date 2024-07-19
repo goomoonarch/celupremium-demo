@@ -17,14 +17,13 @@ const router = createBrowserRouter([
         element: <App />,
       },
       {
-        path: "buy-iphone",
+        path: "buyiphone/:slug/:variant?",
         element: <BuyDescription />,
       },
       {
         path: "iphone",
         element: <IPhone />,
       },
-      // Puedes agregar más rutas aquí según sea necesario
     ],
   },
 ]);
