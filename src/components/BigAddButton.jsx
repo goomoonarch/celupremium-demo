@@ -57,7 +57,7 @@ export const BigAddButton = () => {
           </clipPath>
         </defs>
       </svg>
-      <p className="text-[17px] font-medium translate-x-[28px]">Agregar</p>
+      <p className="text-[17px] font-medium translate-x-[28px] select-none">Agregar</p>
     </a>
   );
 };
