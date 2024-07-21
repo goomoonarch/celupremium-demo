@@ -604,6 +604,8 @@
               "backcameraimg": "/src/assets/images/iPhone_13_pink_back_focus_on_camera.png",
               "lateralimg": "/src/assets/images/pink_flat_edge.png",
               "dubleviewimg": "/src/assets/images/iPhone_13_pink_front_and_back.png",
+              "backBoxcontent": "/src/assets/images/iphone13_pink_back_box_content.png",
+              "case": "/src/assets/images/iphone13_pink_black_case.png",
               "stock": 2,
               "adtocartlink": ""
             },
@@ -621,7 +623,9 @@
               "lgfrontimg": "/src/assets/images/iPhone13_pink_front_photoStudio.png",
               "backcameraimg": "/src/assets/images/iPhone_13_pink_back_focus_on_camera.png",
               "lateralimg": "/src/assets/images/pink_flat_edge.png",
+              "backBoxcontent": "/src/assets/images/iphone13_pink_back_box_content.png",
               "dubleviewimg": "/src/assets/images/iPhone_13_pink_front_and_back.png",
+              "case": "/src/assets/images/iphone13_pink_black_case.png",
               "stock": 1,
               "adtocartlink": ""
             },
@@ -639,7 +643,9 @@
               "lgfrontimg": "/src/assets/images/iPhone13_pink_front_photoStudio.png",
               "backcameraimg": "/src/assets/images/iPhone_13_pink_back_focus_on_camera.png",
               "lateralimg": "/src/assets/images/pink_flat_edge.png",
+              "backBoxcontent": "/src/assets/images/iphone13_pink_back_box_content.png",
               "dubleviewimg": "/src/assets/images/iPhone_13_pink_front_and_back.png",
+              "case": "/src/assets/images/iphone13_pink_black_case.png",
               "stock": 0,
               "adtocartlink": ""
             },
@@ -671,6 +677,8 @@
               "backcameraimg": "/src/assets/images/iPhone_13_starlight_back_focus_on_camera.png",
               "lateralimg": "/src/assets/images/starlight_flat_edge.png",
               "dubleviewimg": "/src/assets/images/iPhone_13_starlight_front_and_back.png",
+              "backBoxcontent": "/src/assets/images/iphone13_starlight_back_box_content.png",
+              "case": "/src/assets/images/iphone13_starlight_black_case.png",
               "stock": 1,
               "adtocartlink": ""
             },
@@ -689,6 +697,8 @@
               "backcameraimg": "/src/assets/images/iPhone_13_starlight_back_focus_on_camera.png",
               "lateralimg": "/src/assets/images/starlight_flat_edge.png",
               "dubleviewimg": "/src/assets/images/iPhone_13_starlight_front_and_back.png",
+              "backBoxcontent": "/src/assets/images/iphone13_starlight_back_box_content.png",
+              "case": "/src/assets/images/iphone13_starlight_black_case.png",
               "stock": 2,
               "adtocartlink": ""
             },
@@ -707,6 +717,8 @@
               "backcameraimg": "/src/assets/images/iPhone_13_pink_back_focus_on_camera.png",
               "lateralimg": "/src/assets/images/starlight_flat_edge.png",
               "dubleviewimg": "/src/assets/images/iPhone_13_starlight_front_and_back.png",
+              "backBoxcontent": "/src/assets/images/iphone13_starlight_back_box_content.png",
+              "case": "/src/assets/images/iphone13_starlight_black_case.png",
               "stock": 0,
               "adtocartlink": ""
             },

@@ -33,6 +33,8 @@ import livephoto from "./images/livephotos2.png";
 import frontcameradeep from "./images/frontcamera_deep.png";
 import bluephonecramicshield from "./images/blue_ceramicshield.png";
 import g5conection from "./images/5g_conection.png";
+import lightning from "./images/lightning_cable_box_content.png";
+import poweradapter20 from "./images/20wpoweradapter_boxcontent.png";
 
 //--->Data
 import phonedetails from "./data/landingPhoneDetails.json";
@@ -85,3 +87,5 @@ export const livePhotos = livephoto;
 export const frontCameraDeep = frontcameradeep;
 export const bluePhoneCeramicShield = bluephonecramicshield;
 export const g5Conection = g5conection;
+export const lightningBoxContent = lightning;
+export const powerAdapter20 = poweradapter20;

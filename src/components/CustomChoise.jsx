@@ -8,6 +8,7 @@ import { useProductContext } from "../context/ProductContext";
 
 export const CustomChoise = () => {
   const {
+    isLoading,
     product,
     variant,
     selectedColor,
@@ -17,6 +18,10 @@ export const CustomChoise = () => {
     isColorInStock,
     isCapacityInStock,
   } = useProductContext();
+
+  if (isLoading) {
+    return <div>Cargando...</div>;
+  }
 
   if (!product || !variant) {
     return <div>Producto no encontrado o sin stock disponible</div>;
@@ -31,16 +36,16 @@ export const CustomChoise = () => {
       <h2 className="text-[20px] text-[#6E6E73] mb-4">
         usado como <span className="text-[#FF4B4F]">nuevo*</span>
       </h2>
-      <p className="text-[30px] font-medium">${variant.price} COP</p>
+      <p className="text-[30px] font-semibold text-[#FFCC00]">${variant.price} COP</p>
       <div className="flex flex-col text-[18px] text-[#6E6E73] leading-6 mb-2">
         <p className="">o hasta 12 cuotas</p>
         <p className="flex items-baseline">
           de ${variant.finance} COP al mes** con
-          <img src={addiLogo} alt="addi logo" className="h-[17px] ml-1" />
+          <img src={addiLogo} alt="addi logo" className="h-[17px] ml-[6px]" />
         </p>
       </div>
       <div className="text-[18px] flex items-baseline text-[#FFCC00] cursor-pointer">
-        Simula tu crédito aquí³
+        Simula tu crédito aquí<span className="ml-[3px]">³</span>
         <svg
           width="12"
           height="12"

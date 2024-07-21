@@ -2,7 +2,12 @@ import { useProductContext } from "../context/ProductContext";
 
 /* eslint-disable react/prop-types */
 export const GrandTitleDetailPhone = () => {
-  const { product, variant } = useProductContext();
+  const { isLoading, product, variant } = useProductContext();
+
+  if (isLoading) {
+    return <div>Cargando...</div>;
+  }
+  
   return (
     <div className="mt-[50px] mb-[30px] flex justify-between w-[1064px]">
       <div className="flex text-[32px] font-semibold w-fit ml-[5px]">

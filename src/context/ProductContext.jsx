@@ -11,10 +11,11 @@ export const useProductContext = () => useContext(ProductContext);
 export const ProductProvider = ({ children }) => {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedCapacity, setSelectedCapacity] = useState("");
-  const [product, setProduct] = useState("");
-  const [variant, setVariant] = useState("");
+  const [product, setProduct] = useState(null);
+  const [variant, setVariant] = useState(null);
 
   const getProductBySlug = (slug) => {
     for (let family of phoneFam) {
@@ -29,47 +30,43 @@ export const ProductProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const prod = getProductBySlug(slug);
-    if (prod) {
-      setProduct(prod);
-      const availableVariant = prod.allstockrefenreces.find((v) => v.stock > 0);
-      if (availableVariant) {
-        setVariant(availableVariant);
+    const loadProduct = async () => {
+      setIsLoading(true);
+      const prod = getProductBySlug(slug);
+      if (prod) {
+        setProduct(prod);
+        const availableVariant = prod.allstockrefenreces.find((v) => v.stock > 0);
+        if (availableVariant) {
+          setVariant(availableVariant);
+          setSelectedColor(availableVariant.choices.color);
+          setSelectedCapacity(availableVariant.choices.capacity);
+        }
       }
-    }
+      setIsLoading(false);
+    };
+
+    loadProduct();
   }, [slug]);
 
   useEffect(() => {
-    const prod = getProductBySlug(slug);
-    if (prod) {
-      setProduct(prod);
-      const availableVariant = prod.allstockrefenreces.find((v) => v.stock > 0);
-      if (availableVariant) {
-        setVariant(availableVariant);
-        setSelectedColor(availableVariant.choices.color);
-        setSelectedCapacity(availableVariant.choices.capacity);
-      }
-    }
-  }, [slug]);
-
-  useEffect(() => {
-    if (product && selectedColor && selectedCapacity) {
-      const variant = product.allstockrefenreces.find((v) => {
+    if (!isLoading && product && selectedColor && selectedCapacity) {
+      const newVariant = product.allstockrefenreces.find((v) => {
         return (
           v.choices.color === selectedColor &&
           v.choices.capacity === selectedCapacity
         );
       });
-      if (variant) {
-        setVariant(variant);
-        navigate(`/buyiphone/${product.slug}/${variant.slug}`, {
+      if (newVariant) {
+        setVariant(newVariant);
+        navigate(`/buyiphone/${product.slug}/${newVariant.slug}`, {
           replace: true,
         });
       }
     }
-  }, [selectedColor, selectedCapacity, product, navigate]);
+  }, [selectedColor, selectedCapacity, product, navigate, isLoading]);
 
   const handleColorSelect = (color) => {
+    if (!product) return;
     setSelectedColor(color);
     const availableCapacity = product.allstockrefenreces.find(
       (v) => v.choices.color === color && v.stock > 0
@@ -84,12 +81,14 @@ export const ProductProvider = ({ children }) => {
   };
 
   const isColorInStock = (color) => {
+    if (!product) return false;
     return product.allstockrefenreces.some(
       (v) => v.choices.color === color && v.stock > 0
     );
   };
 
   const isCapacityInStock = (capacity) => {
+    if (!product) return false;
     return product.allstockrefenreces.some(
       (v) =>
         v.choices.color === selectedColor &&
@@ -101,6 +100,7 @@ export const ProductProvider = ({ children }) => {
   return (
     <ProductContext.Provider
       value={{
+        isLoading,
         product,
         setProduct,
         variant,
