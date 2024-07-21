@@ -5,9 +5,17 @@
 @layer base {
   :root {
     --container-size: 1200px;
+    --container-size-small: 1064px;
   }
 }
-
+.slide-center-card {
+  transform: translateX(
+    calc(
+      max(var(--container-size-small), 100vw) / 2 -
+        calc(var(--container-size-small) / 2)
+    )
+  );
+}
 @layer utilities {
   .slide-center-text {
     transform: translateX(
@@ -126,13 +134,15 @@
 
 .custom-list-item-star,
 .custom-list-item-doublestar,
-.custom-list-item-number {
+.custom-list-item-number,
+.custom-list-item-number-four {
   position: relative;
 }
 
 .custom-list-item-star::before,
 .custom-list-item-doublestar::before,
-.custom-list-item-number::before {
+.custom-list-item-number::before,
+.custom-list-item-number-four::before {
   position: absolute;
   left: 0;
   width: 20px;
@@ -150,4 +160,8 @@
 
 .custom-list-item-number::before {
   content: "3.";
+}
+
+.custom-list-item-number-four::before {
+  content: "4.";
 }

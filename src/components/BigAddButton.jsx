@@ -23,7 +23,7 @@ export const BigAddButton = () => {
     <a
       ref={addReff}
       id="addbutton"
-      className="abutton flex items-center p-[8px] w-[118px] h-[44px] rounded-[12px] text-[color] font-medium border-2 border-[color] transition-all ease-out duration-300 cursor-pointer"
+      className="abutton flex items-center p-[8px] w-[122px] h-[44px] rounded-[12px] text-[color] font-medium border-2 border-[color] transition-all ease-out duration-300 cursor-pointer"
       style={{
         borderColor: bcolor,
         color: isHovered ? "white" : bcolor,
@@ -57,7 +57,7 @@ export const BigAddButton = () => {
           </clipPath>
         </defs>
       </svg>
-      <p className="text-[17px] font-medium translate-x-[28px] select-none">Agregar</p>
+      <p className="text-[17px] font-medium translate-x-[30px] select-none">Agregar</p>
     </a>
   );
 };
