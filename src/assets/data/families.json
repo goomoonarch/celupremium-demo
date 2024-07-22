@@ -609,12 +609,43 @@
             {
               "id": "battery",
               "svg": "/src/assets/images/iphone13specs/battery100percent.svg",
+              "description": ["Hasta 19 horas de", "reproducción de video"]
+            },
+            {
+              "id": "sos",
+              "svg": "/src/assets/images/iphone13specs/sos.svg",
+              "description": ["Emergencia SOS"]
+            },
+            {
+              "id": "lightning",
+              "svg": "/src/assets/images/iphone13specs/lighting_icon.svg",
+              "description": ["Lightning", "Compatible con USB2"]
+            },
+            {
+              "id": "faceid",
+              "svg": "/src/assets/images/iphone13specs/face_id_icon.svg",
+              "description": ["Face ID"]
+            },
+            {
+              "id": "5gicon",
+              "svg": "/src/assets/images/iphone13specs/5G_icon.svg",
+              "description": ["Redes 5G ultrarrápidas⁷"]
+            },
+            {
+              "id": "ceramicshield",
+              "svg": "/src/assets/images/iphone13specs/ceramic_shield_icon.svg",
               "description": [
-                "Hasta 19 horas de",
-                "reproducción de video"
+                "Parte delantera con",
+                "Ceramic Shield, más",
+                "resistente que cualquier",
+                "otro smartphone"
               ]
+            },
+            {
+              "id": "ip68",
+              "svg": "/src/assets/images/iphone13specs/IP68.svg",
+              "description": ["Resistenci al agua hasta", "6 metros de profundidad", "durante un máximo", "30 minutos⁸"]
             }
-
           ],
           "allstockrefenreces": [
             {

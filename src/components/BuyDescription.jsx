@@ -24,10 +24,10 @@ export const BuyDescription = () => {
         Características.<span className="text-[#6E6E73]">⁵</span>
       </p>
       <Carrousel />
-      <p className="slide-center-card text-[26px] font-semibold text-[#1d1d1f] mb-8 w-fit">
+      <p className="slide-center-card text-[26px] font-semibold text-[#1d1d1f] mb-0 w-fit">
         Espeficicaciones.
       </p>
-      <div className="flex flex-col flex-wrap font-inter items-center">
+      <div className="flex flex-col flex-wrap font-inter items-center mb-2">
         <SpecsCarrousel />
       </div>
       <p className="slide-center-card text-[26px] font-semibold text-[#1d1d1f] mb-4 w-fit">
