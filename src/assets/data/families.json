@@ -575,6 +575,47 @@
             "red": "/src/assets/swatch_colors/diferential/iphone13_red_swatch_circle.png"
           },
           "capacities": [128, 256, 512],
+          "specs": [
+            {
+              "id": "61px",
+              "svg": "/src/assets/images/iphone13specs/6.1”.svg",
+              "description": ["Pantalla super", "Retina XDR⁶"]
+            },
+            {
+              "id": "16cores",
+              "svg": "/src/assets/images/iphone13specs/icon_A15.svg",
+              "description": [
+                "Chip A15 Bionic",
+                "CPU de 6 núcleos",
+                "GPU de 4 núcleos",
+                "Neural Engine de 16 núcleos"
+              ]
+            },
+            {
+              "id": "opticzoom",
+              "svg": "/src/assets/images/iphone13specs/icon_optical_zoom.svg",
+              "description": ["Opciones de", "Zoom óptico"]
+            },
+            {
+              "id": "duallens",
+              "svg": "/src/assets/images/iphone13specs/icon_iphone_dual2_lens.svg",
+              "description": [
+                "Sistemas de dos",
+                "cámaras",
+                "Gran angular de 12MP",
+                "Ultra gran angular"
+              ]
+            },
+            {
+              "id": "battery",
+              "svg": "/src/assets/images/iphone13specs/battery100percent.svg",
+              "description": [
+                "Hasta 19 horas de",
+                "reproducción de video"
+              ]
+            }
+
+          ],
           "allstockrefenreces": [
             {
               "choices": { "color": "blue", "capacity": 128 },

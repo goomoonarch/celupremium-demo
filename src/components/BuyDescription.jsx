@@ -7,6 +7,7 @@ import { GrandTitleDetailPhone } from "./GrandTitleDetailPhone";
 import { ProductProvider } from "../context/ProductContext";
 import { BoxContent } from "./BoxContent";
 import { AdvicesN2 } from "./AdvicesN2";
+import { SpecsCarrousel } from "./SpecsCarrousel";
 
 export const BuyDescription = () => {
   return (
@@ -26,8 +27,8 @@ export const BuyDescription = () => {
       <p className="slide-center-card text-[26px] font-semibold text-[#1d1d1f] mb-8 w-fit">
         Espeficicaciones.
       </p>
-      <div className="flex flex-col items-center">
-        <div className="w-[1050px] h-[200px]"></div>
+      <div className="flex flex-col flex-wrap font-inter items-center">
+        <SpecsCarrousel />
       </div>
       <p className="slide-center-card text-[26px] font-semibold text-[#1d1d1f] mb-4 w-fit">
         Contenido de la caja.
