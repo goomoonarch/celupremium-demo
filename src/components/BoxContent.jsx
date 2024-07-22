@@ -7,7 +7,7 @@ export const BoxContent = () => {
     return <div>Cargando...</div>;
   }
   return (
-    <div className="flex justify-center font-inter text-[20px] text-[#1d1d1f] mb-10 scale-90">
+    <div className="flex justify-center font-inter text-[20px] text-[#1d1d1f] mb-10 scale-[90%]">
       <div className="flex w-[1050px] h-[500px] bg-[#FAFAFC] rounded-[16px] overflow-hidden px-[16px]">
         <div
           id="backviewselected"
