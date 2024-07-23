@@ -7,10 +7,15 @@ import { ProductProvider } from "../context/ProductContext";
 import { BoxContent } from "./BoxContent";
 import { AdvicesN2 } from "./AdvicesN2";
 import { SpecsCarrousel } from "./SpecsCarrousel";
-import { useScrollTitleAnimation } from "../hooks/useScrollTitleAnimation ";
+import { useUnifiedAnimation } from "../hooks/useUnifiedAnimation ";
+import { useRef } from "react";
+// ... otros imports ...
 
 export const BuyDescription = () => {
-  const { addTitleRef } = useScrollTitleAnimation();
+  const { addItemRef } = useUnifiedAnimation("fadeUp");
+  const caracteristicasTitleRef = useRef(null);
+  const especificacionesTitleRef = useRef(null);
+  const contenidoTitleRef = useRef(null);
 
   return (
     <ProductProvider>
@@ -23,29 +28,41 @@ export const BuyDescription = () => {
         <AdvicesN1 />
       </div>
       <p
-        ref={addTitleRef}
+        ref={(el) => {
+          addItemRef(el);
+          caracteristicasTitleRef.current = el;
+        }}
+        id="caracteristicas-title"
         className="slide-center-card text-[30px] font-semibold text-[#1d1d1f] mb-8 w-fit"
       >
         Características.<span className="text-[#6E6E73]">⁵</span>
       </p>
-      <Carrousel />
+      <Carrousel triggerRef={caracteristicasTitleRef} />
       <p
-        ref={addTitleRef}
+        ref={(el) => {
+          addItemRef(el);
+          especificacionesTitleRef.current = el;
+        }}
+        id="especificaciones-title"
         className="slide-center-card text-[30px] font-semibold text-[#1d1d1f] mb-2 w-fit"
       >
         Espeficicaciones.
       </p>
       <div className="flex flex-col flex-wrap font-inter items-center mb-8">
-        <SpecsCarrousel />
+        <SpecsCarrousel triggerRef={especificacionesTitleRef} />
       </div>
       <p
-        ref={addTitleRef}
+        ref={(el) => {
+          addItemRef(el);
+          contenidoTitleRef.current = el;
+        }}
+        id="contenido-title"
         className="slide-center-card text-[30px] font-semibold text-[#1d1d1f] mb-2 w-fit"
       >
         Contenido de la caja.
       </p>
       <div className="flex flex-col flex-wrap font-inter items-center">
-        <BoxContent />
+        <BoxContent triggerRef={contenidoTitleRef} />
         <AdvicesN2 />
       </div>
     </ProductProvider>

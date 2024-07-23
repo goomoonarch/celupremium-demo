@@ -1,13 +1,18 @@
+/* eslint-disable react/prop-types */
 import { useProductContext } from "../context/ProductContext";
-import { useSpecsCarrouselAnimation } from "../hooks/useSpecsCarrouselAnimation ";
+import { useUnifiedAnimation } from "../hooks/useUnifiedAnimation ";
 import { ButtonSet } from "./ButtonSet";
 import { useRef } from "react";
 
 const bcolor = "#1d1d1f";
 
-export const SpecsCarrousel = () => {
+export const SpecsCarrousel = ({ triggerRef }) => {
   const { product, isLoading } = useProductContext();
-  const { carouselRef, addItemRef } = useSpecsCarrouselAnimation([product])
+  const { containerRef, addItemRef } = useUnifiedAnimation(
+    "specsFadeUp",
+    [product],
+    triggerRef
+  );
   const slideRef = useRef();
 
   if (isLoading) {
@@ -21,7 +26,7 @@ export const SpecsCarrousel = () => {
         className="absolute inset-0 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
       >
         <ul
-          ref={carouselRef}
+          ref={containerRef}
           className="flex w-max scale-[85%] pr-[50px] translate-x-[-60px]"
         >
           {product.specs.map((list) => (

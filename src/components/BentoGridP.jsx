@@ -29,7 +29,7 @@ export const BentoGridP = () => {
   };
 
   if (isLoading) {
-    return <div>Cargando...</div>;
+    return null;
   }
 
   return (

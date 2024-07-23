@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   sunMax,
   infoXDR,
@@ -11,18 +12,19 @@ import {
   bluePhoneCeramicShield,
   g5Conection,
 } from "../assets";
+import { useUnifiedAnimation } from "../hooks/useUnifiedAnimation ";
 import { BottonButtonSet } from "./BottonButtonSet";
-import { useCarrouselAnimation } from "../hooks/useCarrouselAnimation ";
 
 const bcolor = "#E2E2E5";
 
-export const Carrousel = () => {
-  const { carouselRef, addItemRef } = useCarrouselAnimation();
+export const Carrousel = ({ triggerRef }) => {
+  console.log(triggerRef);
+  const { containerRef, addItemRef } = useUnifiedAnimation('carouselFadeUp', [], triggerRef);
 
   return (
     <div className="relative mb-10">
       <ul
-        ref={carouselRef}
+        ref={containerRef}
         className="flex overflow-x-auto scrollbar-hide h-[560px] items-center snap-x snap-mandatory"
       >
         {/**SuperRetina */}
@@ -248,7 +250,7 @@ export const Carrousel = () => {
       <div className="flex justify-end items-center mx-[174px] my-[16px]">
         <BottonButtonSet
           set={{
-            slideRef: carouselRef,
+            slideRef: containerRef,
             bcolor: bcolor,
           }}
         />

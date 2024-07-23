@@ -20,7 +20,7 @@ export const CustomChoise = () => {
   } = useProductContext();
 
   if (isLoading) {
-    return <div>Cargando...</div>;
+    return null;
   }
 
   if (!product || !variant) {
