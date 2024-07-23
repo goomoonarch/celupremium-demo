@@ -8,15 +8,16 @@
     --container-size-small: 1064px;
   }
 }
-.slide-center-card {
-  transform: translateX(
-    calc(
-      max(var(--container-size-small), 100vw) / 2 -
-        calc(var(--container-size-small) / 2)
-    )
-  );
-}
+
 @layer utilities {
+  .slide-center-card {
+    transform: translateX(
+      calc(
+        max(var(--container-size-small), 100vw) / 2 -
+          calc(var(--container-size-small) / 2)
+      )
+    );
+  }
   .slide-center-text {
     transform: translateX(
       calc(
