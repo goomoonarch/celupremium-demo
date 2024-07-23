@@ -1,14 +1,20 @@
 /* eslint-disable react/prop-types */
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
+import { useNavigate } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export const MainCarrousel = ({ references }) => {
+  const navigate = useNavigate();
   const sliderRef = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoverU, setHoverU] = useState(true);
+
+  const handleCardClick = (slug) => {
+    navigate(`/buyiphone/${slug}`);
+  };
 
   const checkScrollPosition = () => {
     if (sliderRef.current) {
@@ -61,6 +67,8 @@ export const MainCarrousel = ({ references }) => {
     { dependencies: [references], revertOnUpdate: true }
   );
 
+  
+
   return (
     <div className="relative mb-10">
       <ul
@@ -70,6 +78,7 @@ export const MainCarrousel = ({ references }) => {
         onMouseOut={handleMouseOut}
       >
         {references.map((list) => (
+          console.log(list),
           <li
             key={list.id}
             id="slider"
@@ -78,6 +87,7 @@ export const MainCarrousel = ({ references }) => {
             <div
               id="article"
               className="cursor-pointer shrink-0 slide-center relative"
+              onClick={() => handleCardClick(list.slug)}
             >
               <div className="transition-transform duration-300 hover:scale-[1.016] ease-custom w-[300px] h-[480px] bg-white rounded-[20px] p-[30px]">
                 <div className="flex flex-col items-center justify-center">

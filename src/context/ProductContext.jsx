@@ -9,8 +9,9 @@ const ProductContext = createContext();
 export const useProductContext = () => useContext(ProductContext);
 
 export const ProductProvider = ({ children }) => {
-  const { slug } = useParams();
+  const { slug, variant: variantSlug } = useParams();
   const navigate = useNavigate();
+
   const [isLoading, setIsLoading] = useState(true);
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedCapacity, setSelectedCapacity] = useState("");
@@ -35,18 +36,26 @@ export const ProductProvider = ({ children }) => {
       const prod = getProductBySlug(slug);
       if (prod) {
         setProduct(prod);
-        const availableVariant = prod.allstockrefenreces.find((v) => v.stock > 0);
-        if (availableVariant) {
-          setVariant(availableVariant);
-          setSelectedColor(availableVariant.choices.color);
-          setSelectedCapacity(availableVariant.choices.capacity);
+        let targetVariant;
+        if (variantSlug) {
+          targetVariant = prod.allstockrefenreces.find(
+            (v) => v.slug === variantSlug
+          );
+        }
+        if (!targetVariant) {
+          targetVariant = prod.allstockrefenreces.find((v) => v.stock > 0);
+        }
+        if (targetVariant) {
+          setVariant(targetVariant);
+          setSelectedColor(targetVariant.choices.color);
+          setSelectedCapacity(targetVariant.choices.capacity);
         }
       }
       setIsLoading(false);
     };
 
     loadProduct();
-  }, [slug]);
+  }, [slug, variantSlug]);
 
   useEffect(() => {
     if (!isLoading && product && selectedColor && selectedCapacity) {

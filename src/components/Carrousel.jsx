@@ -12,13 +12,23 @@ import {
   bluePhoneCeramicShield,
   g5Conection,
 } from "../assets";
+import { useProductContext } from "../context/ProductContext";
 import { useUnifiedAnimation } from "../hooks/useUnifiedAnimation ";
 import { BottonButtonSet } from "./BottonButtonSet";
 
 const bcolor = "#E2E2E5";
 
 export const Carrousel = ({ triggerRef }) => {
-  const { containerRef, addItemRef } = useUnifiedAnimation('carouselFadeUp', [], triggerRef);
+  const { isLoading } = useProductContext();
+  const { containerRef, addItemRef } = useUnifiedAnimation(
+    "carouselFadeUp",
+    [],
+    triggerRef
+  );
+
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <div className="relative mb-0">
@@ -31,8 +41,9 @@ export const Carrousel = ({ triggerRef }) => {
           ref={addItemRef}
           id="superretinadisplay"
           className="snap-start snap-always mr-6"
+          style={{ opacity: 0, transform: "translateY(50px)" }}
         >
-          <div className="bg-black w-[312px] h-[540px] rounded-[30px] p-[36px] cursor-default shrink-0 slide-center-card relative overflow-hidden">
+          <div className="bg-black w-[312px] h-[540px] rounded-[20px] p-[36px] cursor-default shrink-0 slide-center-card relative overflow-hidden">
             <p className="text-white">Pantalla</p>
             <div className="flex items-end mb-[4px]">
               <p className="text-[#4681ED] text-[26px] font-semibold leading-8 w-[180px]">
@@ -52,6 +63,7 @@ export const Carrousel = ({ triggerRef }) => {
           ref={addItemRef}
           id="cinemode"
           className="mr-6 snap-start snap-always"
+          style={{ opacity: 0, transform: "translateY(50px)" }}
         >
           <div className="bg-[#F5F5F7] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative">
             <img
@@ -76,6 +88,7 @@ export const Carrousel = ({ triggerRef }) => {
           ref={addItemRef}
           id="nightmode"
           className="mr-6 snap-start snap-always"
+          style={{ opacity: 0, transform: "translateY(50px)" }}
         >
           <div
             className="w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative"
@@ -101,6 +114,7 @@ export const Carrousel = ({ triggerRef }) => {
           ref={addItemRef}
           id="batteryefficiency"
           className="mr-6 snap-start snap-always"
+          style={{ opacity: 0, transform: "translateY(50px)" }}
         >
           <div
             className="w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative"
@@ -127,6 +141,7 @@ export const Carrousel = ({ triggerRef }) => {
           ref={addItemRef}
           id="livephotostyles"
           className="mr-6 snap-start snap-always"
+          style={{ opacity: 0, transform: "translateY(50px)" }}
         >
           <div className="bg-[#F5F5F7] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative">
             <p className="text-[#2D2E3A] font-semibold">Cámara</p>
@@ -147,6 +162,7 @@ export const Carrousel = ({ triggerRef }) => {
           ref={addItemRef}
           id="proccesor"
           className="mr-6 snap-start snap-always"
+          style={{ opacity: 0, transform: "translateY(50px)" }}
         >
           <div className="bg-[#13223A] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative ">
             <p className="text-white">CPU</p>
@@ -177,6 +193,7 @@ export const Carrousel = ({ triggerRef }) => {
           ref={addItemRef}
           id="deepCamera"
           className="mr-6 snap-start snap-always"
+          style={{ opacity: 0, transform: "translateY(50px)" }}
         >
           <div className="bg-[#35283C] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative ">
             <p className="text-white">Cámara</p>
@@ -197,6 +214,7 @@ export const Carrousel = ({ triggerRef }) => {
           ref={addItemRef}
           id="ceramicShield"
           className="mr-6 snap-start snap-always"
+          style={{ opacity: 0, transform: "translateY(50px)" }}
         >
           <div className="bg-[#0C3139] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative">
             <p className="text-white">Hardware</p>
@@ -229,6 +247,7 @@ export const Carrousel = ({ triggerRef }) => {
           ref={addItemRef}
           id="5Gconectivity"
           className="mr-[700px] snap-start snap-always"
+          style={{ opacity: 0, transform: "translateY(50px)" }}
         >
           <div className="bg-[#12203B] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative ">
             <p className="text-white">Conectividad</p>

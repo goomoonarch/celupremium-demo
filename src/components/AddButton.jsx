@@ -23,7 +23,7 @@ export const AddButton = ({ bcolor }) => {
     <a
       ref={addReff}
       id="addbutton"
-      className="abutton flex items-center p-[8px] w-[100px] h-[32px] rounded-[9px] text-[color] font-medium border-2 border-[color] transition-all ease-out duration-300"
+      className="cursor-pointer abutton flex items-center p-[8px] w-[100px] h-[32px] rounded-[9px] text-[color] font-medium border-2 border-[color] transition-all ease-out duration-300"
       style={{
         borderColor: bcolor,
         color: isHovered ? "white" : bcolor,

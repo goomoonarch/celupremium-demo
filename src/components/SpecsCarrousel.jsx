@@ -16,7 +16,7 @@ export const SpecsCarrousel = ({ triggerRef }) => {
   const slideRef = useRef();
 
   if (isLoading) {
-    return <div>Cargando...</div>;
+    return null;
   }
 
   return (
@@ -34,6 +34,7 @@ export const SpecsCarrousel = ({ triggerRef }) => {
               ref={addItemRef}
               key={list.id}
               className="flex-shrink-0 w-[216px] snap-center"
+              style={{ opacity: 0, transform: "translateY(50px)" }}
             >
               <div className="grid grid-rows-[90px_90px] gap-2">
                 <div className="flex justify-center items-end">

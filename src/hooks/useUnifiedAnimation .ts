@@ -50,15 +50,14 @@ export const useUnifiedAnimation = (
         case "specsFadeUp":
           const carouselTrigger = triggerRef?.current || container;
           if (carouselTrigger) {
-            gsap.fromTo(
+            gsap.to(
               items,
-              { opacity: 0, y: 50 },
               {
                 opacity: 1,
                 y: 0,
-                delay: 0.4,
-                duration: 0.8,
-                stagger: 0.3,
+                delay: 0.3,
+                duration: 0.6,
+                stagger: 0.25,
                 ease: "cubic-bezier(0.4, 0, 0.6, 1)",
                 scrollTrigger: {
                   trigger: carouselTrigger,
@@ -80,7 +79,7 @@ export const useUnifiedAnimation = (
                 opacity: 1,
                 y: 0,
                 duration: 0.8,
-                delay: 0.3,
+                delay: 0.25,
                 ease: "cubic-bezier(0.4, 0, 0.6, 1)",
                 scrollTrigger: {
                   trigger: boxContentTrigger,
@@ -97,12 +96,23 @@ export const useUnifiedAnimation = (
   }, [type, triggerRef]);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      animateItems();
-    });
+    let ctx: gsap.Context;
+
+    const initAnimation = () => {
+      ctx = gsap.context(() => {
+        animateItems();
+      });
+    };
+
+    // Usar un pequeño retraso para asegurar que los elementos estén cargados
+    const timeoutId = setTimeout(initAnimation, 100);
 
     return () => {
-      ctx.revert();
+      clearTimeout(timeoutId);
+      if (ctx) {
+        ctx.revert();
+      }
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, [animateItems, ...dependency]);
 

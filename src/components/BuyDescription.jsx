@@ -9,10 +9,11 @@ import { AdvicesN2 } from "./AdvicesN2";
 import { SpecsCarrousel } from "./SpecsCarrousel";
 import { useUnifiedAnimation } from "../hooks/useUnifiedAnimation ";
 import { useRef } from "react";
-// ... otros imports ...
+import { useOverviewAnimation } from "../hooks/useOverviewAnimation";
 
 export const BuyDescription = () => {
   const { addItemRef } = useUnifiedAnimation("fadeUp");
+  const { overviewRef } = useOverviewAnimation();
   const caracteristicasTitleRef = useRef(null);
   const especificacionesTitleRef = useRef(null);
   const contenidoTitleRef = useRef(null);
@@ -21,7 +22,7 @@ export const BuyDescription = () => {
     <ProductProvider>
       <div className="flex flex-col flex-wrap font-inter items-center">
         <GrandTitleDetailPhone />
-        <div className="flex mb-8">
+        <div ref={overviewRef} className="flex mb-8">
           <BentoGridP />
           <CustomChoise />
         </div>
