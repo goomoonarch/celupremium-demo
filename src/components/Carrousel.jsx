@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import {
   sunMax,
   infoXDR,
@@ -13,20 +12,26 @@ import {
   g5Conection,
 } from "../assets";
 import { BottonButtonSet } from "./BottonButtonSet";
+import { useCarrouselAnimation } from "../hooks/useCarrouselAnimation ";
 
 const bcolor = "#E2E2E5";
 
 export const Carrousel = () => {
-  const slideRef = useRef();
+  const { carouselRef, addItemRef } = useCarrouselAnimation();
+
   return (
     <div className="relative mb-10">
       <ul
-        ref={slideRef}
+        ref={carouselRef}
         className="flex overflow-x-auto scrollbar-hide h-[560px] items-center snap-x snap-mandatory"
       >
         {/**SuperRetina */}
-        <li id="superretinadisplay" className="snap-start snap-always mr-6">
-          <div className="bg-black w-[312px] h-[540px] rounded-[20px] p-[36px] cursor-default shrink-0 slide-center-card relative overflow-hidden">
+        <li
+          ref={addItemRef}
+          id="superretinadisplay"
+          className="snap-start snap-always mr-6"
+        >
+          <div className="bg-black w-[312px] h-[540px] rounded-[30px] p-[36px] cursor-default shrink-0 slide-center-card relative overflow-hidden">
             <p className="text-white">Pantalla</p>
             <div className="flex items-end mb-[4px]">
               <p className="text-[#4681ED] text-[26px] font-semibold leading-8 w-[180px]">
@@ -42,7 +47,11 @@ export const Carrousel = () => {
           </div>
         </li>
         {/**CinematicMode */}
-        <li id="cinemode" className="mr-6 snap-start snap-always">
+        <li
+          ref={addItemRef}
+          id="cinemode"
+          className="mr-6 snap-start snap-always"
+        >
           <div className="bg-[#F5F5F7] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative">
             <img
               src={cinematicMode}
@@ -62,7 +71,11 @@ export const Carrousel = () => {
           </div>
         </li>
         {/**NightMode */}
-        <li id="nightmode" className="mr-6 snap-start snap-always">
+        <li
+          ref={addItemRef}
+          id="nightmode"
+          className="mr-6 snap-start snap-always"
+        >
           <div
             className="w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative"
             style={{
@@ -83,7 +96,11 @@ export const Carrousel = () => {
           </div>
         </li>
         {/**Batery */}
-        <li id="batteryefficiency" className="mr-6 snap-start snap-always">
+        <li
+          ref={addItemRef}
+          id="batteryefficiency"
+          className="mr-6 snap-start snap-always"
+        >
           <div
             className="w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative"
             style={{
@@ -105,7 +122,11 @@ export const Carrousel = () => {
           </div>
         </li>
         {/**PhotoLiveStyles */}
-        <li id="livephotostyles" className="mr-6 snap-start snap-always">
+        <li
+          ref={addItemRef}
+          id="livephotostyles"
+          className="mr-6 snap-start snap-always"
+        >
           <div className="bg-[#F5F5F7] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative">
             <p className="text-[#2D2E3A] font-semibold">Cámara</p>
             <div className="flex items-end mb-[4px]">
@@ -121,7 +142,11 @@ export const Carrousel = () => {
           </div>
         </li>
         {/**Proccesador */}
-        <li id="proccesor" className="mr-6 snap-start snap-always">
+        <li
+          ref={addItemRef}
+          id="proccesor"
+          className="mr-6 snap-start snap-always"
+        >
           <div className="bg-[#13223A] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative ">
             <p className="text-white">CPU</p>
             <div className="flex items-end mb-2">
@@ -147,7 +172,11 @@ export const Carrousel = () => {
           </div>
         </li>
         {/**DeepCamera */}
-        <li id="deepCamera" className="mr-6 snap-start snap-always">
+        <li
+          ref={addItemRef}
+          id="deepCamera"
+          className="mr-6 snap-start snap-always"
+        >
           <div className="bg-[#35283C] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative ">
             <p className="text-white">Cámara</p>
             <div className="flex items-end mb-[4px]">
@@ -163,7 +192,11 @@ export const Carrousel = () => {
           </div>
         </li>
         {/**CeramicShield */}
-        <li id="ceramicShield" className="mr-6 snap-start snap-always">
+        <li
+          ref={addItemRef}
+          id="ceramicShield"
+          className="mr-6 snap-start snap-always"
+        >
           <div className="bg-[#0C3139] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative">
             <p className="text-white">Hardware</p>
             <div className="flex items-end mb-2">
@@ -191,7 +224,11 @@ export const Carrousel = () => {
           </div>
         </li>
         {/**5G conectivity */}
-        <li id="5Gconectivity" className="mr-[700px] snap-start snap-always">
+        <li
+          ref={addItemRef}
+          id="5Gconectivity"
+          className="mr-[700px] snap-start snap-always"
+        >
           <div className="bg-[#12203B] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative ">
             <p className="text-white">Conectividad</p>
             <div className="flex items-end mb-[4px]">
@@ -211,7 +248,7 @@ export const Carrousel = () => {
       <div className="flex justify-end items-center mx-[174px] my-[16px]">
         <BottonButtonSet
           set={{
-            slideRef: slideRef,
+            slideRef: carouselRef,
             bcolor: bcolor,
           }}
         />

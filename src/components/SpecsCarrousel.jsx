@@ -1,11 +1,13 @@
-import { useRef } from "react";
 import { useProductContext } from "../context/ProductContext";
+import { useSpecsCarrouselAnimation } from "../hooks/useSpecsCarrouselAnimation ";
 import { ButtonSet } from "./ButtonSet";
+import { useRef } from "react";
 
 const bcolor = "#1d1d1f";
 
 export const SpecsCarrousel = () => {
   const { product, isLoading } = useProductContext();
+  const { carouselRef, addItemRef } = useSpecsCarrouselAnimation([product])
   const slideRef = useRef();
 
   if (isLoading) {
@@ -18,9 +20,16 @@ export const SpecsCarrousel = () => {
         ref={slideRef}
         className="absolute inset-0 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
       >
-        <ul className="flex w-max scale-[85%] pr-[50px] translate-x-[-60px]">
+        <ul
+          ref={carouselRef}
+          className="flex w-max scale-[85%] pr-[50px] translate-x-[-60px]"
+        >
           {product.specs.map((list) => (
-            <li key={list.id} className="flex-shrink-0 w-[210px] snap-center">
+            <li
+              ref={addItemRef}
+              key={list.id}
+              className="flex-shrink-0 w-[210px] snap-center"
+            >
               <div className="grid grid-rows-[90px_90px] gap-2">
                 <div className="flex justify-center items-end">
                   <img src={list.svg} alt={list.id} />
