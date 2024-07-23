@@ -18,7 +18,6 @@ import { BottonButtonSet } from "./BottonButtonSet";
 const bcolor = "#E2E2E5";
 
 export const Carrousel = ({ triggerRef }) => {
-  console.log(triggerRef);
   const { containerRef, addItemRef } = useUnifiedAnimation('carouselFadeUp', [], triggerRef);
 
   return (

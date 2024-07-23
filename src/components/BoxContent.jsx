@@ -1,13 +1,21 @@
+/* eslint-disable react/prop-types */
 import { lightningBoxContent, powerAdapter20 } from "../assets";
 import { useProductContext } from "../context/ProductContext";
+import { useUnifiedAnimation } from "../hooks/useUnifiedAnimation ";
 
-export const BoxContent = () => {
+export const BoxContent = ({ triggerRef }) => {
   const { variant, isLoading } = useProductContext();
+  const { containerRef } = useUnifiedAnimation("fadeUp", [variant], triggerRef);
+
   if (isLoading) {
-    return <div>Cargando...</div>;
+    return null;
   }
+
   return (
-    <div className="flex justify-center font-inter text-[20px] text-[#1d1d1f] mb-10 scale-[90%]">
+    <div
+      ref={containerRef}
+      className="flex justify-center font-inter text-[20px] text-[#1d1d1f] mb-10 scale-[90%] opacity-0"
+    >
       <div className="flex w-[1050px] h-[500px] bg-[#FAFAFC] rounded-[16px] overflow-hidden px-[16px]">
         <div
           id="backviewselected"
@@ -40,10 +48,7 @@ export const BoxContent = () => {
           </div>
           <img src={powerAdapter20} alt="20wadapter" />
         </div>
-        <div
-          id="case13"
-          className="flex flex-col items-center w-[243px]"
-        >
+        <div id="case13" className="flex flex-col items-center w-[243px]">
           <div className="h-[80px] absolute translate-y-[38px]">
             <p>Case de silicona⁹</p>
           </div>

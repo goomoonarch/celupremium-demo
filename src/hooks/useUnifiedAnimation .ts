@@ -30,7 +30,7 @@ export const useUnifiedAnimation = (
               {
                 opacity: 1,
                 y: 0,
-                duration: 0.8,
+                duration: 0.6,
                 ease: "cubic-bezier(0.4, 0, 0.6, 1)",
                 scrollTrigger: {
                   trigger: item,
@@ -49,11 +49,11 @@ export const useUnifiedAnimation = (
           if (triggerElement) {
             gsap.fromTo(
               items,
-              { opacity: 0, y: 50 },
+              { opacity: 0, y: 30 },
               {
                 opacity: 1,
                 y: 0,
-                duration: 0.8,
+                duration: 0.6,
                 stagger: 0.2,
                 ease: "cubic-bezier(0.4, 0, 0.6, 1)",
                 scrollTrigger: {
