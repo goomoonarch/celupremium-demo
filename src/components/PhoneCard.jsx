@@ -11,7 +11,9 @@ export const PhoneCard = ({ arg: { list, bcolor } }) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate(`/buyiphone/iphone13/${list.slug}`);
+    if (list.stock > 0) {
+      navigate(`/buyiphone/iphone13/${list.slug}`);
+    } else return;
   };
 
   useGSAP(
@@ -37,10 +39,7 @@ export const PhoneCard = ({ arg: { list, bcolor } }) => {
       id="slider"
       className="snap-start snap-always mr-6 last:mr-[50px]"
     >
-      <div
-        id="article"
-        className="slide-center shrink-0 relative"
-      >
+      <div id="article" className="slide-center shrink-0 relative">
         <div className="transition-transform duration-300 hover:scale-[1.03] ease-custom w-[300px] h-[480px] bg-white rounded-[20px] p-[30px]">
           <div className="cursor-pointer" onClick={handleCardClick}>
             <div className="flex flex-col items-center justify-center">

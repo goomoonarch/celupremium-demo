@@ -78,7 +78,6 @@ export const MainCarrousel = ({ references }) => {
         onMouseOut={handleMouseOut}
       >
         {references.map((list) => (
-          console.log(list),
           <li
             key={list.id}
             id="slider"

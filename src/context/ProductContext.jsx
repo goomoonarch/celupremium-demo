@@ -5,7 +5,6 @@ import { phoneFam } from "../assets";
 
 const ProductContext = createContext();
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useProductContext = () => useContext(ProductContext);
 
 export const ProductProvider = ({ children }) => {
@@ -30,42 +29,57 @@ export const ProductProvider = ({ children }) => {
     return null;
   };
 
+  const findValidVariant = (variants, targetSlug = null) => {
+    // Primero, busca una variante que coincida con el slug y tenga stock > 0
+    if (targetSlug) {
+      const matchingVariant = variants.find(
+        (v) => v.slug === targetSlug && v.stock > 0
+      );
+      if (matchingVariant) return matchingVariant;
+    }
+
+    // Si no se encuentra, busca la primera variante con stock > 0 y slug definido
+    return variants.find((v) => v.stock > 0 && v.slug);
+  };
+
   useEffect(() => {
     const loadProduct = async () => {
       setIsLoading(true);
       const prod = getProductBySlug(slug);
       if (prod) {
         setProduct(prod);
-        let targetVariant;
-        if (variantSlug) {
-          targetVariant = prod.allstockrefenreces.find(
-            (v) => v.slug === variantSlug
-          );
-        }
-        if (!targetVariant) {
-          targetVariant = prod.allstockrefenreces.find((v) => v.stock > 0);
-        }
+        const targetVariant = findValidVariant(
+          prod.allstockrefenreces,
+          variantSlug
+        );
         if (targetVariant) {
           setVariant(targetVariant);
           setSelectedColor(targetVariant.choices.color);
           setSelectedCapacity(targetVariant.choices.capacity);
+        } else {
+          // Si no se encuentra una variante válida, puedes manejar este caso
+          console.log("No se encontró una variante válida");
+          // Opcionalmente, podrías navegar a una página de error o a la página principal
+          // navigate('/');
         }
       }
       setIsLoading(false);
     };
 
     loadProduct();
-  }, [slug, variantSlug]);
+  }, [slug, variantSlug, navigate]);
 
   useEffect(() => {
     if (!isLoading && product && selectedColor && selectedCapacity) {
-      const newVariant = product.allstockrefenreces.find((v) => {
-        return (
-          v.choices.color === selectedColor &&
-          v.choices.capacity === selectedCapacity
-        );
-      });
-      if (newVariant) {
+      const newVariant = findValidVariant(
+        product.allstockrefenreces.filter(
+          (v) =>
+            v.choices.color === selectedColor &&
+            v.choices.capacity === selectedCapacity
+        )
+      );
+
+      if (newVariant && newVariant.slug) {
         setVariant(newVariant);
         navigate(`/buyiphone/${product.slug}/${newVariant.slug}`, {
           replace: true,
@@ -77,11 +91,11 @@ export const ProductProvider = ({ children }) => {
   const handleColorSelect = (color) => {
     if (!product) return;
     setSelectedColor(color);
-    const availableCapacity = product.allstockrefenreces.find(
-      (v) => v.choices.color === color && v.stock > 0
-    )?.choices.capacity;
-    if (availableCapacity) {
-      setSelectedCapacity(availableCapacity);
+    const availableVariant = product.allstockrefenreces.find(
+      (v) => v.choices.color === color && v.stock > 0 && v.slug
+    );
+    if (availableVariant) {
+      setSelectedCapacity(availableVariant.choices.capacity);
     }
   };
 
@@ -92,7 +106,7 @@ export const ProductProvider = ({ children }) => {
   const isColorInStock = (color) => {
     if (!product) return false;
     return product.allstockrefenreces.some(
-      (v) => v.choices.color === color && v.stock > 0
+      (v) => v.choices.color === color && v.stock > 0 && v.slug
     );
   };
 
@@ -102,7 +116,8 @@ export const ProductProvider = ({ children }) => {
       (v) =>
         v.choices.color === selectedColor &&
         v.choices.capacity === capacity &&
-        v.stock > 0
+        v.stock > 0 &&
+        v.slug
     );
   };
 

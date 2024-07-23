@@ -41,7 +41,7 @@ export const Carrousel = ({ triggerRef }) => {
           ref={addItemRef}
           id="superretinadisplay"
           className="snap-start snap-always mr-6"
-          style={{ opacity: 0, transform: "translateY(50px)" }}
+          style={{ opacity: 0, transform: "translateY(30px)" }}
         >
           <div className="bg-black w-[312px] h-[540px] rounded-[20px] p-[36px] cursor-default shrink-0 slide-center-card relative overflow-hidden">
             <p className="text-white">Pantalla</p>
