@@ -33,7 +33,7 @@ export const BuyDescription = () => {
           caracteristicasTitleRef.current = el;
         }}
         id="caracteristicas-title"
-        className="slide-center-card text-[30px] font-semibold text-[#1d1d1f] mb-8 w-fit"
+        className="slide-center-card text-[30px] font-semibold text-[#1d1d1f] w-fit"
       >
         Características.<span className="text-[#6E6E73]">⁵</span>
       </p>

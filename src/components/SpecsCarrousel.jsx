@@ -20,7 +20,7 @@ export const SpecsCarrousel = ({ triggerRef }) => {
   }
 
   return (
-    <div className="relative w-[1200px] h-[200px]">
+    <div className="relative w-[1200px] h-[220px]">
       <div
         ref={slideRef}
         className="absolute inset-0 overflow-x-auto scrollbar-hide snap-x snap-mandatory"

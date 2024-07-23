@@ -4,7 +4,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-type AnimationType = "fadeUp" | "carouselFadeUp" | "specsFadeUp";
+type AnimationType =
+  | "fadeUp"
+  | "carouselFadeUp"
+  | "specsFadeUp"
+  | "boxContentFadeUp";
 
 export const useUnifiedAnimation = (
   type: AnimationType,
@@ -20,7 +24,7 @@ export const useUnifiedAnimation = (
       (item): item is HTMLElement => item !== null
     );
 
-    if (items.length > 0) {
+    if (items.length > 0 || (type === "boxContentFadeUp" && container)) {
       switch (type) {
         case "fadeUp":
           items.forEach((item, index) => {
@@ -30,7 +34,7 @@ export const useUnifiedAnimation = (
               {
                 opacity: 1,
                 y: 0,
-                duration: 0.6,
+                duration: 0.8,
                 ease: "cubic-bezier(0.4, 0, 0.6, 1)",
                 scrollTrigger: {
                   trigger: item,
@@ -44,28 +48,48 @@ export const useUnifiedAnimation = (
           break;
         case "carouselFadeUp":
         case "specsFadeUp":
-          const triggerElement = triggerRef?.current || container;
-
-          if (triggerElement) {
+          const carouselTrigger = triggerRef?.current || container;
+          if (carouselTrigger) {
             gsap.fromTo(
               items,
-              { opacity: 0, y: 30 },
+              { opacity: 0, y: 50 },
               {
                 opacity: 1,
                 y: 0,
-                duration: 0.6,
-                stagger: 0.2,
+                delay: 0.4,
+                duration: 0.8,
+                stagger: 0.3,
                 ease: "cubic-bezier(0.4, 0, 0.6, 1)",
                 scrollTrigger: {
-                  trigger: triggerElement,
+                  trigger: carouselTrigger,
                   start: "top bottom-=100",
                   toggleActions: "play none none none",
                   id: type,
                 },
               }
             );
-          } else {
-            console.warn(`Trigger element not found for ${type} animation`);
+          }
+          break;
+        case "boxContentFadeUp":
+          const boxContentTrigger = triggerRef?.current || container;
+          if (container && boxContentTrigger) {
+            gsap.fromTo(
+              container,
+              { opacity: 0, y: 50 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: 0.3,
+                ease: "cubic-bezier(0.4, 0, 0.6, 1)",
+                scrollTrigger: {
+                  trigger: boxContentTrigger,
+                  start: "top bottom-=100",
+                  toggleActions: "play none none none",
+                  id: "boxContentFadeUp",
+                },
+              }
+            );
           }
           break;
       }

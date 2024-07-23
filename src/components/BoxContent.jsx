@@ -5,7 +5,7 @@ import { useUnifiedAnimation } from "../hooks/useUnifiedAnimation ";
 
 export const BoxContent = ({ triggerRef }) => {
   const { variant, isLoading } = useProductContext();
-  const { containerRef } = useUnifiedAnimation("fadeUp", [variant], triggerRef);
+  const { containerRef } = useUnifiedAnimation("boxContentFadeUp", [variant], triggerRef);
 
   if (isLoading) {
     return null;
@@ -14,7 +14,7 @@ export const BoxContent = ({ triggerRef }) => {
   return (
     <div
       ref={containerRef}
-      className="flex justify-center font-inter text-[20px] text-[#1d1d1f] mb-10 scale-[90%] opacity-0"
+      className="flex justify-center font-inter text-[20px] text-[#1d1d1f] mb-10 scale-[90%]"
     >
       <div className="flex w-[1050px] h-[500px] bg-[#FAFAFC] rounded-[16px] overflow-hidden px-[16px]">
         <div

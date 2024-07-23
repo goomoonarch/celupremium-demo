@@ -21,10 +21,10 @@ export const Carrousel = ({ triggerRef }) => {
   const { containerRef, addItemRef } = useUnifiedAnimation('carouselFadeUp', [], triggerRef);
 
   return (
-    <div className="relative mb-10">
+    <div className="relative mb-0">
       <ul
         ref={containerRef}
-        className="flex overflow-x-auto scrollbar-hide h-[560px] items-center snap-x snap-mandatory"
+        className="flex overflow-x-auto scrollbar-hide h-[640px] items-center snap-x snap-mandatory"
       >
         {/**SuperRetina */}
         <li
