@@ -1,12 +1,16 @@
+/* eslint-disable react/prop-types */
 import gsap from "gsap";
 import { useRef, useState } from "react";
+import { useBag } from "../context/bag";
 
-export const BigAddButton = () => {
+export const BigAddButton = ({ variant }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { addToBag } = useBag();
   const addReff = useRef();
-  const bcolor = "#FFCC00"
+  const bcolor = "#FFCC00";
 
   const handleClick = () => {
+    addToBag(variant);
     gsap
       .timeline()
       .to(addReff.current, {
@@ -57,7 +61,9 @@ export const BigAddButton = () => {
           </clipPath>
         </defs>
       </svg>
-      <p className="text-[17px] font-medium translate-x-[30px] select-none">Agregar a la bolsa</p>
+      <p className="text-[17px] font-medium translate-x-[30px] select-none">
+        Agregar a la bolsa
+      </p>
     </a>
   );
 };

@@ -23,11 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: "iphone",
-        element: (
-          <BagProvider>
-            <IPhone />
-          </BagProvider>
-        ),
+        element: <IPhone />,
       },
     ],
   },
@@ -35,6 +31,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BagProvider>
+      <RouterProvider router={router} />
+    </BagProvider>
   </React.StrictMode>
 );

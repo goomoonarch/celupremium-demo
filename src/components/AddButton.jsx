@@ -1,10 +1,10 @@
 import gsap from "gsap";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useBag } from "../hooks/useBag";
+import { useCallback, useRef, useState } from "react";
+import { useBag } from "../context/bag";
 
 // eslint-disable-next-line react/prop-types
 export const AddButton = ({ bcolor, product }) => {
-  const { addToBag, bag } = useBag();
+  const { addToBag } = useBag();
   const [isHovered, setIsHovered] = useState(false);
   const addReff = useRef();
 

@@ -1,9 +1,6 @@
 /* eslint-disable react/prop-types */
-//import { useEffect, useState } from "react";
 import { addiLogo } from "../assets";
-//import { useNavigate, useParams } from "react-router-dom";
 import { BigAddButton } from "./BigAddButton";
-//import { useCustomChoice } from "../hooks/useCustomChoise";
 import { useProductContext } from "../context/ProductContext";
 
 export const CustomChoise = () => {
@@ -36,7 +33,9 @@ export const CustomChoise = () => {
       <h2 className="text-[20px] text-[#6E6E73] mb-4">
         usado como <span className="text-[#FF4B4F]">nuevo*</span>
       </h2>
-      <p className="text-[30px] font-semibold text-[#FFCC00]">${variant.price} COP</p>
+      <p className="text-[30px] font-semibold text-[#FFCC00]">
+        ${variant.price} COP
+      </p>
       <div className="flex flex-col text-[18px] text-[#6E6E73] leading-6 mb-2">
         <p className="">o hasta 12 cuotas</p>
         <p className="flex items-baseline">
@@ -136,7 +135,7 @@ export const CustomChoise = () => {
           );
         })}
       </div>
-      <BigAddButton />
+      <BigAddButton variant={variant} />
     </div>
   );
 };
