@@ -1,12 +1,16 @@
 import gsap from "gsap";
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useBag } from "../hooks/useBag";
 
 // eslint-disable-next-line react/prop-types
-export const AddButton = ({ bcolor }) => {
+export const AddButton = ({ bcolor, product }) => {
+  const { addToBag, bag } = useBag();
   const [isHovered, setIsHovered] = useState(false);
   const addReff = useRef();
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
+    addToBag(product);
+
     gsap
       .timeline()
       .to(addReff.current, {
@@ -17,7 +21,7 @@ export const AddButton = ({ bcolor }) => {
         scale: 1.05,
         duration: 0.1,
       });
-  }; //---> efecto de pulsado de botón
+  }, [addToBag, product]); //---> efecto de pulsado de botón
 
   return (
     <a

@@ -2,13 +2,14 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import celupremiumLogo from "../assets/cp_logo.svg";
-import bag from "../assets/bag.svg";
 import { PhoneCat } from "./PhoneCat";
 import { AccesoriesCat } from "./AccesoriesCat";
 import { AboutUsCat } from "./AboutUsCat";
 import { SearchButton } from "./SearchButton";
 import { Searchbar } from "./Searchbar";
 import { Politices } from "./Politices";
+import { Bag } from "./submenucontent/Bag";
+import { BagButton } from "./BagButton";
 
 export const NavBar = () => {
   const subMenuRef = useRef(null);
@@ -21,6 +22,8 @@ export const NavBar = () => {
   const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
   const [subMenuHeight, setSubMenuHeight] = useState(0);
   const [searchBarView, setSearchBarView] = useState(false);
+  const [bagBarView, setBagBarView] = useState(false);
+  const [isBagActive, setIsBagActive] = useState(false);
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [activeItem, setActiveItem] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -39,8 +42,14 @@ export const NavBar = () => {
         return <Politices />;
       case "SearchBar":
         return (
-          <Searchbar onSearchResult={handleSearchResults} click={searchClick} onLeave={handleMouseLeave} />
+          <Searchbar
+            onSearchResult={handleSearchResults}
+            click={searchClick}
+            onLeave={handleMouseLeave}
+          />
         );
+      case "Bag":
+        return <Bag />;
       default:
         return null;
     }
@@ -149,12 +158,16 @@ export const NavBar = () => {
     setSubPage(nav);
     setIsSubMenuVisible(true);
     setActiveItem(nav);
-    if (nav === "SearchBar") {
+    if (nav === "SearchBar" || nav === "Bag") {
       setSearchBarView(true);
       setIsSearchActive(true);
+      setBagBarView(true);
+      setIsBagActive(true);
     } else {
       setSearchBarView(false);
       setIsSearchActive(false);
+      setBagBarView(false);
+      setIsBagActive(false);
     }
   }, []);
 
@@ -163,6 +176,8 @@ export const NavBar = () => {
       setIsSubMenuVisible(false);
       setSearchBarView(false);
       setIsSearchActive(false);
+      setBagBarView(false);
+      setIsBagActive(false);
       setActiveItem("");
     }, 100);
   }, []);
@@ -181,14 +196,40 @@ export const NavBar = () => {
     }
   };
 
-  const handleIconMouseEnter = useCallback(() => {
+  const handleBagClick = () => {
+    if (bagBarView) {
+      setIsSubMenuVisible(false);
+      setBagBarView(false);
+      setIsBagActive(false);
+    } else {
+      setSubPage("Bag");
+      setIsSubMenuVisible(true);
+      setBagBarView(true);
+      setIsBagActive(true);
+    }
+  };
+
+  const handleSearchIconMouseEnter = useCallback(() => {
     if (isSubMenuVisible && !searchBarView) {
       setIsSubMenuVisible(false);
       setSearchBarView(false);
       setIsSearchActive(false);
+      setBagBarView(false);
+      setIsBagActive(false);
       setActiveItem("");
     }
   }, [isSubMenuVisible, searchBarView]);
+
+  const handleBagIconMouseEnter = useCallback(() => {
+    if (isSubMenuVisible && !bagBarView) {
+      setIsSubMenuVisible(false);
+      setBagBarView(false);
+      setIsBagActive(false);
+      setSearchBarView(false);
+      setIsSearchActive(false);
+      setActiveItem("");
+    }
+  }, [isSubMenuVisible, bagBarView]);
 
   const handleOnclick = (nav) => {
     const lowercaseNav = nav.toLowerCase();
@@ -226,19 +267,20 @@ export const NavBar = () => {
             ))}
           </div>
           <div className="flex items-center space-x-[28px]">
-            <div onMouseEnter={handleIconMouseEnter}>
+            <div onMouseEnter={handleSearchIconMouseEnter}>
               <SearchButton
                 className={"search-button"}
                 onClick={handleSearchbarClick}
                 isActive={isSearchActive}
               />
             </div>
-            <img
-              src={bag}
-              alt="bag"
-              className="w-[20px]"
-              onMouseEnter={handleMouseLeave}
-            />
+            <div onMouseEnter={handleBagIconMouseEnter}>
+              <BagButton
+                className={"search-button"}
+                onClick={handleBagClick}
+                isActive={isBagActive}
+              />
+            </div>
           </div>
         </div>
       </nav>

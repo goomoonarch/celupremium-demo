@@ -14,7 +14,7 @@ export const BoxContent = ({ triggerRef }) => {
   return (
     <div
       ref={containerRef}
-      className="flex justify-center font-inter text-[20px] text-[#1d1d1f] mb-10 scale-[90%]"
+      className="flex justify-center font-inter font-medium text-[18px] text-[#1d1d1f] mb-10 scale-[90%]"
     >
       <div className="flex w-[1050px] h-[500px] bg-[#FAFAFC] rounded-[16px] overflow-hidden px-[16px]">
         <div

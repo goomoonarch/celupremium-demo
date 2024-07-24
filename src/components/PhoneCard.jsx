@@ -69,7 +69,7 @@ export const PhoneCard = ({ arg: { list, bcolor } }) => {
             </div>
           </div>
           <div className="flex mt-[10px]">
-            <AddButton bcolor={bcolor} />
+              <AddButton product={list} bcolor={bcolor} />
           </div>
         </div>
       </div>

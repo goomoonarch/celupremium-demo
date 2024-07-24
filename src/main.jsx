@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import { BuyDescription } from "./components/BuyDescription.jsx";
 import { IPhone } from "./components/IPhone.jsx";
 import Layout from "./Layout.jsx";
+import { BagProvider } from "./context/bag.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "iphone",
-        element: <IPhone />,
+        element: (
+          <BagProvider>
+            <IPhone />
+          </BagProvider>
+        ),
       },
     ],
   },
