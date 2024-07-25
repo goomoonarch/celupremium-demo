@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useState, useRef, useEffect } from "react";
@@ -6,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const AccesoriesCarrousel = ({ references }) => {
   const sliderRef = useRef(null);
+  const articlesRef = useRef([]);
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoverU, setHoverU] = useState(true);
 
@@ -43,27 +45,52 @@ export const AccesoriesCarrousel = ({ references }) => {
     return () => slider.removeEventListener("scroll", checkScrollPosition);
   }, []);
 
+  useGSAP(
+    () => {
+      articlesRef.current.forEach((article, index) => {
+        gsap.to(article, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "cubic-bezier(0.4, 0, 0.6, 1)",
+          scrollTrigger: {
+            trigger: sliderRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+          delay: index * 0.1,
+        });
+      });
+    },
+    { dependencies: [references], revertOnUpdate: true }
+  );
+
   return (
     <div className="relative">
       <ul
         ref={sliderRef}
-        className="flex overflow-x-auto scrollbar-hide bg-[#F3F5F7] h-[500px] items-center snap-x snap-mandatory"
+        className="flex overflow-x-auto scrollbar-hide bg-[#F3F5F7] h-[600px] items-center snap-x snap-mandatory"
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       >
-        {references.map((list) => (
+        {references.map((list, index) => (
           <li
             key={list.id}
             id="slider"
             className="snap-start snap-always mr-6 last:mr-[700px]"
           >
             <div
+              ref={(el) => (articlesRef.current[index] = el)}
               id="article"
               className="cursor-pointer shrink-0 slide-center relative"
             >
               <div className="transition-transform duration-300 hover:scale-[1.016] ease-custom w-[300px] h-[480px] bg-white rounded-[20px] p-[30px]">
                 <div className="flex flex-col items-center justify-center">
-                  <img src={list.img} alt="articleimg" className="w-[210px] pt-[28px]" />
+                  <img
+                    src={list.img}
+                    alt="articleimg"
+                    className="w-[210px] pt-[28px]"
+                  />
                   <img
                     src={list.swatch}
                     alt="swatch"

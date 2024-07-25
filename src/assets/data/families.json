@@ -1,6 +1,7 @@
 [
   {
     "title": "iPhone 15",
+    "slug": "iphone15family",
     "color": "#FF7278",
     "bcolor": "#FFC5C5",
     "bgcolor": "#FFF7F9",
@@ -290,6 +291,7 @@
   },
   {
     "title": "iPhone 14",
+    "slug": "iphone14family",
     "color": "#E4B0F7",
     "bcolor": "#E4B0F7",
     "bgcolor": "#FBF3FE",
@@ -578,6 +580,7 @@
   },
   {
     "title": "iPhone 13",
+    "slug": "iphone13family",
     "color": "#7CD3FD",
     "bcolor": "#7CD3FD",
     "bgcolor": "#F3FBFF",
@@ -1054,6 +1057,7 @@
   },
   {
     "title": "iPhone 12",
+    "slug": "iphone12family",
     "color": "#B2E5B4",
     "bcolor": "#B2E5B4",
     "bgcolor": "#F7FCF7",
@@ -1342,6 +1346,7 @@
   },
   {
     "title": "iPhone 11",
+    "slug": "iphone11family",
     "color": "#FEE682",
     "bcolor": "#FEE682",
     "bgcolor": "#FFFAF0",

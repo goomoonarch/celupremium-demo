@@ -27,7 +27,7 @@ export const BarContent = () => {
   );
   
   return (
-    <div ref={marquee} className="scrolling-text">
+    <div ref={marquee} className="scrolling-text z-20">
       {content}
       {content}
       {content}

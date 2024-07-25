@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 export const MainCarrousel = ({ references }) => {
   const navigate = useNavigate();
   const sliderRef = useRef(null);
+  const articlesRef = useRef([]);
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoverU, setHoverU] = useState(true);
 
@@ -52,38 +53,40 @@ export const MainCarrousel = ({ references }) => {
 
   useGSAP(
     () => {
-      gsap.to(".slide-center", {
-        opacity: 1,
-        duration: 0.5,
-        scale: 1,
-        ease: "power3.out",
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: ".slide-center",
-          start: "top 110%",
-        },
+      articlesRef.current.forEach((article, index) => {
+        gsap.to(article, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "cubic-bezier(0.4, 0, 0.6, 1)",
+          scrollTrigger: {
+            trigger: sliderRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+          delay: index * 0.1,
+        });
       });
     },
     { dependencies: [references], revertOnUpdate: true }
   );
 
-  
-
   return (
-    <div className="relative mb-10">
+    <div className="relative">
       <ul
         ref={sliderRef}
-        className="flex overflow-x-auto scrollbar-hide bg-[#F3F5F7] h-[490px] items-center snap-x snap-mandatory"
+        className="flex overflow-x-auto scrollbar-hide bg-[#F3F5F7] h-[600px] items-center snap-x snap-mandatory"
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       >
-        {references.map((list) => (
+        {references.map((list, index) => (
           <li
             key={list.id}
             id="slider"
             className="snap-start snap-always mr-6 last:mr-[700px]"
           >
             <div
+              ref={(el) => (articlesRef.current[index] = el)}
               id="article"
               className="cursor-pointer shrink-0 slide-center relative"
               onClick={() => handleCardClick(list.slug)}

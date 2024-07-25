@@ -42,6 +42,7 @@ export const NavBar = () => {
       setIsBagActive(true);
       setIsOpenedByAddButton(true);
       setLastAddedProduct(null);
+      window.scrollTo({ top: 0  });
     }
   }, [lastAddedProduct, setLastAddedProduct]);
 
@@ -270,7 +271,7 @@ export const NavBar = () => {
     <header onMouseLeave={handleMouseLeave}>
       <nav
         ref={navRef}
-        className="flex justify-center p-2 relative"
+        className="flex justify-center p-2 relative z-20"
         style={{ backgroundColor: "white" }}
       >
         <div className="flex justify-between items-center w-[70%]">
@@ -340,8 +341,12 @@ export const NavBar = () => {
         ref={blurRef}
         onClick={isOpenedByAddButton ? handleBlurClick : null}
         onMouseEnter={isOpenedByAddButton ? null : handleMouseLeave}
-        className="absolute z-20 overflow-hidden w-full h-full backdrop-blur-[12px] bg-[#ffffff30] cursor-pointer"
-        style={{ height: 0, opacity: 0 }}
+        className="fixed top-[50px] left-0 w-full h-full z-10 backdrop-blur-[12px] bg-[#ffffff30] cursor-pointer"
+        style={{
+          height: isSubMenuVisible ? "100vh" : 0,
+          opacity: isSubMenuVisible ? 1 : 0,
+          pointerEvents: isSubMenuVisible ? "auto" : "none",
+        }}
       />
     </header>
   );

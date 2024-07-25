@@ -1,13 +1,57 @@
 /* eslint-disable react/prop-types */
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export const Title = ({ atributes }) => {
   const { title, url } = atributes;
+  const titleRef = useRef();
+  const subtitleRef = useRef();
+  const containerRef = useRef();
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    tl.from(titleRef.current, {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      ease: "cubic-bezier(0.4, 0, 0.6, 1)",
+    }).from(
+      subtitleRef.current,
+      {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: "cubic-bezier(0.4, 0, 0.6, 1)",
+      },
+      "-=0.8"
+    ); // This makes the subtitle animation start slightly before the title animation ends
+  }, []);
+
   return (
-    <div className="flex items-center justify-start slide-center-text mt-[60px] font-inter max-w-[1080px]">
-      <div className="flex flex-col w-[960px] leading-8 mb-8">
-        <div className="text-[26px] font-medium text-[1d1d1f]">
+    <div
+      ref={containerRef}
+      className="flex items-center justify-start slide-center-text mt-[60px] font-inter w-fit h-fit z-10"
+    >
+      <div className="flex flex-col leading-8 mb-8">
+        <div
+          ref={titleRef}
+          className="text-[26px] font-medium text-[#1d1d1f]"
+        >
           {title}
         </div>
         <a
+          ref={subtitleRef}
           href={url}
           className="text-[#6E6E73] text-[18px] font-medium flex items-center group hover:underline hover:text-[#0D99FF] w-[320px]"
         >

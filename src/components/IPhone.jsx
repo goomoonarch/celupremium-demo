@@ -1,36 +1,55 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { phoneFam } from "../assets";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useFamilyMap } from "../hooks/useFamilyMap";
 import { PhoneCarrousel } from "./PhoneCarrousel";
+import { useNavigate, useParams } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 export const IPhone = () => {
-  const [index, setIndex] = useState(0);
-  const [iphoneFamily, setIphoneFamily] = useState(phoneFam[0]);
+  const navigate = useNavigate();
+  const { familySlug } = useParams();
+  const [index, setIndex] = useState(() => {
+    const initialIndex = phoneFam
+      .slice(0, 4)
+      .findIndex((fam) => fam.slug === familySlug);
+    return initialIndex !== -1 ? initialIndex : 0;
+  });
+  const [iphoneFamily, setIphoneFamily] = useState(() => {
+    const initialFamily = phoneFam
+      .slice(0, 5)
+      .find((fam) => fam.slug === familySlug);
+    return initialFamily || phoneFam[0];
+  });
 
+  useEffect(() => {
+    const familyIndex = phoneFam
+      .slice(0, 5)
+      .findIndex((fam) => fam.slug === familySlug);
+    if (familyIndex !== -1 && familyIndex !== index) {
+      setIndex(familyIndex);
+      setIphoneFamily(phoneFam[familyIndex]);
+    }
+  }, [familySlug, index]);
 
-  const handleRightClick = () => {
-    let value = index + 1;
-    if (value <= 4 && value >= 0) {
-      setIndex(value);
-      setIphoneFamily(phoneFam[value]);
-    } else {
-      setIndex(0);
-      setIphoneFamily(phoneFam[0]);
+  const handleFamilyChange = (newIndex) => {
+    if (newIndex >= 0 && newIndex <= 4) {
+      setIndex(newIndex);
+      setIphoneFamily(phoneFam[newIndex]);
+      navigate(`/iphone/${phoneFam[newIndex].slug}`);
     }
   };
 
+  const handleRightClick = () => {
+    const newIndex = (index + 1) % 5;
+    handleFamilyChange(newIndex);
+  };
+
   const handleLeftClick = () => {
-    let value = index - 1;
-    if (value < 0) {
-      setIndex(0);
-      setIphoneFamily(phoneFam[0]);
-    } else {
-      setIndex(value);
-      setIphoneFamily(phoneFam[value]);
+    if (index > 0) {
+      handleFamilyChange(index - 1);
     }
   };
 
@@ -120,6 +139,7 @@ export const IPhone = () => {
                   } transition-all ease-out duration-300`}
                   style={{ color: iphoneFamily.bcolor }}
                   onClick={handleLeftClick}
+                  disabled={index === 0}
                 >
                   <svg
                     width="78"

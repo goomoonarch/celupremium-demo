@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <BuyDescription />,
       },
       {
-        path: "iphone",
+        path: "iphone/:familySlug?",
         element: <IPhone />,
       },
     ],

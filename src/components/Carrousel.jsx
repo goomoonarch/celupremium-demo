@@ -61,9 +61,14 @@ export const Carrousel = ({ triggerRef }) => {
           </div>
         </li>
         {/**CinematicMode */}
-        <li id="cinemode" className="mr-6 snap-start snap-always">
-          <div ref={addItemRef} className="slide-center-card shrink-0 relative">
-            <div className="bg-[#F5F5F7] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default hover:scale-110">
+        <li
+          ref={addItemRef}
+          id="cinemode"
+          className="mr-6 snap-start snap-always"
+          style={{ opacity: 0, transform: "translateY(50px)" }}
+        >
+          <div className="slide-center-card shrink-0 relative">
+            <div className="bg-[#F5F5F7] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default">
               <img
                 src={cinematicMode}
                 alt="cinematicmodeimg"
