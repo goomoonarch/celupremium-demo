@@ -75,6 +75,44 @@
   color: #ffcc00;
 }
 
+.bag-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.bag-button {
+  color: #1d1d1f;
+  transition: color 0.3s ease;
+}
+
+.bag-button:hover,
+.bag-button.active {
+  color: #ffcc00;
+}
+
+.quantity-indicator {
+  background-color: #1d1d1f;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.quantity-indicator:hover,
+.quantity-indicator.active {
+  background-color: #ffcc00;
+  color: white;
+}
+
+/* Estilos para el hover del contenedor que afectan a ambos componentes */
+.bag-container:hover .bag-button,
+.bag-container:hover .quantity-indicator {
+  color: #ffcc00;
+}
+
+.bag-container:hover .quantity-indicator {
+  background-color: #ffcc00;
+  color: white;
+}
+
 .scrolling-text {
   display: flex;
   white-space: nowrap;

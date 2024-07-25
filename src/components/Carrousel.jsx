@@ -41,46 +41,45 @@ export const Carrousel = ({ triggerRef }) => {
           ref={addItemRef}
           id="superretinadisplay"
           className="snap-start snap-always mr-6"
-          style={{ opacity: 0, transform: "translateY(30px)" }}
+          style={{ opacity: 0, transform: "translateY(50px)" }}
         >
-          <div className="bg-black w-[312px] h-[540px] rounded-[20px] p-[36px] cursor-default shrink-0 slide-center-card relative overflow-hidden">
-            <p className="text-white">Pantalla</p>
-            <div className="flex items-end mb-[4px]">
-              <p className="text-[#4681ED] text-[26px] font-semibold leading-8 w-[180px]">
-                Super Retina XDR Display.
-                <span className="text-[#E9E9E9]">⁵</span>
+          <div className="slide-center-card shrink-0 relative">
+            <div className="bg-black w-[312px]  h-[540px] rounded-[20px] p-[36px] cursor-default overflow-hidden hover:translate-y-[-20px] transition-all ease-out duration-150">
+              <p className="text-white">Pantalla</p>
+              <div className="flex items-end mb-[4px]">
+                <p className="text-[#4681ED] text-[26px] font-semibold leading-8 w-[180px]">
+                  Super Retina XDR Display.
+                  <span className="text-[#E9E9E9]">⁵</span>
+                </p>
+                <img src={sunMax} alt="sunmaxicon" />
+              </div>
+              <p className="text-white leading-6 mb-10">
+                ultra alta densidad de pixeles, panel OLED de hasta 800 nits
               </p>
-              <img src={sunMax} alt="sunmaxicon" />
+              <img src={infoXDR} alt="infoxdr13" />
             </div>
-            <p className="text-white leading-6 mb-10">
-              ultra alta densidad de pixeles, panel OLED de hasta 800 nits
-            </p>
-            <img src={infoXDR} alt="infoxdr13" />
           </div>
         </li>
         {/**CinematicMode */}
-        <li
-          ref={addItemRef}
-          id="cinemode"
-          className="mr-6 snap-start snap-always"
-          style={{ opacity: 0, transform: "translateY(50px)" }}
-        >
-          <div className="bg-[#F5F5F7] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default shrink-0 slide-center-card relative">
-            <img
-              src={cinematicMode}
-              alt="cinematicmodeimg"
-              className="-translate-y-10"
-            />
-            <p className="text-[#3e3e41] font-medium">Video</p>
-            <div className="flex items-center">
-              <p className="text-[#66182A] text-[26px] font-semibold leading-8 mr-2">
-                Modo Cine.
+        <li id="cinemode" className="mr-6 snap-start snap-always">
+          <div ref={addItemRef} className="slide-center-card shrink-0 relative">
+            <div className="bg-[#F5F5F7] w-[312px] h-[540px] rounded-[20px] p-[36px] overflow-hidden cursor-default hover:scale-110">
+              <img
+                src={cinematicMode}
+                alt="cinematicmodeimg"
+                className="-translate-y-10"
+              />
+              <p className="text-[#3e3e41] font-medium">Video</p>
+              <div className="flex items-center">
+                <p className="text-[#66182A] text-[26px] font-semibold leading-8 mr-2">
+                  Modo Cine.
+                </p>
+                <img src={movie_icon} alt="movieicon" />
+              </div>
+              <p className="text-[#3e3e41] font-medium leading-6">
+                El modo cine permite cambiar el enfoque de un sujeto a otro
               </p>
-              <img src={movie_icon} alt="movieicon" />
             </div>
-            <p className="text-[#3e3e41] font-medium leading-6">
-              El modo cine permite cambiar el enfoque de un sujeto a otro
-            </p>
           </div>
         </li>
         {/**NightMode */}

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import celupremiumLogo from "../assets/cp_logo.svg";
@@ -10,6 +10,8 @@ import { Searchbar } from "./Searchbar";
 import { Politices } from "./Politices";
 import { Bag } from "./submenucontent/Bag";
 import { BagButton } from "./BagButton";
+import { AllQuantityIndicator } from "./AllQuantityIndicator";
+import { BagContext } from "../context/bag";
 
 export const NavBar = () => {
   const subMenuRef = useRef(null);
@@ -28,7 +30,20 @@ export const NavBar = () => {
   const [activeItem, setActiveItem] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [searchClick, setSearchClick] = useState(false);
+  const [isOpenedByAddButton, setIsOpenedByAddButton] = useState(false);
+  const { lastAddedProduct, setLastAddedProduct } = useContext(BagContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (lastAddedProduct) {
+      setSubPage("Bag");
+      setIsSubMenuVisible(true);
+      setBagBarView(true);
+      setIsBagActive(true);
+      setIsOpenedByAddButton(true);
+      setLastAddedProduct(null);
+    }
+  }, [lastAddedProduct, setLastAddedProduct]);
 
   const renderSubMenu = (category) => {
     switch (category) {
@@ -168,19 +183,22 @@ export const NavBar = () => {
       setIsSearchActive(false);
       setBagBarView(false);
       setIsBagActive(false);
+      setIsOpenedByAddButton(false);
     }
   }, []);
 
   const handleMouseLeave = useCallback(() => {
-    timeoutRef.current = setTimeout(() => {
-      setIsSubMenuVisible(false);
-      setSearchBarView(false);
-      setIsSearchActive(false);
-      setBagBarView(false);
-      setIsBagActive(false);
-      setActiveItem("");
-    }, 100);
-  }, []);
+    if (!isOpenedByAddButton) {
+      timeoutRef.current = setTimeout(() => {
+        setIsSubMenuVisible(false);
+        setSearchBarView(false);
+        setIsSearchActive(false);
+        setBagBarView(false);
+        setIsBagActive(false);
+        setActiveItem("");
+      }, 100);
+    }
+  }, [isOpenedByAddButton]);
 
   const handleSearchbarClick = () => {
     setSearchClick((prev) => !prev);
@@ -196,7 +214,7 @@ export const NavBar = () => {
     }
   };
 
-  const handleBagClick = () => {
+  const handleBagClick = useCallback(() => {
     if (bagBarView) {
       setIsSubMenuVisible(false);
       setBagBarView(false);
@@ -207,7 +225,8 @@ export const NavBar = () => {
       setBagBarView(true);
       setIsBagActive(true);
     }
-  };
+    setIsOpenedByAddButton(false);
+  }, [bagBarView]);
 
   const handleSearchIconMouseEnter = useCallback(() => {
     if (isSubMenuVisible && !searchBarView) {
@@ -230,6 +249,16 @@ export const NavBar = () => {
       setActiveItem("");
     }
   }, [isSubMenuVisible, bagBarView]);
+
+  const handleBlurClick = useCallback(() => {
+    setIsSubMenuVisible(false);
+    setBagBarView(false);
+    setIsBagActive(false);
+    setSearchBarView(false);
+    setIsSearchActive(false);
+    setActiveItem("");
+    setIsOpenedByAddButton(false);
+  }, []);
 
   const handleOnclick = (nav) => {
     const lowercaseNav = nav.toLowerCase();
@@ -274,10 +303,18 @@ export const NavBar = () => {
                 isActive={isSearchActive}
               />
             </div>
-            <div onMouseEnter={handleBagIconMouseEnter}>
+            <div
+              className="bag-container"
+              onMouseEnter={handleBagIconMouseEnter}
+              onClick={handleBagClick}
+            >
               <BagButton
-                className={"search-button"}
+                className="bag-button"
                 onClick={handleBagClick}
+                isActive={isBagActive}
+              />
+              <AllQuantityIndicator
+                className="quantity-indicator"
                 isActive={isBagActive}
               />
             </div>
@@ -301,8 +338,9 @@ export const NavBar = () => {
       <div
         id="blur"
         ref={blurRef}
-        onMouseEnter={handleMouseLeave}
-        className="absolute z-20 overflow-hidden w-full h-full backdrop-blur-[12px] bg-[#ffffff30]"
+        onClick={isOpenedByAddButton ? handleBlurClick : null}
+        onMouseEnter={isOpenedByAddButton ? null : handleMouseLeave}
+        className="absolute z-20 overflow-hidden w-full h-full backdrop-blur-[12px] bg-[#ffffff30] cursor-pointer"
         style={{ height: 0, opacity: 0 }}
       />
     </header>
