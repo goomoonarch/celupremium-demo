@@ -8,7 +8,7 @@ import { BoxContent } from "./BoxContent";
 import { AdvicesN2 } from "./AdvicesN2";
 import { SpecsCarrousel } from "./SpecsCarrousel";
 import { useUnifiedAnimation } from "../hooks/useUnifiedAnimation ";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useOverviewAnimation } from "../hooks/useOverviewAnimation";
 
 export const BuyDescription = () => {
@@ -17,6 +17,10 @@ export const BuyDescription = () => {
   const caracteristicasTitleRef = useRef(null);
   const especificacionesTitleRef = useRef(null);
   const contenidoTitleRef = useRef(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <ProductProvider>

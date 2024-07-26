@@ -5,7 +5,7 @@ import { useUnifiedAnimation } from "../hooks/useUnifiedAnimation ";
 
 export const BoxContent = ({ triggerRef }) => {
   const { variant, isLoading } = useProductContext();
-  const { containerRef } = useUnifiedAnimation("boxContentFadeUp", [variant], triggerRef);
+  const { containerRef } = useUnifiedAnimation("boxContentFadeUp", [], triggerRef);
 
   if (isLoading) {
     return null;

@@ -9,32 +9,32 @@
   },
   {
     "swatch": "/src/assets/swatch_colors/iPhone13_colors.png",
-    "text1": "Lorem ipsum",
-    "text2": "lorem ipsum lorem",
-    "price": "2'899.900",
-    "buyLink": "",
+    "text1": "Calidad precio",
+    "text2": "insuperable",
+    "price": "2'800.000",
+    "buyLink": "iphone13/iphone13pink128",
     "variantLink": ""
   },
   {
     "swatch": "/src/assets/swatch_colors/iPhone15Pro_colors.png",
-    "text1": "Lorem ipsum",
-    "text2": "pro lorem lorem",
+    "text1": "El iPhone",
+    "text2": "definitivo",
     "price": "3'799.900",
     "buyLink": "",
     "variantLink": ""
   },
   {
     "swatch": "/src/assets/swatch_colors/iPhone14_colors.png",
-    "text1": "Lorem ipsum",
-    "text2": "pro lorem lorem",
+    "text1": "Innovación",
+    "text2": "Sin límites",
     "price": "2'469.900",
     "buyLink": "",
     "variantLink": ""
   },
   {
     "swatch": "/src/assets/swatch_colors/iPhone_SE_3_colors.png",
-    "text1": "Lorem ipsum",
-    "text2": "pro lorem lorem",
+    "text1": "Un precio bajo",
+    "text2": "que encanta",
     "price": "879.900",
     "buyLink": "",
     "variantLink": ""

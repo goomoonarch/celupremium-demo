@@ -17,6 +17,7 @@ export const MainContent = () => {
         <MainCarrousel references={phoneCarrousel}/>
         <Title atributes={{title:"Compra accesorios para tu iPhone.", url: ""}}/>
         <AccesoriesCarrousel references={accesoriesCarrousel}/>
+        <PhonePromo />
       </div>
     </div>
   );

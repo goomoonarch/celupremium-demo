@@ -1,37 +1,20 @@
 /* eslint-disable react/prop-types */
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
 import { AddButton } from "./AddButton";
+import { forwardRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const PhoneCard = ({ arg: { list, bcolor } }) => {
+export const PhoneCard = forwardRef(({ arg: { list, bcolor } }, ref) => {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
     if (list.stock > 0) {
       navigate(`/buyiphone/iphone13/${list.slug}`);
-    } else return;
+    }
   };
-
-  useGSAP(
-    () => {
-      gsap.to(".slide-center", {
-        opacity: 1,
-        duration: 0.5,
-        scale: 1,
-        ease: "power3.out",
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: ".slide-center",
-          start: "top 110%",
-        },
-      });
-    },
-    { dependencies: [list], revertOnUpdate: true }
-  );
 
   return (
     <div
@@ -39,7 +22,11 @@ export const PhoneCard = ({ arg: { list, bcolor } }) => {
       id="slider"
       className="snap-start snap-always mr-6 last:mr-[50px]"
     >
-      <div id="article" className="slide-center shrink-0 relative">
+      <div
+        ref={ref}
+        id="article"
+        className="slide-center shrink-0 relative opacity-0"
+      >
         <div className="transition-transform duration-300 hover:scale-[1.03] ease-custom w-[300px] h-[480px] bg-white rounded-[20px] p-[30px]">
           <div className="cursor-pointer" onClick={handleCardClick}>
             <div className="flex flex-col items-center justify-center">
@@ -69,10 +56,12 @@ export const PhoneCard = ({ arg: { list, bcolor } }) => {
             </div>
           </div>
           <div className="flex mt-[10px]">
-              <AddButton product={list} bcolor={bcolor} />
+            <AddButton product={list} bcolor={bcolor} />
           </div>
         </div>
       </div>
     </div>
   );
-};
+});
+
+PhoneCard.displayName = 'PhoneCard';

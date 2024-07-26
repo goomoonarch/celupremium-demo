@@ -1,7 +1,9 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 /* eslint-disable react/prop-types */
 export const PhoneDetail = ({ details }) => {
+  const navigate = useNavigate();
   const items = useRef(null);
 
   return (
@@ -19,12 +21,12 @@ export const PhoneDetail = ({ details }) => {
         <p className="text-[#6E6E73] font-medium">desde</p>
         <span className="text-[18px] font-medium">${details.price} COP</span>
       </div>
-      <a
-        href={details.buyLink}
-        className="bg-[#FFCC00] w-[94px] h-[30px] rounded-[8px] flex items-center justify-center text-[15px] mb-3 hover:bg-[#FFDE5A] text-white"
+      <div
+        className="bg-[#FFCC00] w-[94px] h-[30px] rounded-[8px] cursor-pointer flex items-center justify-center text-[15px] mb-3 hover:bg-[#FFDE5A] text-white"
+        onClick={() => navigate(`/buyiphone/${details.buyLink}`)}
       >
         Comprar
-      </a>
+      </div>
       <a
         className="group flex items-baseline"
         href={details.variantLink}

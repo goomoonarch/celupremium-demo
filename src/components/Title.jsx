@@ -41,7 +41,7 @@ export const Title = ({ atributes }) => {
   return (
     <div
       ref={containerRef}
-      className="flex items-center justify-start slide-center-text mt-[60px] font-inter w-fit h-fit z-10"
+      className="flex items-center justify-start slide-center-text mt-[10px] font-inter w-fit h-fit z-10"
     >
       <div className="flex flex-col leading-8 mb-8">
         <div

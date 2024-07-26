@@ -13,9 +13,13 @@ export const Hero = () => {
   const videoRef = useRef();
   const [title, setTitle] = useState(false);
   const [description, setDescription] = useState(false);
+  
 
   const handleTimeUpdate = (e) => {
-    if (e.target.currentTime >= 2.8) {
+    const currentTime = e.target.currentTime;
+    sessionStorage.setItem('videoTime', currentTime.toString());
+    
+    if (currentTime >= 2.8) {
       setTitle(true);
       setDescription(true);
     }
@@ -40,6 +44,13 @@ export const Hero = () => {
     return () => {
       window.removeEventListener("resize", handleVideoSrcSet);
     };
+  }, []);
+
+  useEffect(() => {
+    const savedTime = sessionStorage.getItem('videoTime');
+    if (videoRef.current && savedTime) {
+      videoRef.current.currentTime = parseFloat(savedTime);
+    }
   }, []);
 
   useEffect(() => {

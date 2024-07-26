@@ -15,7 +15,7 @@ export const BarContent = () => {
   );
 
   const content = (
-    <div className="promo flex items-center px-3 py-3">
+    <div className="promo flex items-center px-3 py-3 z-30">
       <div className="font-semibold pl-2">
         Aún más baratos?{" "}
         <span className="font-normal pr-2">
@@ -27,7 +27,7 @@ export const BarContent = () => {
   );
   
   return (
-    <div ref={marquee} className="scrolling-text z-20">
+    <div ref={marquee} className="scrolling-text z-30">
       {content}
       {content}
       {content}

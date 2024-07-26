@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { phoneFam } from "../assets";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,6 +9,8 @@ import { useNavigate, useParams } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 export const IPhone = () => {
+  const p1Ref = useRef(null);
+  const p2Ref = useRef(null);
   const navigate = useNavigate();
   const { familySlug } = useParams();
   const [index, setIndex] = useState(() => {
@@ -76,12 +78,25 @@ export const IPhone = () => {
       });
 
       //ScrollTrigger Prove
-      gsap.to(".p2", {
+      gsap.to(p1Ref.current, {
         opacity: 1,
         duration: 0.5,
-        y: -10,
+        y: 30,
+        ease: "cubic-bezier(0.4, 0, 0.6, 1)",
         scrollTrigger: {
-          trigger: ".p2",
+          trigger: p1Ref.current,
+          start: "top 90%",
+          end: "top 20%",
+        },
+      });
+
+      gsap.to(p2Ref.current, {
+        opacity: 1,
+        duration: 0.5,
+        y: 30,
+        ease: "cubic-bezier(0.4, 0, 0.6, 1)",
+        scrollTrigger: {
+          trigger: p2Ref.current,
           start: "top 90%",
           end: "top 20%",
         },
@@ -99,7 +114,7 @@ export const IPhone = () => {
               Conoce las familias iPhone.
             </p>
             <p
-              className="titles font-bold text-[30px] opacity-0 translate-y-1"
+              className="titles font-bold text-[30px] opacity-0 translate-y-[10px]"
               style={{ color: `${iphoneFamily.color}` }}
             >
               {iphoneFamily.title}
@@ -217,7 +232,10 @@ export const IPhone = () => {
         style={{ background: `${iphoneFamily.bgcolor}` }}
       >
         <div id="iphone15&iphone15plus">
-          <p className="p2 slide-center-text text-[26px] font-medium text-[#1d1d1f] mb-2 w-fit opacity-0">
+          <p
+            ref={p1Ref}
+            className="slide-center-text text-[26px] font-medium text-[#1d1d1f] w-fit opacity-0"
+          >
             {iphoneFamily.labelO}
           </p>
           <PhoneCarrousel
@@ -228,7 +246,10 @@ export const IPhone = () => {
           />
         </div>
         <div id="iphone15pro&iphonepromax">
-          <p className="p2 slide-center-text text-[26px] font-medium text-[#1d1d1f] mb-2 w-fit opacity-0">
+          <p
+            ref={p2Ref}
+            className="slide-center-text text-[26px] font-medium text-[#1d1d1f] w-fit opacity-0"
+          >
             {iphoneFamily.labelP}
           </p>
           <PhoneCarrousel
