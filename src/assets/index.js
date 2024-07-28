@@ -35,6 +35,8 @@ import bluephonecramicshield from "./images/blue_ceramicshield.png";
 import g5conection from "./images/5g_conection.png";
 import lightning from "./images/lightning_cable_box_content.png";
 import poweradapter20 from "./images/20wpoweradapter_boxcontent.png";
+import delivery from "./svg/truck.box.fill.svg";
+import locked from "./svg/locked.fill.svg";
 
 //--->Data
 import phonedetails from "./data/landingPhoneDetails.json";
@@ -89,3 +91,5 @@ export const bluePhoneCeramicShield = bluephonecramicshield;
 export const g5Conection = g5conection;
 export const lightningBoxContent = lightning;
 export const powerAdapter20 = poweradapter20;
+export const deliverIcon = delivery;
+export const lockedFill = locked;

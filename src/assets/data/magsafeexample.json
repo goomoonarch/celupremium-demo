@@ -1,0 +1,10 @@
+{
+  "id": "magsafelanding",
+  "img": "/src/assets/images/magsafe.png",
+  "search_img": "/src/assets/images/magsafe_search.png",
+  "family_reference": "Cargador MagSafe",
+  "swatch": "/src/assets/swatch_colors/magsafe_colors_x2.png",
+  "price": "180.000",
+  "finance": "15.000",
+  "buylink": ""
+}

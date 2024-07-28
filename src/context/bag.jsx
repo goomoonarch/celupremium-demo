@@ -1,7 +1,34 @@
 /* eslint-disable react/prop-types */
-import { createContext, useReducer, useCallback, useEffect, useState } from "react";
+import {
+  createContext,
+  useReducer,
+  useCallback,
+  useEffect,
+  useState,
+  useMemo,
+} from "react";
 
 export const BagContext = createContext();
+
+const priceToNumber = (priceString) => {
+  return parseFloat(priceString.replace(/['.]/g, "").replace("'", "."));
+};
+
+const formatToCOP = (number) => {
+  const formatter = new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+
+  const formattedNumber = formatter.format(number);
+  return formattedNumber
+    .replace(/\s/g, "")
+    .replace("COP", "")
+    .replace(/\./g, ".")
+    .replace(/,/g, ".");
+};
 
 const bagReducer = (state, action) => {
   switch (action.type) {
@@ -10,19 +37,43 @@ const bagReducer = (state, action) => {
         (item) => item.id === action.product.id
       );
       if (productIndex >= 0) {
-        return state.map((item, index) =>
-          index === productIndex
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
+        return state.map((item, index) => {
+          if (index === productIndex) {
+            const newQuantity = item.quantity + 1;
+            const itemPrice = priceToNumber(item.price);
+            const newTotalPrice = itemPrice * newQuantity;
+            return {
+              ...item,
+              quantity: newQuantity,
+              totalprice: formatToCOP(newTotalPrice),
+              numericPrice: newTotalPrice,
+            };
+          }
+          return item;
+        });
       } else {
-        return [...state, { ...action.product, quantity: 1 }];
+        const itemPrice = priceToNumber(action.product.price);
+        const newItem = {
+          ...action.product,
+          quantity: 1,
+          totalprice: action.product.price,
+          numericPrice: itemPrice,
+        };
+        return [...state, newItem];
       }
     }
     case "CLEAR_BAG":
       return [];
     case "SET_BAG":
-      return action.bag;
+      return action.bag.map((item) => {
+        const itemPrice = priceToNumber(item.price);
+        const totalPrice = itemPrice * item.quantity;
+        return {
+          ...item,
+          totalprice: formatToCOP(totalPrice),
+          numericPrice: totalPrice,
+        };
+      });
     default:
       return state;
   }
@@ -54,14 +105,37 @@ export function BagProvider({ children }) {
     dispatch({ type: "CLEAR_BAG" });
   }, []);
 
+  const calculateTotal = useCallback(() => {
+    return bag.reduce((total, item) => {
+      return total + (item.numericPrice || 0);
+    }, 0);
+  }, [bag]);
+
+  const formattedTotal = useMemo(() => {
+    return formatToCOP(calculateTotal());
+  }, [calculateTotal]);
+
+  const calculateMonthlyPayment = useCallback(() => {
+    const total = calculateTotal();
+    return total / 12;
+  }, [calculateTotal]);
+
+  const formattedMonthlyPayment = useMemo(() => {
+    return formatToCOP(calculateMonthlyPayment());
+  }, [calculateMonthlyPayment]);
+
   return (
-    <BagContext.Provider 
-      value={{ 
-        bag, 
-        addToBag, 
-        clearBag, 
-        lastAddedProduct, 
-        setLastAddedProduct 
+    <BagContext.Provider
+      value={{
+        bag,
+        addToBag,
+        clearBag,
+        lastAddedProduct,
+        setLastAddedProduct,
+        calculateTotal,
+        formattedTotal,
+        calculateMonthlyPayment,
+        formattedMonthlyPayment,
       }}
     >
       {children}
