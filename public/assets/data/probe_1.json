@@ -1,0 +1,66 @@
+[
+  {
+    "productoptions": {
+      "optionType": "color",
+      "name": "Color",
+      "choices": [
+        { "Color": ["blue", "pink", "midnight", "starlight", "green", "red"] },
+        { "Capacity": [128, 256, 512] }
+      ]
+    },
+    
+    "productvariants": [
+      {
+        "choices": {
+          "Color": "starlight",
+          "Capacity": 256
+        },
+        "variant": {
+          "priceData": [null],
+          "finance": [null],
+          "sku": "1255AD1588CC55"
+        },
+        "stock": {
+          "trasQuantity": true,
+          "quantity": 1,
+          "inStock": true
+        },
+        "_id": "0548516644-498ae7-15332aqcc08"
+      },
+      {
+        "choices": {
+          "Color": "starlight",
+          "Capacity": 128
+        },
+        "variant": {
+          "priceData": [null],
+          "finance": [null],
+          "sku": "1255AD1588CD55"
+        },
+        "stock": {
+          "trasQuantity": true,
+          "quantity": 0,
+          "inStock": true
+        },
+        "_id": "0548516644-498ae7-15332aqcc09"
+      },
+      {
+        "choices": {
+          "Color": "starlight",
+          "Capacity": 2512
+        },
+        "variant": {
+          "priceData": [null],
+          "finance": [null],
+          "sku": "1255AD1588CD55"
+        },
+        "stock": {
+          "trasQuantity": true,
+          "quantity": 2,
+          "inStock": true
+        },
+        "_id": "0548516644-498ae7-15332aqcc09"
+      }
+    ]
+  }
+]
